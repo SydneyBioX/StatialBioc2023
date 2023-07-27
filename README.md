@@ -1,52 +1,69 @@
-# BuildABiocWorkshop
-
-This package is a template for building a Bioconductor workshop. The package
-includes Github actions to:
-
-1. Set up bioconductor/bioconductor_docker:devel on Github resources
-2. Install package dependencies for your package (based on the `DESCRIPTION` file)
-3. Run `rcmdcheck::rcmdcheck`
-4. Build a pkgdown website and push it to github pages
-5. Build a docker image with the installed package and dependencies and deploy to [the Github Container Repository](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#pulling-container-images) at the name `ghcr.io/gihub_user/repo_name`, all lowercase. 
-
-## Responsibilities
-
-Package authors are primarily responsible for:
-
-1. Creating a landing site of their choosing for their workshops (a website). This website should be listed in the `DESCRIPTION` file as the `URL`.
-2. Creating a docker image that will contain workshop materials and the installed packages necessary to run those materials. The name of the resulting docker image, including "tag" if desired, should be listed in a non-standard tag, `DockerImage:` in the `DESCRIPTION` file. 
-
-Both of those tasks can be accomplished using the Github actions included in this template package. The vignette accompanying this package describes how to accomplish both of these tasks.
-
-## Details
-
-For detailed instructions, see the `How to build a workshop` article/vignette.
-
-## Results of successful deployment
-
-- A working docker image that contains the installed package and dependencies.
-- An up-to-date `pkgdown` website at https://YOURUSERNAME.github.io/YOURREPOSITORYNAME/
-- Docker image will be tagged with `latest`, `sha-XXXXXX` where `XXXXXX` is the hash of the current `master` commit, and `master`. 
-
-## To use the resulting image:
-
-```sh
-docker run -e PASSWORD=<choose_a_password_for_rstudio> -p 8787:8787 YOURDOCKERIMAGENAME
-```
-Once running, navigate to http://localhost:8787/ and then login with `rstudio`:`yourchosenpassword`. 
-
-To try with **this** repository docker image:
-
-```sh
-docker run -e PASSWORD=abc -p 8787:8787 ghcr.io/bioconductor/buildabiocworkshop
-```
-
-*NOTE*: Running docker that uses the password in plain text like above exposes the password to others 
-in a multi-user system (like a shared workstation or compute node). In practice, consider using an environment 
-variable instead of plain text to pass along passwords and other secrets in docker command lines. 
+# Statial: A Bioconductor package for identifying spatially-related changes in cell state <img src="man/figures/Statial.png" align="right" style="height: 200px; border: 0px"/>
 
 
-## Whatcha get
+## Overview
 
-- https://bioconductor.github.io/BuildABiocWorkshop
-- A Docker image that you can run locally, in the cloud, or (usually) even as a singularity container on HPC systems. 
+There are over 37 trillion cells in the human body, each taking up different forms and functions. The behaviour of these cells can be described by canonical characteristics, but their functions can also dynamically change based on their environmental context, leading to cells with diverse states. Understanding changes in cell state related to their spatial context in the tissue microenvironment is key to understanding how spatial interactions between cells can contributes to human disease. State-of-the-art technologies such as PhenoCycler, IMC, CosMx, Xenium, MERFISH and many others have made it possible to deeply phenotype characteristics of cells in their native environment. This has created the exciting opportunity to identify spatially related changes in cell state in a high-thoughput manner.
+
+## Description
+
+Statial is a Bioconductor package which contains a suite of complementary approaches for identifying changes in cell state and how these changes are associated with cell type localisation. This workshop will introduce new functionality in the Statial package which can  
+
+  1) uncover changes in marker expression associated with cell proximities and 
+  2) model spatial relationships between cells in the context of hierarchical cell lineage structures. 
+  3) identify changes in cell state between distinct tissue environments,
+
+### Pre-requisites
+
+It is expected that students will have:
+
+* basic knowledge of R syntax,
+* familiarity with SingleCellExperiment and/or SpatialExperiment objects, and
+* this workshop will not provide an in-depth description of cell-resolution spatial omics technologies. 
+
+
+### Participation
+
+While it will be possible for participantsto run code as we go through the demonstration, given time constraints, I would encourage them to focus their attention into critiquing when and why modelling the spatial relationships between cells in these ways is appropriate. Questions are welcome both within the workshop and if students choose to workthrough the workshop independently after the demonstration.
+
+### _R_ / _Bioconductor_ packages used
+
+While this workshop will focus on the functionality of Statial, it will tangentially touch on other Bioconductor packages we have developed for these technologies such as [spicyR](https://www.bioconductor.org/packages/release/bioc/html/spicyR.html), [lisaClust](https://www.bioconductor.org/packages/release/bioc/html/lisaClust.html) and [ClassifyR](https://www.bioconductor.org/packages/release/bioc/html/ClassifyR.html).
+
+<img src="man/figures/spicyR.png"
+     alt="spicyR"
+     style="height: 200px; border: 0px" />
+<img src="man/figures/lisaClust.png"
+     alt="lisaClust"
+     style="height: 200px; width: 173px; border: 0px" />
+<img src="man/figures/ClassifyR.png"
+     alt="ClassifyR"
+     style="height: 200px; border: 0px" />  
+
+
+### Time outline
+
+An example for a 45-minute workshop:
+
+| Activity                     | Time |
+|------------------------------|------|
+| Packages                     | 15m  |
+| Package Development          | 15m  |
+| Contributing to Bioconductor | 5m   |
+| Best Practices               | 10m  |
+
+### Workshop goals and objectives
+
+#### Learning goals
+
+
+* identify methods which align with spatial hypothese of interest.
+* understand the difference between the approaches and when they will be appropriate.
+* appreciate the limitations of the differences approaches and when they will be uninformative.
+
+#### Learning objectives
+
+* apply functions to identify various types of changes in cell state.
+* interpret output from tests and quantifications.
+* evaluate the appropriateness of different analytical approaches.
+* assess the performance of classification approaches that utilise cell state features.
