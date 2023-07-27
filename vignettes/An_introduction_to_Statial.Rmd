@@ -27,7 +27,7 @@ $^3$ School of Mathematics and Statistics, University of Sydney, Australia
 <br/>
 contact: ellis.patrick\@sydney.edu.au
 
-```{r htmlTemplate, echo=FALSE}
+```{r htmlTemplate, echo=FALSE, eval=FALSE}
 # Create the external file
 img <- htmltools::img(src = knitr::image_uri("../inst/images/Statial.png"), 
                alt = 'logo', 
