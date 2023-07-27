@@ -169,9 +169,25 @@ Here we see the abundance of a marker being higher in cell type 2 within spatial
 
 ## Associate with a patient outcome
 
+
+
 ### Identifying discrete changes in cell state with Kontextual
 
 Reiterate the approach
+
+<img src="../inst/images/KontextSpace.png"
+     alt="Kontext"
+     style="height: 200px; border: 0px" />
+
+
+We introduce Kontextual
+
+<img src="../inst/images/Kontextual.png"
+     alt="Kontextual"
+     style="height: 200px; border: 0px" />
+
+For the purposes of using `Kontextual` we treat cell states as identified clusters of cells, where larger clusters represent a "parent" cell population, and finer sub-clusters representing a "child" cell population. For example a CD4 T cell may be considered a child to a larger parent population of Immune cells. `Kontextual` thus aims to see how a child population of cells deviate from the spatial behaviour of their parent population, and how that influences the localisation between the child cell state and another cell state.
+
 
 #### Identify within a single image
 

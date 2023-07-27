@@ -15,9 +15,9 @@ Authors@R:
     person("Ellis", "Patrick", email = "ellis.patrick@sydney.edu.au",
     role = c("aut", "cre")))
 Description: This workshop will introduce new functionality in the Statial package. 
-Statial is a Bioconductor package which contains a suite of complementary 
-approaches for identifying changes in cell state and how these changes are associated 
-with cell type localisation.  
+    Statial is a Bioconductor package which contains a suite of complementary 
+    approaches for identifying changes in cell state and how these changes are associated 
+    with cell type localisation.  
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
