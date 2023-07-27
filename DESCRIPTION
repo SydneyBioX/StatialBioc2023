@@ -1,5 +1,5 @@
 Package: StatialBioc2023
-Title: Package demonstration of the Statial Bioconductor package.
+Title: Package demonstration of the Statial Bioconductor package
 Version: 1.0.0
 Authors@R: 
     c(person("Farhan", "Ameen", email = "farhan.ameen@sydney.edu.au",
@@ -24,15 +24,13 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
 Depends: 
-    Biobase
-Imports:
+    Biobase,
     Statial, spicyR, lisaClust, ClassifyR, ggplot2, SingleCellExperiment, 
     SpatialExperiment, dplyr, tidyr
 Suggests: 
     knitr,
     rmarkdown,
-    pkgdown,
-    readr
+    pkgdown
 URL: https://SydneyBioX.github.io/StatialBioc2023/
 BugReports: https://github.com/SydneyBioX/StatialBioc2023/issues/new/choose
 VignetteBuilder: knitr

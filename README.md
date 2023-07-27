@@ -1,4 +1,4 @@
-# Statial: A Bioconductor package for identifying spatially-related changes in cell state <img src="man/figures/Statial.png" align="right" style="height: 200px; border: 0px"/>
+# Statial: A Bioconductor package for identifying spatially-related changes in cell state <img src="vignettes/images/Statial.png" align="right" style="height: 200px; border: 0px"/>
 
 
 ## Overview
@@ -30,13 +30,13 @@ While it will be possible for participantsto run code as we go through the demon
 
 While this workshop will focus on the functionality of Statial, it will tangentially touch on other Bioconductor packages we have developed for these technologies such as [spicyR](https://www.bioconductor.org/packages/release/bioc/html/spicyR.html), [lisaClust](https://www.bioconductor.org/packages/release/bioc/html/lisaClust.html) and [ClassifyR](https://www.bioconductor.org/packages/release/bioc/html/ClassifyR.html).
 
-<img src="man/figures/spicyR.png"
+<img src="vignettes/images/spicyR.png"
      alt="spicyR"
      style="height: 200px; border: 0px" />
-<img src="man/figures/lisaClust.png"
+<img src="vignettes/images/lisaClust.png"
      alt="lisaClust"
      style="height: 200px; width: 173px; border: 0px" />
-<img src="man/figures/ClassifyR.png"
+<img src="vignettes/images/ClassifyR.png"
      alt="ClassifyR"
      style="height: 200px; border: 0px" />  
 

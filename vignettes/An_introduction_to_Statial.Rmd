@@ -27,21 +27,6 @@ $^3$ School of Mathematics and Statistics, University of Sydney, Australia
 
 <br/> contact: ellis.patrick\@sydney.edu.au
 
-```{r htmlTemplate, echo=FALSE, eval=FALSE}
-# Create the external file
-img <- htmltools::img(src = knitr::image_uri("../inst/images/Statial.png"), 
-               alt = 'logo', 
-               style = 'position:absolute; top:50px; right:1%; padding:10px;z-index:200;max-width: 15%; border: 0px')
-
-htmlhead <- paste0('
-<script>
-document.write(\'<div class="logos">',img,'</div>\')
-</script>
-')
-
-readr::write_lines(htmlhead, file = "header.html")
-
-```
 
 ## Overview
 
@@ -100,6 +85,21 @@ An example for a 45-minute workshop:
 -   assess the performance of classification approaches that utilise cell state features.
 
 ## Workshop
+
+### Load packages
+```{r, warning=FALSE, message=FALSE}
+
+library(Statial)
+library(spicyR)
+library(lisaClust)
+library(ClassifyR)
+library(ggplot2)
+library(SpatialExperiment)
+library(dplyr)
+library(tidyr)
+
+```
+
 
 The definitions of cell types and cell states are somewhat ambiguous. We will purposefully skirt the debate of what is a cell type vs cell state. Instead, in this workshop I would ask participants to associate *cell state* terminology to simply mean a varying phenotype (*state*) of a large cluster of similar cells (*cell type*). In this workshop we will examine two analytically distinct changes in cell state:
 
