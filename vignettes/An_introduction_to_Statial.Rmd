@@ -1,9 +1,7 @@
 ---
 title: "An Introduction to Statial"
 output:
-  rmarkdown::html_vignette:
-    includes:
-      in_header: header.html
+  rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{An Introduction to Statial}
   %\VignetteEngine{knitr::rmarkdown}
@@ -26,6 +24,8 @@ $^3$ School of Mathematics and Statistics, University of Sydney, Australia
   
 <br/>
 contact: ellis.patrick\@sydney.edu.au
+
+
 
 ```{r htmlTemplate, echo=FALSE, eval=FALSE}
 # Create the external file
@@ -177,14 +177,14 @@ Reiterate the approach
 
 <img src="../inst/images/KontextSpace.png"
      alt="Kontext"
-     style="height: 200px; border: 0px" />
+     style="width 40%; border: 0px" />
 
 
 We introduce Kontextual
 
 <img src="../inst/images/Kontextual.png"
      alt="Kontextual"
-     style="height: 200px; border: 0px" />
+     style="width: 80%`; border: 0px" />
 
 For the purposes of using `Kontextual` we treat cell states as identified clusters of cells, where larger clusters represent a "parent" cell population, and finer sub-clusters representing a "child" cell population. For example a CD4 T cell may be considered a child to a larger parent population of Immune cells. `Kontextual` thus aims to see how a child population of cells deviate from the spatial behaviour of their parent population, and how that influences the localisation between the child cell state and another cell state.
 
