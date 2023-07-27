@@ -37,4 +37,4 @@ URL: https://SydneyBioX.github.io/StatialBioc2023/
 BugReports: https://github.com/SydneyBioX/StatialBioc2023/issues/new/choose
 VignetteBuilder: knitr
 DockerImage: ghcr.io/sydneybiox/statialbioc2023:latest
-Remotes: SydneyBioX/Statial, SydneyBioX/spicyR
+Remotes: SydneyBioX/Statial, ellispatrick/spicyR
