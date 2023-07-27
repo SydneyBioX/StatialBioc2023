@@ -14,17 +14,17 @@ Authors@R:
     role = c("aut")),
     person("Ellis", "Patrick", email = "ellis.patrick@sydney.edu.au",
     role = c("aut", "cre")))
-Description: This package serves as a template for using github actions to 
-    prepare a Bioconductor Workshop package for use. In particular,
-    a pkgdown website and docker image are generated based on workflow 
-    settings. 
+Description: This workshop will introduce new functionality in the Statial package. 
+Statial is a Bioconductor package which contains a suite of complementary 
+approaches for identifying changes in cell state and how these changes are associated 
+with cell type localisation.  
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
 Depends: 
-    Biobase
+    Biobase, readr
 Suggests: 
     knitr,
     rmarkdown,

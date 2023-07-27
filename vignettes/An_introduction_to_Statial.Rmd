@@ -5,7 +5,7 @@ output:
     includes:
       in_header: header.html
 vignette: >
-  %\VignetteIndexEntry{An Example Workshop}
+  %\VignetteIndexEntry{An Introduction to Statial}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -113,7 +113,81 @@ An example for a 45-minute workshop:
 
 ## Workshop
 
+The definitions of cell types and cell states are somewhat ambiguous. We will purposefully skirt the debate of what is a cell type vs cell state. Instead, in this workshop I would ask participants to associate *cell state* terminology to simply mean a varying phenotype (*state*) of a large cluster of similar cells (*cell type*). In this workshop we will examine two analytically distinct changes in cell state:
+
+  1. *A continuous change in state.* The state of a cell type is defined by variation in abundance of a gene or protein.  
+  2. *A discrete change in state.* Cell types (clusters of cells) are further clustered into sub-clusters. These finer-resolution phenotypes of the cell type are labelled as cell states.  
 
 
+
+### Identifying continuous changes in cell state
+
+Changes in cell states can be analytically framed as the change in abundance of a gene or protein within a particular cell type. We can look to see if a cell type changes state when in close proximity to another cell type. In the figures below we see the abundance of a particular marker increased in circle cells that are closer to square cells.
+
+<img src="../inst/images/cts1.png"
+     alt="cts1"
+     style="width: 50%; border: 0px" />
+<img src="../inst/images/cts2.png"
+     alt="cts2"
+     style="width: 35%; border: 0px" />
+
+
+We can use Statial to quantify and test for these types of relationships.
+
+#### A change in state within a single image.
+
+###### Code to run for everything (e.g. don't specify for relationships)
+###### Which interactions don't make sense
+###### Marker contamination from lateral spillover
+##### Correcting for lateral spillover with cell type deconvolution.
+Show that it helps.
+##### ROC curve showing contamination calculation works (somewhat)
+
+#### Identify change in state consistent across images.
+##### Mixed model
+
+#### Associate these changes with a patient outcome
+##### ProportionalHazards Models
+##### Generate imageModels and see if the image features are associated with survival with spicyR::colTest
+
+### Identifying continuous changes in cell state within spatial domains
+
+We can look at changes of cell state relative to membership of different spatial domains. These domains can represent distinct tissue microenvironments where cells will potentially be interacting with different types cells.
+
+<img src="../inst/images/region.png"
+     alt="cts1"
+     style="width: 70%; border: 0px" />
+
+Here we see the abundance of a marker being higher in cell type 2 within spatial region 1 than spatial region 2. 
+
+
+####LISACLUST 
+
+### Identify spatial domains with lisaClust
+
+## Test between spatial domains
+
+## Associate with a patient outcome
+
+### Identifying discrete changes in cell state with Kontextual
+
+Reiterate the approach
+
+#### Identify within a single image
+
+## Identify across images
+
+## Associate with a patient outcome
+
+
+
+
+We might need to add coxph tests to the colTest function. Nick could potentially help with this. If not, for-loop it.
+
+# Predicting patient outcomes
+
+## Extract feature sets
+
+## Run classifyR
 
 
