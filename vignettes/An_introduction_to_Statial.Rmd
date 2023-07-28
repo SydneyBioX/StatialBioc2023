@@ -124,8 +124,6 @@ We can use Statial to quantify and test for these types of relationships.
 
 ##### Correcting for lateral spillover with cell type deconvolution.
 
-Show that it helps. \##### ROC curve showing contamination calculation works (somewhat)
-
 #### Identify change in state consistent across images.
 
 ##### Mixed model
@@ -144,36 +142,34 @@ We can look at changes of cell state relative to membership of different spatial
 
 Here we see the abundance of a marker being higher in cell type 2 within spatial region 1 than spatial region 2.
 
-####LISACLUST
 
-### Identify spatial domains with lisaClust
+#### Identify spatial domains with lisaClust
 
-## Test between spatial domains
+#### Test between spatial domains
 
-## Associate with a patient outcome
+#### Associate with a patient outcome
 
 ### Identifying discrete changes in cell state with Kontextual
 
-Reiterate the approach
+Cells states can also be modelled as subclusters of a broader parent cell population. These subclusters, or states, are typically identified via a hierarchical clustering strategy. 
+By framing cell states as discrete clusters, we are able to explore relationships as follows - cell type A has two states, with state 2 being closer to cell type B.
 
 <img src="images/KontextSpace.png" alt="Kontext" style="width 40%; border: 0px"/>
 
-We introduce Kontextual
+Here we introduce Kontextual. Kontextual models spatial relationships between cells in the context of hierarchical cell lineage structures. By assessing spatial relationships between pairs of cells in the context of other related cell types, Kontextual provides robust quantification of cell type relationships which are invariant to changes in tissue structure.
 
 <img src="images/Kontextual.png" alt="Kontextual" style="width: 65%`; border: 0px"/>
 
-For the purposes of using `Kontextual` we treat cell states as identified clusters of cells, where larger clusters represent a "parent" cell population, and finer sub-clusters representing a "child" cell population. For example a CD4 T cell may be considered a child to a larger parent population of Immune cells. `Kontextual` thus aims to see how a child population of cells deviate from the spatial behaviour of their parent population, and how that influences the localisation between the child cell state and another cell state.
+For the purposes of using `Kontextual` we treat cell states as identified clusters of cells, where larger clusters represent a "parent" cell population, and finer sub-clusters representing a "child" cell population. For example a CD4+ T cell may be considered a child to a larger parent population of T cells. `Kontextual` thus aims to see how a child population of cells deviate from the spatial behaviour of their parent population, and how that influences the localisation between the child cell state and another cell state.
 
 #### Identify within a single image
 
-## Identify across images
+#### Identify across images
 
-## Associate with a patient outcome
+#### Associate with a patient outcome
 
-We might need to add coxph tests to the colTest function. Nick could potentially help with this. If not, for-loop it.
+### Predicting patient outcomes
 
-# Predicting patient outcomes
+#### Extract feature sets
 
-## Extract feature sets
-
-## Run classifyR
+#### Run classifyR
