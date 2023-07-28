@@ -93,9 +93,9 @@ Medical Research, University of Sydney, Australia<br><span class="math inline">\
 Centre, University of Sydney, Australia<br><span class="math inline">\(^3\)</span> School of Mathematics and
 Statistics, University of Sydney, Australia</p>
 <p><br> contact: ellis.patrick@sydney.edu.au</p>
-<div class="section level3">
-<h3 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
-</h3>
+<div class="section level2">
+<h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
+</h2>
 <p>There are over 37 trillion cells in the human body, each taking up
 different forms and functions. The behaviour of these cells can be
 described by canonical characteristics, but their functions can also
@@ -107,11 +107,11 @@ human disease. State-of-the-art technologies such as PhenoCycler, IMC,
 CosMx, Xenium, MERFISH and many others have made it possible to deeply
 phenotype characteristics of cells in their native environment. This has
 created the exciting opportunity to identify spatially related changes
-in cell state in a high-thoughput manner.</p>
+in cell state in a high-throughput manner.</p>
 </div>
-<div class="section level3">
-<h3 id="description">Description<a class="anchor" aria-label="anchor" href="#description"></a>
-</h3>
+<div class="section level2">
+<h2 id="description">Description<a class="anchor" aria-label="anchor" href="#description"></a>
+</h2>
 <p>Statial is a Bioconductor package which contains a suite of
 complementary approaches for identifying changes in cell state and how
 these changes are associated with cell type localisation. This workshop
@@ -124,9 +124,9 @@ hierarchical cell lineage structures.</li>
 <li>identify changes in cell state between distinct tissue
 environments,</li>
 </ol>
-<div class="section level4">
-<h4 id="pre-requisites">Pre-requisites<a class="anchor" aria-label="anchor" href="#pre-requisites"></a>
-</h4>
+<div class="section level3">
+<h3 id="pre-requisites">Pre-requisites<a class="anchor" aria-label="anchor" href="#pre-requisites"></a>
+</h3>
 <p>It is expected that students will have:</p>
 <ul>
 <li>basic knowledge of R syntax,</li>
@@ -136,20 +136,20 @@ objects, and</li>
 cell-resolution spatial omics technologies.</li>
 </ul>
 </div>
-<div class="section level4">
-<h4 id="participation">Participation<a class="anchor" aria-label="anchor" href="#participation"></a>
-</h4>
-<p>While it will be possible for participantsto run code as we go
+<div class="section level3">
+<h3 id="participation">Participation<a class="anchor" aria-label="anchor" href="#participation"></a>
+</h3>
+<p>While it will be possible for participants to run code as we go
 through the demonstration, given time constraints, I would encourage
 them to focus their attention into critiquing when and why modelling the
 spatial relationships between cells in these ways is appropriate.
 Questions are welcome both within the workshop and if students choose to
 workthrough the workshop independently after the demonstration.</p>
 </div>
-<div class="section level4">
-<h4 id="r-bioconductor-packages-used">
+<div class="section level3">
+<h3 id="r-bioconductor-packages-used">
 <em>R</em> / <em>Bioconductor</em> packages used<a class="anchor" aria-label="anchor" href="#r-bioconductor-packages-used"></a>
-</h4>
+</h3>
 <p>While this workshop will focus on the functionality of Statial, it
 will tangentially touch on other Bioconductor packages we have developed
 for these technologies such as <a href="https://www.bioconductor.org/packages/release/bioc/html/spicyR.html" class="external-link">spicyR</a>,
@@ -157,9 +157,9 @@ for these technologies such as <a href="https://www.bioconductor.org/packages/re
 and <a href="https://www.bioconductor.org/packages/release/bioc/html/ClassifyR.html" class="external-link">ClassifyR</a>.</p>
 <p><img src="images/spicyR.png" alt="spicyR" style="height: 200px; border: 0px"><img src="images/lisaClust.png" alt="lisaClust" style="height: 200px; width: 173px; border: 0px"><img src="images/ClassifyR.png" alt="ClassifyR" style="height: 200px; border: 0px"></p>
 </div>
-<div class="section level4">
-<h4 id="time-outline">Time outline<a class="anchor" aria-label="anchor" href="#time-outline"></a>
-</h4>
+<div class="section level3">
+<h3 id="time-outline">Time outline<a class="anchor" aria-label="anchor" href="#time-outline"></a>
+</h3>
 <p>An example for a 45-minute workshop:</p>
 <table class="table">
 <thead><tr class="header">
@@ -186,12 +186,12 @@ and <a href="https://www.bioconductor.org/packages/release/bioc/html/ClassifyR.h
 </tbody>
 </table>
 </div>
+<div class="section level3">
+<h3 id="workshop-goals-and-objectives">Workshop goals and objectives<a class="anchor" aria-label="anchor" href="#workshop-goals-and-objectives"></a>
+</h3>
 <div class="section level4">
-<h4 id="workshop-goals-and-objectives">Workshop goals and objectives<a class="anchor" aria-label="anchor" href="#workshop-goals-and-objectives"></a>
+<h4 id="learning-goals">Learning goals<a class="anchor" aria-label="anchor" href="#learning-goals"></a>
 </h4>
-<div class="section level5">
-<h5 id="learning-goals">Learning goals<a class="anchor" aria-label="anchor" href="#learning-goals"></a>
-</h5>
 <ul>
 <li>identify methods which align with spatial hypothese of
 interest.</li>
@@ -201,9 +201,9 @@ be appropriate.</li>
 they will be uninformative.</li>
 </ul>
 </div>
-<div class="section level5">
-<h5 id="learning-objectives">Learning objectives<a class="anchor" aria-label="anchor" href="#learning-objectives"></a>
-</h5>
+<div class="section level4">
+<h4 id="learning-objectives">Learning objectives<a class="anchor" aria-label="anchor" href="#learning-objectives"></a>
+</h4>
 <ul>
 <li>apply functions to identify various types of changes in cell
 state.</li>
@@ -216,12 +216,12 @@ cell state features.</li>
 </div>
 </div>
 </div>
+<div class="section level2">
+<h2 id="workshop">Workshop<a class="anchor" aria-label="anchor" href="#workshop"></a>
+</h2>
 <div class="section level3">
-<h3 id="workshop">Workshop<a class="anchor" aria-label="anchor" href="#workshop"></a>
+<h3 id="load-packages">Load packages<a class="anchor" aria-label="anchor" href="#load-packages"></a>
 </h3>
-<div class="section level4">
-<h4 id="load-packages">Load packages<a class="anchor" aria-label="anchor" href="#load-packages"></a>
-</h4>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">Statial</span><span class="op">)</span></span>
@@ -250,9 +250,9 @@ are further clustered into sub-clusters. These finer-resolution
 phenotypes of the cell type are labelled as cell states.</li>
 </ol>
 </div>
-<div class="section level4">
-<h4 id="identifying-continuous-changes-in-cell-state">Identifying continuous changes in cell state<a class="anchor" aria-label="anchor" href="#identifying-continuous-changes-in-cell-state"></a>
-</h4>
+<div class="section level3">
+<h3 id="identifying-continuous-changes-in-cell-state">Identifying continuous changes in cell state<a class="anchor" aria-label="anchor" href="#identifying-continuous-changes-in-cell-state"></a>
+</h3>
 <p>Changes in cell states can be analytically framed as the change in
 abundance of a gene or protein within a particular cell type. We can
 look to see if a cell type changes state when in close proximity to
@@ -262,55 +262,53 @@ cells.</p>
 <p><img src="images/cts1.png" alt="cts1" style="width: 50%; border: 0px"><img src="images/cts2.png" alt="cts2" style="width: 35%; border: 0px"></p>
 <p>We can use Statial to quantify and test for these types of
 relationships.</p>
-<div class="section level5">
-<h5 id="a-change-in-state-within-a-single-image-">A change in state within a single image.<a class="anchor" aria-label="anchor" href="#a-change-in-state-within-a-single-image-"></a>
-</h5>
-<div class="section level7">
+<div class="section level4">
+<h4 id="a-change-in-state-within-a-single-image-">A change in state within a single image.<a class="anchor" aria-label="anchor" href="#a-change-in-state-within-a-single-image-"></a>
+</h4>
+<div class="section level6">
 <h6 id="code-to-run-for-everything-e-g--dont-specify-for-relationships">Code to run for everything (e.g. don’t specify for
 relationships)<a class="anchor" aria-label="anchor" href="#code-to-run-for-everything-e-g--dont-specify-for-relationships"></a>
 </h6>
 </div>
-<div class="section level7">
+<div class="section level6">
 <h6 id="which-interactions-dont-make-sense">Which interactions don’t make sense<a class="anchor" aria-label="anchor" href="#which-interactions-dont-make-sense"></a>
 </h6>
 </div>
-<div class="section level7">
+<div class="section level6">
 <h6 id="marker-contamination-from-lateral-spillover">Marker contamination from lateral spillover<a class="anchor" aria-label="anchor" href="#marker-contamination-from-lateral-spillover"></a>
 </h6>
 </div>
-<div class="section level6">
-<h6 id="correcting-for-lateral-spillover-with-cell-type-deconvolution-">Correcting for lateral spillover with cell type deconvolution.<a class="anchor" aria-label="anchor" href="#correcting-for-lateral-spillover-with-cell-type-deconvolution-"></a>
-</h6>
-<p>Show that it helps. ##### ROC curve showing contamination calculation
-works (somewhat)</p>
-</div>
-</div>
 <div class="section level5">
-<h5 id="identify-change-in-state-consistent-across-images-">Identify change in state consistent across images.<a class="anchor" aria-label="anchor" href="#identify-change-in-state-consistent-across-images-"></a>
+<h5 id="correcting-for-lateral-spillover-with-cell-type-deconvolution-">Correcting for lateral spillover with cell type deconvolution.<a class="anchor" aria-label="anchor" href="#correcting-for-lateral-spillover-with-cell-type-deconvolution-"></a>
 </h5>
-<div class="section level6">
-<h6 id="mixed-model">Mixed model<a class="anchor" aria-label="anchor" href="#mixed-model"></a>
-</h6>
-</div>
-</div>
-<div class="section level5">
-<h5 id="associate-these-changes-with-a-patient-outcome">Associate these changes with a patient outcome<a class="anchor" aria-label="anchor" href="#associate-these-changes-with-a-patient-outcome"></a>
-</h5>
-<div class="section level6">
-<h6 id="proportionalhazards-models">ProportionalHazards Models<a class="anchor" aria-label="anchor" href="#proportionalhazards-models"></a>
-</h6>
-</div>
-<div class="section level6">
-<h6 id="generate-imagemodels-and-see-if-the-image-features-are-associated-with-survival-with-spicyrcoltest">Generate imageModels and see if the image features are associated
-with survival with spicyR::colTest<a class="anchor" aria-label="anchor" href="#generate-imagemodels-and-see-if-the-image-features-are-associated-with-survival-with-spicyrcoltest"></a>
-</h6>
-</div>
 </div>
 </div>
 <div class="section level4">
-<h4 id="identifying-continuous-changes-in-cell-state-within-spatial-domains">Identifying continuous changes in cell state within spatial
-domains<a class="anchor" aria-label="anchor" href="#identifying-continuous-changes-in-cell-state-within-spatial-domains"></a>
+<h4 id="identify-change-in-state-consistent-across-images-">Identify change in state consistent across images.<a class="anchor" aria-label="anchor" href="#identify-change-in-state-consistent-across-images-"></a>
 </h4>
+<div class="section level5">
+<h5 id="mixed-model">Mixed model<a class="anchor" aria-label="anchor" href="#mixed-model"></a>
+</h5>
+</div>
+</div>
+<div class="section level4">
+<h4 id="associate-these-changes-with-a-patient-outcome">Associate these changes with a patient outcome<a class="anchor" aria-label="anchor" href="#associate-these-changes-with-a-patient-outcome"></a>
+</h4>
+<div class="section level5">
+<h5 id="proportionalhazards-models">ProportionalHazards Models<a class="anchor" aria-label="anchor" href="#proportionalhazards-models"></a>
+</h5>
+</div>
+<div class="section level5">
+<h5 id="generate-imagemodels-and-see-if-the-image-features-are-associated-with-survival-with-spicyrcoltest">Generate imageModels and see if the image features are associated
+with survival with spicyR::colTest<a class="anchor" aria-label="anchor" href="#generate-imagemodels-and-see-if-the-image-features-are-associated-with-survival-with-spicyrcoltest"></a>
+</h5>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="identifying-continuous-changes-in-cell-state-within-spatial-domains">Identifying continuous changes in cell state within spatial
+domains<a class="anchor" aria-label="anchor" href="#identifying-continuous-changes-in-cell-state-within-spatial-domains"></a>
+</h3>
 <p>We can look at changes of cell state relative to membership of
 different spatial domains. These domains can represent distinct tissue
 microenvironments where cells will potentially be interacting with
@@ -318,62 +316,69 @@ different types cells.</p>
 <p><img src="images/region.png" alt="cts1" style="width: 70%; border: 0px"></p>
 <p>Here we see the abundance of a marker being higher in cell type 2
 within spatial region 1 than spatial region 2.</p>
-<p>####LISACLUST</p>
-</div>
 <div class="section level4">
 <h4 id="identify-spatial-domains-with-lisaclust">Identify spatial domains with lisaClust<a class="anchor" aria-label="anchor" href="#identify-spatial-domains-with-lisaclust"></a>
 </h4>
 </div>
-</div>
-<div class="section level3">
-<h3 id="test-between-spatial-domains">Test between spatial domains<a class="anchor" aria-label="anchor" href="#test-between-spatial-domains"></a>
-</h3>
-</div>
-<div class="section level3">
-<h3 id="associate-with-a-patient-outcome">Associate with a patient outcome<a class="anchor" aria-label="anchor" href="#associate-with-a-patient-outcome"></a>
-</h3>
 <div class="section level4">
-<h4 id="identifying-discrete-changes-in-cell-state-with-kontextual">Identifying discrete changes in cell state with Kontextual<a class="anchor" aria-label="anchor" href="#identifying-discrete-changes-in-cell-state-with-kontextual"></a>
+<h4 id="test-between-spatial-domains">Test between spatial domains<a class="anchor" aria-label="anchor" href="#test-between-spatial-domains"></a>
 </h4>
-<p>Reiterate the approach</p>
-<p><img src="images/KontextSpace.png" alt="Kontext" style="width 40%; border: 0px"></p>
-<p>We introduce Kontextual</p>
-<p><img src="images/Kontextual.png" alt="Kontextual" style="width: 65%`; border: 0px"></p>
+</div>
+<div class="section level4">
+<h4 id="associate-with-a-patient-outcome">Associate with a patient outcome<a class="anchor" aria-label="anchor" href="#associate-with-a-patient-outcome"></a>
+</h4>
+</div>
+</div>
+<div class="section level3">
+<h3 id="identifying-discrete-changes-in-cell-state-with-kontextual">Identifying discrete changes in cell state with Kontextual<a class="anchor" aria-label="anchor" href="#identifying-discrete-changes-in-cell-state-with-kontextual"></a>
+</h3>
+<p>Cells states can also be modelled as subclusters of a broader parent
+cell population. These subclusters, or states, are typically identified
+via a hierarchical clustering strategy. By framing cell states as
+discrete clusters, we are able to explore relationships as follows -
+cell type A has two states, with state 2 being closer to cell type
+B.</p>
+<p><img src="images/KontextSpace.png" alt="Kontext" width="35%" style="border: 0px"></p>
+<p>Here we introduce Kontextual. Kontextual models spatial relationships
+between cells in the context of hierarchical cell lineage structures. By
+assessing spatial relationships between pairs of cells in the context of
+other related cell types, Kontextual provides robust quantification of
+cell type relationships which are invariant to changes in tissue
+structure.</p>
+<p><img src="images/Kontextual.png" alt="Kontextual" width="100%" style="border:0px"></p>
 <p>For the purposes of using <code>Kontextual</code> we treat cell
 states as identified clusters of cells, where larger clusters represent
 a “parent” cell population, and finer sub-clusters representing a
-“child” cell population. For example a CD4 T cell may be considered a
-child to a larger parent population of Immune cells.
-<code>Kontextual</code> thus aims to see how a child population of cells
-deviate from the spatial behaviour of their parent population, and how
-that influences the localisation between the child cell state and
-another cell state.</p>
-<div class="section level5">
-<h5 id="identify-within-a-single-image">Identify within a single image<a class="anchor" aria-label="anchor" href="#identify-within-a-single-image"></a>
-</h5>
+“child” cell population. For example a CD4+ T cell may be considered a
+child to a larger parent population of T cells. <code>Kontextual</code>
+thus aims to see how a child population of cells deviate from the
+spatial behaviour of their parent population, and how that influences
+the localisation between the child cell state and another cell
+state.</p>
+<div class="section level4">
+<h4 id="identify-within-a-single-image">Identify within a single image<a class="anchor" aria-label="anchor" href="#identify-within-a-single-image"></a>
+</h4>
 </div>
+<div class="section level4">
+<h4 id="identify-across-images">Identify across images<a class="anchor" aria-label="anchor" href="#identify-across-images"></a>
+</h4>
+</div>
+<div class="section level4">
+<h4 id="associate-with-a-patient-outcome-1">Associate with a patient outcome<a class="anchor" aria-label="anchor" href="#associate-with-a-patient-outcome-1"></a>
+</h4>
 </div>
 </div>
 <div class="section level3">
-<h3 id="identify-across-images">Identify across images<a class="anchor" aria-label="anchor" href="#identify-across-images"></a>
+<h3 id="predicting-patient-outcomes">Predicting patient outcomes<a class="anchor" aria-label="anchor" href="#predicting-patient-outcomes"></a>
 </h3>
+<div class="section level4">
+<h4 id="extract-feature-sets">Extract feature sets<a class="anchor" aria-label="anchor" href="#extract-feature-sets"></a>
+</h4>
 </div>
-<div class="section level3">
-<h3 id="associate-with-a-patient-outcome-1">Associate with a patient outcome<a class="anchor" aria-label="anchor" href="#associate-with-a-patient-outcome-1"></a>
-</h3>
-<p>We might need to add coxph tests to the colTest function. Nick could
-potentially help with this. If not, for-loop it.</p>
+<div class="section level4">
+<h4 id="run-classifyr">Run classifyR<a class="anchor" aria-label="anchor" href="#run-classifyr"></a>
+</h4>
 </div>
-<div class="section level2">
-<h2 id="predicting-patient-outcomes">Predicting patient outcomes<a class="anchor" aria-label="anchor" href="#predicting-patient-outcomes"></a>
-</h2>
-<div class="section level3">
-<h3 id="extract-feature-sets">Extract feature sets<a class="anchor" aria-label="anchor" href="#extract-feature-sets"></a>
-</h3>
-</div>
-<div class="section level3">
-<h3 id="run-classifyr">Run classifyR<a class="anchor" aria-label="anchor" href="#run-classifyr"></a>
-</h3>
 </div>
 </div>
   </div>
