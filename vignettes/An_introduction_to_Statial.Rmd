@@ -36,7 +36,7 @@ $^3$ School of Mathematics and Statistics, University of Sydney, Australia
 
 <br/> contact: ellis.patrick\@sydney.edu.au
 
-## Overview
+# Overview
 
 There are over 37 trillion cells in the human body, each taking up different forms and functions. The behaviour of these cells can be described by canonical characteristics, but their functions can also dynamically change based on their environmental context, leading to cells with diverse states. Understanding changes in cell state related to their spatial context in the tissue microenvironment is key to understanding how spatial interactions between cells can contributes to human disease. State-of-the-art technologies such as PhenoCycler, IMC, CosMx, Xenium, MERFISH and many others have made it possible to deeply phenotype characteristics of cells in their native environment. This has created the exciting opportunity to identify spatially related changes in cell state in a high-thoughput manner.
 
@@ -92,9 +92,9 @@ An example for a 45-minute workshop:
 -   evaluate the appropriateness of different analytical approaches.
 -   assess the performance of classification approaches that utilise cell state features.
 
-## Workshop
+# Workshop
 
-### Load packages
+## Load packages
 
 ```{r, warning=FALSE, message=FALSE}
 
@@ -120,7 +120,7 @@ The definitions of cell types and cell states are somewhat ambiguous. We will pu
 1.  *A continuous change in state.* The state of a cell type is defined by variation in abundance of a gene or protein.\
 2.  *A discrete change in state.* Cell types (clusters of cells) are further clustered into sub-clusters. These finer-resolution phenotypes of the cell type are labelled as cell states.
 
-### The data
+## The data
 
 To illustrate the functionality of Statial we will use a multiplexed ion beam imaging by time-of-flight (MIBI-TOF) dataset profiling tissue from triple-negative breast cancer patients$^1$. This dataset simultaneously quantifies *in situ* expression of 36 proteins in 34 immune rich patients. *Note:* The data contains some "uninformative" probes and the original cohort included 41 patients.
 
@@ -156,7 +156,7 @@ scater::plotReducedDim(kerenSPE, dimred = "UMAP", colour_by = "cellType")
 2.  What are some observations we could make if we coloured by `imageID`?
 :::
 
-### Identifying discrete changes in cell state with Kontextual
+## Identifying discrete changes in cell state with Kontextual
 
 Cells states can be modelled as subclusters of a broader parent cell population. These subclusters, or states, are typically identified via a hierarchical clustering strategy. By framing cell states as discrete clusters, we are able to explore relationships as follows - cell type A has two states, with state 2 being closer to cell type B.
 
@@ -168,7 +168,7 @@ Here we introduce Kontextual. Kontextual models spatial relationships between ce
 
 For the purposes of using `Kontextual` we treat cell states as identified clusters of cells, where larger clusters represent a "parent" cell population, and finer sub-clusters representing a "child" cell population. For example a CD4+ T cell may be considered a child to a larger parent population of T cells. `Kontextual` thus aims to quantify how the localisation patterns of a child population of cells deviate from the spatial behaviour of their parent population, and how that influences the localisation between the child cell state and another cell state.
 
-#### Cell type hierarchy
+### Cell type hierarchy
 
 A key input for Kontextual is an annotation of cell type hierarchies. We will need these to organise all the cells present into cell state populations or clusters, e.g. all the different B cell types are put in a vector called bcells.
 
@@ -197,7 +197,7 @@ all <- c(tumour, tissue, immune, "Unidentified")
 
 ```
 
-#### Discrete cell state changes within a single image
+### Discrete cell state changes within a single image
 
 Here we examine an image highlighted in the Keren et al. 2018 manuscript where the relationship between 2 cell types depends on a parent cell population. In the image below we can see that *p53+ tumour cells* and *immune cells* are dispersed. However when the behaviour of *p53+ tumour cells* are placed in the context of the spatial behaviour of its broader parent population *tumour cells*, *p53+ tumour cells* and *immune* would appear localised.
 
@@ -288,7 +288,7 @@ parentDf <- parentCombinations(
 
 ```
 
-#### Discrete cell state changes across all images
+### Discrete cell state changes across all images
 
 Rather than specifying `to`, `from`, and `parent` in Kontextual, the output from `parentCombinations` can be inputed into `Kontextual` using the `parentDf` argument, to examine all pairwise relationships in the dataset. This chunk will take a signficant amount of time to run (\~20 minutes), for demonstration the results have been saved and are loaded in.
 
@@ -308,7 +308,7 @@ bigDiff <- (kerenKontextual$original - kerenKontextual$kontextual)
 head(kerenKontextual[order(bigDiff),], 10)
 ```
 
-#### Associate discrete state changes with survival outcomes
+### Associate discrete state changes with survival outcomes
 
 To examine whether the features obtained from `Statial` are associated with patient outcomes or groupings, we can use the `colTest` function from `SpicyR`. To understand if survival outcomes differ significantly between 2 patient groups, specify `type = "survival"` in `colTest`. Here we examine which features are most associated with patient survival using the Kontextual values as example. To do so, the survival data is extracted from `kerenSPE` and converted to a survival object.
 
@@ -370,7 +370,7 @@ survfit2(kerenSurv ~ survRelationship) |>
     ggtitle("Mesenchymal__Macrophages__tissue")
 ```
 
-### Identifying continuous changes in cell state
+## Identifying continuous changes in cell state
 
 Changes in cell states can be analytically framed as the change in abundance of a gene or protein within a particular cell type. We can look to see if a cell type changes state when in close proximity to another cell type. In the figures below we see the abundance of a particular marker increased in circle cells that are closer to square cells.
 
@@ -378,7 +378,7 @@ Changes in cell states can be analytically framed as the change in abundance of 
 
 We can use Statial to quantify and test for these types of relationships.
 
-#### Continuous cell state changes within a single image.
+### Continuous cell state changes within a single image.
 
 The first step in analysing these changes is to calculate the spatial proximity (`getDistances`) and abundance (`getAbundances`) of each cell to every cell type. These values will then be stored in the `reducedDims` slot of the `SpatialExperiment` object under the names `distances` and `abundances` respectively.
 
@@ -441,7 +441,7 @@ p
 3.  Can you try find an interaction where the coefficient is positive? i.e. marker expression in the `to` cell type rises as distances increases from the `from` cell type.
 :::
 
-#### Continuous cell state changes across all images.
+### Continuous cell state changes across all images.
 
 Beyond looking at single cell-to-cell interactions for a single image, we can also look at all interactions across all images. The `calcStateChanges` function provided by Statial can be expanded for this exact purpose - by not specifying cell types, a marker, or an image, `calcStateChanges` will examine the most significant correlations between distance and marker expression across the entire dataset. Here, we've calculated all state changes across all images in case you would like to have a play, but we'll be taking a closer examination at the most significant interactions found within image 6 of the Keren et al. dataset.
 
@@ -522,7 +522,7 @@ p
 
 So why are T cells expressing CD20? This brings us to a key problem of cell segmentation - contamination.
 
-#### Contamination (Lateral marker spill over)
+### Contamination (Lateral marker spill over)
 
 Contamination, or more specifically known as lateral marker spill over, is an issue that results in a cell's marker expressions being wrongly attributed to another adjacent cell. This issue arises from incorrect segmentation where components of one cell are wrongly determined as belonging to another cell. Alternatively, this issue can arise when antibodies used to tag and measure marker expressions don't latch on properly to a cell of interest, thereby resulting in residual markers being wrongly assigned as belonging to a cell near the intended target cell. It is important that we either correct or account for this incorrect attribution of markers in our modelling process. This is critical in understanding whether significant cell-cell interactions detected are an artefact of technical measurement errors driven by spill over or are real biological changes that represent a shift in a cell's state.
 
@@ -569,7 +569,7 @@ ggplot(df, aes(x = TP, y = FP, colour = type)) + geom_line()+ xlim(0,100) + ylim
 
 ```
 
-#### Associate continuous state changes with survival outcomes
+### Associate continuous state changes with survival outcomes
 
 Similiar to `Kontextual`, we can run a similar survival analysis using our state changes results. Here, `prepMatrix` extracts the coefficients, or `coef` column of stateChanges by default. To use the t values instead, specify `column = "tval"` in the `prepMatrix` function.
 
@@ -597,6 +597,7 @@ Again, we can also visualise the Kaplan-Meier curve visualisation for the most s
 As shown below, increased keratin6 expression in keratin/tumour cells near CD4 populations tends to worsen survival outcomes, whilst lower keratin6 expression appears to improve survival outcomes.
 
 ```{r}
+# Selecting the most significant relationship
 survRelationship = stateMat[["Keratin_Tumour__CD4_Cell__Keratin6"]]
 survRelationship = ifelse(survRelationship > median(survRelationship), "Dispersed", "Localised")
     
@@ -615,7 +616,7 @@ survfit2(kerenSurv ~ survRelationship) |>
 2.  Which ones are they? Do they make biological sense?
 :::
 
-### Continuous cell state changes within spatial domains
+## Continuous cell state changes within spatial domains
 
 We can look at changes of cell state relative to membership of different spatial domains. These domains can represent distinct tissue microenvironments where cells will potentially be interacting with different types cells.
 
@@ -623,7 +624,7 @@ We can look at changes of cell state relative to membership of different spatial
 
 Here we see the abundance of a marker being higher in cell type 2 within spatial region 1 than spatial region 2.
 
-#### Identify spatial domains with lisaClust
+### Identify spatial domains with lisaClust
 
 We can cluster areas with similar spatial interactions to identify regions using the `lisaClust` package on Bioconductor. Here we set `k = 5` to identify 5 regions.
 
@@ -647,7 +648,7 @@ lisaClust::hatchingPlot(kerenSPE,
 
 ```
 
-#### Changes in marker means
+### Changes in marker means
 
 `Statial` provides functionality to identify the average marker expression of a given cell type in a given region, using the `getMarkerMeans` function. Similar to the analysis above, these features can also be used for survival analysis.
 
@@ -664,7 +665,7 @@ head(survivalResults)
 
 ```
 
-### Patient classification
+## Patient classification
 
 Finally we demonstrate how we can use the Bioconductor package `ClassifyR` to perform patient classification with the features generated from `Statial`. In addition to the kontextual, state changes, and marker means values, we also calculate cell type proportions and region proportions using the `getProp` function in `spicyR`. Here we perform 3 fold cross validation with 10 repeats, using a CoxPH model for survival classification, feature selection is also performed by selecting the top 10 features per fold using a CoxPH model.
 
