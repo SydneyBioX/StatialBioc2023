@@ -42,23 +42,23 @@ There are over 37 trillion cells in the human body, each taking up different for
 
 ## Description
 
-Statial is a Bioconductor package which contains a suite of complementary approaches for identifying changes in cell state and how these changes are associated with cell type localisation. This workshop will introduce new functionality in the Statial package which can
+Statial is a Bioconductor package which contains a suite of complementary approaches for identifying changes in cell state and how these changes are associated with cell type localisation. This workshop will introduce new functionality in the Statial package which can:
 
-1)  uncover changes in marker expression associated with cell proximities and
-2)  model spatial relationships between cells in the context of hierarchical cell lineage structures.
-3)  identify changes in cell state between distinct tissue environments,
+1)  Model spatial relationships between cells in the context of hierarchical cell lineage structures
+2)  Uncover changes in marker expression associated with cell proximities
+3)  Identify changes in cell state between distinct tissue environments
 
 ### Pre-requisites
 
 It is expected that students will have:
 
--   basic knowledge of R syntax,
--   familiarity with SingleCellExperiment and/or SpatialExperiment objects, and
--   this workshop will not provide an in-depth description of cell-resolution spatial omics technologies.
+-   Basic knowledge of R syntax
+-   Familiarity with SingleCellExperiment and/or SpatialExperiment objects
+-   This workshop will not provide an in-depth description of cell-resolution spatial omics technologies
 
 ### Participation
 
-While it will be possible for participantsto run code as we go through the demonstration, given time constraints, I would encourage them to focus their attention into critiquing when and why modelling the spatial relationships between cells in these ways is appropriate. Questions are welcome both within the workshop and if students choose to workthrough the workshop independently after the demonstration.
+While it will be possible for participants to run code as we go through the demonstration, given time constraints, I would encourage them to focus their attention into critiquing when and why modelling the spatial relationships between cells in these ways is appropriate. Questions are welcome both within the workshop and if students choose to work through the workshop independently after the demonstration.
 
 ### *R* / *Bioconductor* packages used
 
@@ -81,16 +81,16 @@ An example for a 45-minute workshop:
 
 #### Learning goals
 
--   identify methods which align with spatial hypothese of interest.
--   understand the difference between the approaches and when they will be appropriate.
--   appreciate the limitations of the differences approaches and when they will be uninformative.
+-   Identify methods which align with spatial hypotheses of interest.
+-   Understand the difference between the approaches and when they will be appropriate.
+-   Appreciate the limitations of the different approaches and when they will be uninformative.
 
 #### Learning objectives
 
--   apply functions to identify various types of changes in cell state.
--   interpret output from tests and quantifications.
--   evaluate the appropriateness of different analytical approaches.
--   assess the performance of classification approaches that utilise cell state features.
+-   Apply functions to identify various types of changes in cell state.
+-   Interpret output from tests and quantifications.
+-   Evaluate the appropriateness of different analytical approaches.
+-   Assess the performance of classification approaches that utilise cell state features.
 
 # Workshop
 
@@ -117,8 +117,8 @@ nCores <- 1  # Feel free to parallelise things if you have the cores to spare.
 
 The definitions of cell types and cell states are somewhat ambiguous. We will purposefully skirt the debate of what is a cell type vs cell state. Instead, in this workshop I would ask participants to associate *cell state* terminology to simply mean a varying phenotype (*state*) of a large cluster of similar cells (*cell type*). In this workshop we will examine two analytically distinct changes in cell state:
 
-1.  *A continuous change in state.* The state of a cell type is defined by variation in abundance of a gene or protein.\
-2.  *A discrete change in state.* Cell types (clusters of cells) are further clustered into sub-clusters. These finer-resolution phenotypes of the cell type are labelled as cell states.
+1.  *A discrete change in state.* Cell types (clusters of cells) are further clustered into sub-clusters. These finer-resolution phenotypes of the cell type are labelled as cell states.\
+2.  *A continuous change in state.* The state of a cell type is defined by variation in abundance of a gene or protein.
 
 ## The data
 
@@ -200,7 +200,7 @@ all <- c(tumour, tissue, immune, "Unidentified")
 
 ### Discrete cell state changes within a single image
 
-Here we examine an image highlighted in the Keren et al. 2018 manuscript where the relationship between 2 cell types depends on a parent cell population. In the image below we can see that *p53+ tumour cells* and *immune cells* are dispersed. However when the behaviour of *p53+ tumour cells* are placed in the context of the spatial behaviour of its broader parent population *tumour cells*, *p53+ tumour cells* and *immune* would appear localised.
+Here we examine an image highlighted in the Keren et al. 2018 manuscript where the relationship between two cell types depends on a parent cell population. In image 6 of the Keren et al. dataset, we can see that *p53+ tumour cells* and *immune cells* are dispersed. However when the behaviour of *p53+ tumour cells* are placed in the context of the spatial behaviour of its broader parent population *tumour cells*, *p53+ tumour cells* and *immune* would appear localised.
 
 ```{r, fig.width=5.5, fig.height=3.5}
 
@@ -253,7 +253,7 @@ p53_Kontextual
 
 ```
 
-The `kontextCurve` calculates the L-function value and Kontextual values over a range of radii. While `kontextPlot` plots these values. If the points lie above the red line (expected pattern) then localisation is indicated for that radius, if the points lie below the red line then dispersion is indicated. As seen in the following plot Kontextual is able to correctly identify localisation between p53+ tumour cells and immune cells in the example image for a certain range of radii. The original L-function does not able to identify localisation at any value of radii.
+The `kontextCurve` calculates the L-function value and Kontextual values over a range of radii. While `kontextPlot` plots these values. If the points lie above the red line (expected pattern) then localisation is indicated for that radius, if the points lie below the red line then dispersion is indicated. As seen in the following plot Kontextual is able to correctly identify localisation between p53+ tumour cells and immune cells in the example image for a certain range of radii. The original L-function is not able to identify localisation at any value of radii.
 
 ```{r}
 
@@ -271,7 +271,7 @@ curves <- kontextCurve(
 kontextPlot(curves)
 ```
 
-Alternatively all pairwise cell relationships and their corresponding parent in the dataset can be tested. A data frame with all pairwise combinations can be creating using the `parentCombinations` function. This function takes in a vector of all the cells, as well as all the parent vectors set up earlier. As shown below the output is a data frame specifying the `to`, `from`, and `parent` arguments for `Kontextual`.
+Alternatively all pairwise cell relationships and their corresponding parents in the dataset can be tested. A data frame with all pairwise combinations can be creating using the `parentCombinations` function. This function takes in a vector of all the cells, as well as all the parent vectors set up earlier. As shown below the output is a data frame specifying the `to`, `from`, and `parent` arguments for `Kontextual`.
 
 ```{r}
 # Get all relationships between cell types and their parents
@@ -291,7 +291,7 @@ parentDf <- parentCombinations(
 
 ### Discrete cell state changes across all images
 
-Rather than specifying `to`, `from`, and `parent` in Kontextual, the output from `parentCombinations` can be inputed into `Kontextual` using the `parentDf` argument, to examine all pairwise relationships in the dataset. This chunk will take a signficant amount of time to run (\~20 minutes), for demonstration the results have been saved and are loaded in.
+Rather than specifying `to`, `from`, and `parent` in Kontextual, the output from `parentCombinations` can be input into `Kontextual` using the `parentDf` argument, to examine all pairwise relationships in the dataset. This chunk will take a signficant amount of time to run (\~20 minutes), for demonstration the results have been saved and are loaded in.
 
 ```{r eval=FALSE}
 # Running Kontextual on all relationships across all images.
@@ -311,7 +311,7 @@ head(kerenKontextual[order(bigDiff),], 10)
 
 ### Associate discrete state changes with survival outcomes
 
-To examine whether the features obtained from `Statial` are associated with patient outcomes or groupings, we can use the `colTest` function from `SpicyR`. To understand if survival outcomes differ significantly between 2 patient groups, specify `type = "survival"` in `colTest`. Here we examine which features are most associated with patient survival using the Kontextual values as example. To do so, the survival data is extracted from `kerenSPE` and converted to a survival object.
+To examine whether the features obtained from `Statial` are associated with patient outcomes or groupings, we can use the `colTest` function from `SpicyR`. To understand if survival outcomes differ significantly between 2 patient groups, specify `type = "survival"` in `colTest`. Here we examine which features are most associated with patient survival using the Kontextual values as an example. To do so, survival data is extracted from `kerenSPE` and converted into the survival object `kerenSurv`.
 
 ```{r}
 
@@ -328,7 +328,7 @@ names(kerenSurv) = survData$imageID
 
 ```
 
-In addition to this, the Kontextual results must be converted from a `data.frame` to a wide `matrix`, this can be done using `prepKontextMat`. Note, to extract the original L-function values, specify `type = "original"` in `prepKontextMat`.
+In addition to this, the Kontextual results must be converted from a `data.frame` to a wide `matrix`, this can be done using `prepMatrix`. Note, to extract the original L-function values, specify `column = "original"` in `prepMatrix`.
 
 ```{r}
 # Converting Kontextual result into data matrix
@@ -373,11 +373,9 @@ survfit2(kerenSurv ~ survRelationship) |>
 
 ## Identifying continuous changes in cell state
 
-Changes in cell states can be analytically framed as the change in abundance of a gene or protein within a particular cell type. We can look to see if a cell type changes state when in close proximity to another cell type. In the figures below we see the abundance of a particular marker increased in circle cells that are closer to square cells.
+Changes in cell states can be analytically framed as the change in abundance of a gene or protein within a particular cell type. We can analytically determine whether continuous changes occur to a cell's state as changes occur in its spatial proximity to another cell type. In the figures below we see the expression of a marker increased in cell type A as it grows closer in spatial proximity to cell type B. This can then be quantified with a scatterplot to determine statistical significance. In the next section of this workshop, we will be exploring the analytical functionalities of Statial which can uncover these continuous changes in cell state.
 
 <img src="images/ctsCombined.jpg" alt="ctsCombined" style="border: 0px"/>
-
-We can use Statial to quantify and test for these types of relationships.
 
 ### Continuous cell state changes within a single image.
 
@@ -444,7 +442,7 @@ p
 
 ### Continuous cell state changes across all images.
 
-Beyond looking at single cell-to-cell interactions for a single image, we can also look at all interactions across all images. The `calcStateChanges` function provided by Statial can be expanded for this exact purpose - by not specifying cell types, a marker, or an image, `calcStateChanges` will examine the most significant correlations between distance and marker expression across the entire dataset. Here, we've calculated all state changes across all images in case you would like to have a play, but we'll be taking a closer examination at the most significant interactions found within image 6 of the Keren et al. dataset.
+Beyond looking at single cell-to-cell interactions for a single image, we can also look at all interactions across all images. The `calcStateChanges` function provided by Statial can be expanded for this exact purpose - by not specifying cell types, a marker, or an image, `calcStateChanges` will examine the most significant correlations between distance and marker expression across the entire dataset. Here, we've calculated all state changes across all images in case you would like to have a play, but first we'll be taking a closer examination at the most significant interactions found within image 6 of the Keren et al. dataset.
 
 ```{r}
 stateChanges <- calcStateChanges(
@@ -457,7 +455,7 @@ stateChanges |>
   head(n = 10)
 ```
 
-Let's take a look at the top 10 most significant gene-to-distance pairwise interactions. In image 6, the majority of the top 10 most significant interactions occur between keratin/tumour cells and an immune population, and many of these interactions appear to involve the HLA class I ligand.
+In image 6, the majority of the top 10 most significant interactions occur between keratin/tumour cells and an immune population, and many of these interactions appear to involve the HLA class I ligand.
 
 We can examine some of these interactions further with the `plotStateChanges` function. Taking a closer examination of the relationship between macrophages and keratin/tumour HLA class I expression, the plot below shows us a clear visual correlation - as macrophage density increases, keratin/tumour cells increase their expression HLA class I.
 
@@ -497,9 +495,11 @@ Could this potentially be an artefact of `calcStateChanges`? We can examine the 
 ::: question
 **Question**
 
-1.  Are there any other interactions here that you think might not make biological sense?
-2.  Does the relationship between T cell CD20 expression and B cell proximity occur across many images?
-3.  Why are many of the strong relationships occurring in image 35? Configure the parameters of `plotStateChanges` to examine some these most significant interactions.
+1.  Are there any other interactions here that you think might not make biological sense?  
+2.  Does the relationship between T cell CD20 expression and B cell proximity occur across images?  
+3.  Why are the majority of most significant interactions occurring in image 35?  
+
+    HINT: Configure the parameters of `plotStateChanges` to examine some these other significant interactions. Do they look like artefacts?
 :::
 
 ```{r}
@@ -571,19 +571,22 @@ ggplot(df, aes(x = TP, y = FP, colour = type)) + geom_line()+ xlim(0,100) + ylim
 
 ```
 
+::: question
+**Question**
+
+1.  What can we conclude from the above ROC graphs?
+:::
+
 ### Associate continuous state changes with survival outcomes
 
-Similiar to `Kontextual`, we can run a similar survival analysis using our state changes results. Here, `prepMatrix` extracts the coefficients, or `coef` column of stateChanges by default. To use the t values instead, specify `column = "tval"` in the `prepMatrix` function.
-
-For our state changes results, `Keratin_Tumour__CD4_Cell__Keratin6` is the most significant pairwise relationship which contributes to patient survival. That is the relationship between Keratin6 expressing keratin/tumour cells and CD4 cells. We can see that there is a positive coeffcient associated with this relationship, which tells us that higher Keratin6 in keratin/tumour cells nearby CD4 populations lead to poorer survival outcomes for patients.
+Similiar to `Kontextual`, we can run a similar survival analysis using our state changes results. Here, `prepMatrix` extracts the coefficients, or the `coef` column of `stateChanges` by default. To use the t values instead, specify `column = "tval"` in the `prepMatrix` function.
 
 ```{r}
 # Preparing features for Statial
 stateMat <- prepMatrix(stateChanges)
 
-# Ensuring rownames of stateMat match up with rownames of the survival vector 
+# Ensuring rownames of stateMat match up with rownames of the survival vector
 stateMat <- stateMat[names(kerenSurv), ]
-
 
 # Remove some very small values
 stateMat <- stateMat[,colMeans(abs(stateMat)>0.0001)>.8]
@@ -594,6 +597,20 @@ head(survivalResults)
 
 ```
 
+For our state changes results, `Keratin_Tumour__Mesenchymal__HLA_Class_1` is the most significant pairwise relationship which contributes to patient survival. That is, the relationship between HLA class I expression in keratin/tumour cells and their spatial proximity to mesenchymal cells. As there is a negative coeffcient associated with this relationship, which tells us that higher HLA class I expression in keratin/tumour cells nearby mesenchymal cell populations lead to poorer survival outcomes for patients.
+
+```{r}
+# Selecting the most significant relationship
+survRelationship = stateMat[["Keratin_Tumour__Mesenchymal__HLA_Class_1"]]
+survRelationship = ifelse(survRelationship > median(survRelationship), "Higher expressed in close cells", "Lower expressed in close cells")
+    
+# Plotting Kaplan-Meier curve
+survfit2(kerenSurv ~ survRelationship) |>
+    ggsurvfit() +
+    add_pvalue() +
+    ggtitle("Keratin_Tumour__Mesenchymal__HLA_Class_1")
+
+```
 
 
 ::: question
