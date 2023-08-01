@@ -594,28 +594,14 @@ head(survivalResults)
 
 ```
 
-Similar to `Kontextual`, we can also visualise the Kaplan-Meier curve visualisation for the most significant interaction. As `Kontextual` and `calcStateChanges` provides different outputs, localisation here refers to increased localisation between Keratin6 expressing keratin/tumour cells and CD4 cells, i.e. localisation means keratin/tumour cells tend to increase Keratin6 expression nearby CD4 cells, whilst dispersion would mean keratin/tumour cells do not tend to express Keratin6 near CD4 cell populations.
 
-As shown below, increased keratin6 expression in keratin/tumour cells near CD4 populations tends to worsen survival outcomes, whilst lower keratin6 expression appears to improve survival outcomes.
-
-```{r}
-# Selecting the most significant relationship
-survRelationship = stateMat[["Keratin_Tumour__CD4_Cell__Keratin6"]]
-survRelationship = ifelse(survRelationship > median(survRelationship), "Dispersed", "Localised")
-    
-# Plotting Kaplan-Meier curve
-survfit2(kerenSurv ~ survRelationship) |>
-    ggsurvfit() +
-    add_pvalue() +
-    ggtitle("Keratin_Tumour__CD4_Cell__Keratin6")
-
-```
 
 ::: question
 **Question**
 
-1.  Are there any relationships where localisation improves patient survival outcomes?
-2.  Which ones are they? Do they make biological sense?
+1.  How should these coefficients be interpreted?
+2.  Do any of these relationships makes sense?
+3.  Could you visualise representative images?
 :::
 
 ## Continuous cell state changes within spatial domains
