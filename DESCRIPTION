@@ -26,7 +26,7 @@ RoxygenNote: 7.2.3
 Depends: 
     Biobase,
     Statial, spicyR, lisaClust, ClassifyR, ggplot2, SingleCellExperiment, 
-    SpatialExperiment, dplyr, tidyr, ggsurvfit
+    SpatialExperiment, dplyr, tidyr, ggsurvfit, scater
 Suggests: 
     knitr,
     rmarkdown,

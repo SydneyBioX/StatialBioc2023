@@ -108,6 +108,7 @@ library(SpatialExperiment)
 library(dplyr)
 library(tidyr)
 library(ggsurvfit)
+library(scater)
 
 theme_set(theme_classic())
 nCores <- 1  # Feel free to parallelise things if you have the cores to spare.
@@ -126,7 +127,7 @@ To illustrate the functionality of Statial we will use a multiplexed ion beam im
 The data is stored in a `SpatialExperiment` object called `kerenSPE`. We can load the data and view some basic characteristics.
 
 ```{r}
-data("kerenSPE")
+data("kerenSPE", package = "StatialBioc2023")
 
 # Filter out samples with few immune cells and those without survival information.
 kerenSPE <- kerenSPE[,kerenSPE$tumour_type!="cold" & !is.na(kerenSPE$`Survival_days_capped*`)]
@@ -305,7 +306,7 @@ kerenKontextual <- Kontextual(
 ```
 
 ```{r}
-data("kerenKontextual")
+data("kerenKontextual", package = "StatialBioc2023")
 bigDiff <- (kerenKontextual$original - kerenKontextual$kontextual)
 head(kerenKontextual[order(bigDiff),], 10)
 ```
