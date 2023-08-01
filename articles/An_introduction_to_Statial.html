@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">StatialBioc2023</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.1</span>
       </span>
     </div>
 
@@ -85,6 +85,14 @@
 
     
     
+<style>
+.question {
+  padding: 1em;
+  background: lightcyan;
+  color: black;
+  border-radius: 10px;
+}
+</style>
 <p><img src="images/Statial.png" align="right" style="height: 200px; border: 0px"></p>
 <p>Farhan Ameen, Alex Qin, Nick Robertson, Sourish Iyengar, Shila
 Ghazanfar, Ellis Patrick<span class="math inline">\(^{1,2,3}\)</span>.</p>
@@ -93,9 +101,9 @@ Medical Research, University of Sydney, Australia<br><span class="math inline">\
 Centre, University of Sydney, Australia<br><span class="math inline">\(^3\)</span> School of Mathematics and
 Statistics, University of Sydney, Australia</p>
 <p><br> contact: ellis.patrick@sydney.edu.au</p>
-<div class="section level2">
-<h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
-</h2>
+<div class="section level3">
+<h3 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
+</h3>
 <p>There are over 37 trillion cells in the human body, each taking up
 different forms and functions. The behaviour of these cells can be
 described by canonical characteristics, but their functions can also
@@ -107,11 +115,11 @@ human disease. State-of-the-art technologies such as PhenoCycler, IMC,
 CosMx, Xenium, MERFISH and many others have made it possible to deeply
 phenotype characteristics of cells in their native environment. This has
 created the exciting opportunity to identify spatially related changes
-in cell state in a high-throughput manner.</p>
+in cell state in a high-thoughput manner.</p>
 </div>
-<div class="section level2">
-<h2 id="description">Description<a class="anchor" aria-label="anchor" href="#description"></a>
-</h2>
+<div class="section level3">
+<h3 id="description">Description<a class="anchor" aria-label="anchor" href="#description"></a>
+</h3>
 <p>Statial is a Bioconductor package which contains a suite of
 complementary approaches for identifying changes in cell state and how
 these changes are associated with cell type localisation. This workshop
@@ -124,9 +132,9 @@ hierarchical cell lineage structures.</li>
 <li>identify changes in cell state between distinct tissue
 environments,</li>
 </ol>
-<div class="section level3">
-<h3 id="pre-requisites">Pre-requisites<a class="anchor" aria-label="anchor" href="#pre-requisites"></a>
-</h3>
+<div class="section level4">
+<h4 id="pre-requisites">Pre-requisites<a class="anchor" aria-label="anchor" href="#pre-requisites"></a>
+</h4>
 <p>It is expected that students will have:</p>
 <ul>
 <li>basic knowledge of R syntax,</li>
@@ -136,20 +144,20 @@ objects, and</li>
 cell-resolution spatial omics technologies.</li>
 </ul>
 </div>
-<div class="section level3">
-<h3 id="participation">Participation<a class="anchor" aria-label="anchor" href="#participation"></a>
-</h3>
-<p>While it will be possible for participants to run code as we go
+<div class="section level4">
+<h4 id="participation">Participation<a class="anchor" aria-label="anchor" href="#participation"></a>
+</h4>
+<p>While it will be possible for participantsto run code as we go
 through the demonstration, given time constraints, I would encourage
 them to focus their attention into critiquing when and why modelling the
 spatial relationships between cells in these ways is appropriate.
 Questions are welcome both within the workshop and if students choose to
 workthrough the workshop independently after the demonstration.</p>
 </div>
-<div class="section level3">
-<h3 id="r-bioconductor-packages-used">
+<div class="section level4">
+<h4 id="r-bioconductor-packages-used">
 <em>R</em> / <em>Bioconductor</em> packages used<a class="anchor" aria-label="anchor" href="#r-bioconductor-packages-used"></a>
-</h3>
+</h4>
 <p>While this workshop will focus on the functionality of Statial, it
 will tangentially touch on other Bioconductor packages we have developed
 for these technologies such as <a href="https://www.bioconductor.org/packages/release/bioc/html/spicyR.html" class="external-link">spicyR</a>,
@@ -157,9 +165,9 @@ for these technologies such as <a href="https://www.bioconductor.org/packages/re
 and <a href="https://www.bioconductor.org/packages/release/bioc/html/ClassifyR.html" class="external-link">ClassifyR</a>.</p>
 <p><img src="images/spicyR.png" alt="spicyR" style="height: 200px; border: 0px"><img src="images/lisaClust.png" alt="lisaClust" style="height: 200px; width: 173px; border: 0px"><img src="images/ClassifyR.png" alt="ClassifyR" style="height: 200px; border: 0px"></p>
 </div>
-<div class="section level3">
-<h3 id="time-outline">Time outline<a class="anchor" aria-label="anchor" href="#time-outline"></a>
-</h3>
+<div class="section level4">
+<h4 id="time-outline">Time outline<a class="anchor" aria-label="anchor" href="#time-outline"></a>
+</h4>
 <p>An example for a 45-minute workshop:</p>
 <table class="table">
 <thead><tr class="header">
@@ -186,12 +194,12 @@ and <a href="https://www.bioconductor.org/packages/release/bioc/html/ClassifyR.h
 </tbody>
 </table>
 </div>
-<div class="section level3">
-<h3 id="workshop-goals-and-objectives">Workshop goals and objectives<a class="anchor" aria-label="anchor" href="#workshop-goals-and-objectives"></a>
-</h3>
 <div class="section level4">
-<h4 id="learning-goals">Learning goals<a class="anchor" aria-label="anchor" href="#learning-goals"></a>
+<h4 id="workshop-goals-and-objectives">Workshop goals and objectives<a class="anchor" aria-label="anchor" href="#workshop-goals-and-objectives"></a>
 </h4>
+<div class="section level5">
+<h5 id="learning-goals">Learning goals<a class="anchor" aria-label="anchor" href="#learning-goals"></a>
+</h5>
 <ul>
 <li>identify methods which align with spatial hypothese of
 interest.</li>
@@ -201,9 +209,9 @@ be appropriate.</li>
 they will be uninformative.</li>
 </ul>
 </div>
-<div class="section level4">
-<h4 id="learning-objectives">Learning objectives<a class="anchor" aria-label="anchor" href="#learning-objectives"></a>
-</h4>
+<div class="section level5">
+<h5 id="learning-objectives">Learning objectives<a class="anchor" aria-label="anchor" href="#learning-objectives"></a>
+</h5>
 <ul>
 <li>apply functions to identify various types of changes in cell
 state.</li>
@@ -216,14 +224,15 @@ cell state features.</li>
 </div>
 </div>
 </div>
-<div class="section level2">
-<h2 id="workshop">Workshop<a class="anchor" aria-label="anchor" href="#workshop"></a>
-</h2>
 <div class="section level3">
-<h3 id="load-packages">Load packages<a class="anchor" aria-label="anchor" href="#load-packages"></a>
+<h3 id="workshop">Workshop<a class="anchor" aria-label="anchor" href="#workshop"></a>
 </h3>
+<div class="section level4">
+<h4 id="load-packages">Load packages<a class="anchor" aria-label="anchor" href="#load-packages"></a>
+</h4>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://SydneyBioX.github.io/StatialBioc2023/">StatialBioc2023</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">Statial</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">spicyR</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">lisaClust</span><span class="op">)</span></span>
@@ -231,7 +240,12 @@ cell state features.</li>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/drighelli/SpatialExperiment" class="external-link">SpatialExperiment</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org" class="external-link">tidyr</a></span><span class="op">)</span></span></code></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org" class="external-link">tidyr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ddsjoberg/ggsurvfit" class="external-link">ggsurvfit</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://bioconductor.org/packages/scater/" class="external-link">scater</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html" class="external-link">theme_set</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_classic</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">nCores</span> <span class="op">&lt;-</span> <span class="fl">1</span>  <span class="co"># Feel free to parallelise things if you have the cores to spare.</span></span></code></pre></div>
 <p>The definitions of cell types and cell states are somewhat ambiguous.
 We will purposefully skirt the debate of what is a cell type vs cell
 state. Instead, in this workshop I would ask participants to associate
@@ -250,9 +264,366 @@ are further clustered into sub-clusters. These finer-resolution
 phenotypes of the cell type are labelled as cell states.</li>
 </ol>
 </div>
-<div class="section level3">
-<h3 id="identifying-continuous-changes-in-cell-state">Identifying continuous changes in cell state<a class="anchor" aria-label="anchor" href="#identifying-continuous-changes-in-cell-state"></a>
-</h3>
+<div class="section level4">
+<h4 id="the-data">The data<a class="anchor" aria-label="anchor" href="#the-data"></a>
+</h4>
+<p>To illustrate the functionality of Statial we will use a multiplexed
+ion beam imaging by time-of-flight (MIBI-TOF) dataset profiling tissue
+from triple-negative breast cancer patients^1. This dataset
+simultaneously quantifies <em>in situ</em> expression of 36 proteins in
+34 immune rich patients. <em>Note:</em> The data contains some
+“uninformative” probes and the original cohort included 41 patients.</p>
+<p>The data is stored in a <code>SpatialExperiment</code> object called
+<code>kerenSPE</code>. We can load the data and view some basic
+characteristics.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"kerenSPE"</span>, package <span class="op">=</span> <span class="st">"StatialBioc2023"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Filter out samples with few immune cells and those without survival information.</span></span>
+<span><span class="va">kerenSPE</span> <span class="op">&lt;-</span> <span class="va">kerenSPE</span><span class="op">[</span>,<span class="va">kerenSPE</span><span class="op">$</span><span class="va">tumour_type</span><span class="op">!=</span><span class="st">"cold"</span> <span class="op">&amp;</span> <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">kerenSPE</span><span class="op">$</span><span class="va">`Survival_days_capped*`</span><span class="op">)</span><span class="op">]</span></span>
+<span></span>
+<span><span class="va">kerenSPE</span></span>
+<span><span class="co">#&gt; class: SpatialExperiment </span></span>
+<span><span class="co">#&gt; dim: 48 170171 </span></span>
+<span><span class="co">#&gt; metadata(0):</span></span>
+<span><span class="co">#&gt; assays(1): intensities</span></span>
+<span><span class="co">#&gt; rownames(48): Na Si ... Ta Au</span></span>
+<span><span class="co">#&gt; rowData names(0):</span></span>
+<span><span class="co">#&gt; colnames(170171): 1 2 ... 197677 197678</span></span>
+<span><span class="co">#&gt; colData names(42): x y ... Censored sample_id</span></span>
+<span><span class="co">#&gt; reducedDimNames(2): spatialCoords UMAP</span></span>
+<span><span class="co">#&gt; mainExpName: NULL</span></span>
+<span><span class="co">#&gt; altExpNames(0):</span></span>
+<span><span class="co">#&gt; spatialCoords names(2) : x y</span></span>
+<span><span class="co">#&gt; imgData names(1): sample_id</span></span></code></pre></div>
+<p>As our data is stored in a <code>SpatialExperiment</code>, with the
+<code>spatialCoords</code> also stored as a <code>reducedDim</code>, we
+can use <code>scater</code> to visualise our data in a lower dimensional
+embedding and look for image or cluster differences.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="co"># Perform dimension reduction using UMAP.</span></span>
+<span><span class="co"># I have already run this and saved it in kerenSPE so that you can save time.</span></span>
+<span><span class="co">#</span></span>
+<span><span class="co"># set.seed(51773)</span></span>
+<span><span class="co"># kerenSPE &lt;- scater::runUMAP(kerenSPE, exprs_values = "intensities", name = "UMAP")</span></span>
+<span></span>
+<span><span class="co"># UMAP by imageID.</span></span>
+<span><span class="fu">scater</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/scater/man/plotReducedDim.html" class="external-link">plotReducedDim</a></span><span class="op">(</span><span class="va">kerenSPE</span>, dimred <span class="op">=</span> <span class="st">"UMAP"</span>, colour_by <span class="op">=</span> <span class="st">"cellType"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-4-1.png" width="480"></p>
+<div class="question">
+<p><strong>Question</strong></p>
+<ol style="list-style-type: decimal">
+<li>What does this UMAP tell us?</li>
+<li>What are some observations we could make if we coloured by
+<code>imageID</code>?</li>
+</ol>
+</div>
+</div>
+<div class="section level4">
+<h4 id="identifying-discrete-changes-in-cell-state-with-kontextual">Identifying discrete changes in cell state with Kontextual<a class="anchor" aria-label="anchor" href="#identifying-discrete-changes-in-cell-state-with-kontextual"></a>
+</h4>
+<p>Cells states can be modelled as subclusters of a broader parent cell
+population. These subclusters, or states, are typically identified via a
+hierarchical clustering strategy. By framing cell states as discrete
+clusters, we are able to explore relationships as follows - cell type A
+has two states, with state 2 being closer to cell type B.</p>
+<p><img src="images/KontextSpace.png" alt="Kontext" style="width 4in; border: 0px"></p>
+<p>Here we introduce Kontextual. Kontextual models spatial relationships
+between cells in the context of hierarchical cell lineage structures. By
+assessing spatial relationships between pairs of cells in the context of
+other related cell types, Kontextual provides robust quantification of
+cell type relationships which are invariant to changes in tissue
+structure.</p>
+<p><img src="images/Kontextual.png" alt="Kontextual" style="width: 4in`; border: 0px"></p>
+<p>For the purposes of using <code>Kontextual</code> we treat cell
+states as identified clusters of cells, where larger clusters represent
+a “parent” cell population, and finer sub-clusters representing a
+“child” cell population. For example a CD4+ T cell may be considered a
+child to a larger parent population of T cells. <code>Kontextual</code>
+thus aims to quantify how the localisation patterns of a child
+population of cells deviate from the spatial behaviour of their parent
+population, and how that influences the localisation between the child
+cell state and another cell state.</p>
+<div class="section level5">
+<h5 id="cell-type-hierarchy">Cell type hierarchy<a class="anchor" aria-label="anchor" href="#cell-type-hierarchy"></a>
+</h5>
+<p>A key input for Kontextual is an annotation of cell type hierarchies.
+We will need these to organise all the cells present into cell state
+populations or clusters, e.g. all the different B cell types are put in
+a vector called bcells.</p>
+<p>To make our lives easier, we will start by defining these here. I’m
+happy to talk about how we use our bioconductor package <a href="http://www.bioconductor.org/packages/release/bioc/html/treekoR.html" class="external-link">treekoR</a>
+to define these hierarchies in a data driven way.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Set up cell populations</span></span>
+<span></span>
+<span><span class="va">tumour</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Keratin_Tumour"</span>, <span class="st">"Tumour"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">bcells</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"B_cell"</span><span class="op">)</span></span>
+<span><span class="va">tcells</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"dn_T_cell"</span>, <span class="st">"CD4_T_cell"</span>, <span class="st">"CD8_T_cell"</span>, <span class="st">"Tregs"</span><span class="op">)</span></span>
+<span><span class="va">myeloid</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Dc_or_Mono"</span>, <span class="st">"DC"</span>, <span class="st">"Mono_or_Neu"</span>, <span class="st">"Macrophages"</span>, <span class="st">"Other_Immune"</span>, <span class="st">"Neutrophils"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">endothelial</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Endothelial"</span><span class="op">)</span></span>
+<span><span class="va">mesenchymal</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Mesenchymal"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">tissue</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">endothelial</span>, <span class="va">mesenchymal</span><span class="op">)</span></span>
+<span><span class="va">immune</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">bcells</span>, <span class="va">tcells</span>, <span class="va">myeloid</span>, <span class="st">"NK"</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="va">all</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">tumour</span>, <span class="va">tissue</span>, <span class="va">immune</span>, <span class="st">"Unidentified"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level5">
+<h5 id="identify-within-a-single-image">Identify within a single image<a class="anchor" aria-label="anchor" href="#identify-within-a-single-image"></a>
+</h5>
+<p>Here we examine an image highlighted in the Keren et al. 2018
+manuscript where the relationship between 2 cell types depends on a
+parent cell population. In the image below we can see that <em>p53+
+tumour cells</em> and <em>immune cells</em> are dispersed. However when
+the behaviour of <em>p53+ tumour cells</em> are placed in the context of
+the spatial behaviour of its broader parent population <em>tumour
+cells</em>, <em>p53+ tumour cells</em> and <em>immune</em> would appear
+localised.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span></span>
+<span><span class="co"># Lets define a new cell type vector</span></span>
+<span><span class="va">kerenSPE</span><span class="op">$</span><span class="va">cellTypeNew</span> <span class="op">&lt;-</span> <span class="va">kerenSPE</span><span class="op">$</span><span class="va">cellType</span></span>
+<span></span>
+<span><span class="co"># Select for all cells that express higher than baseline level of p53</span></span>
+<span><span class="va">p53Pos</span> <span class="op">=</span> <span class="fu">assay</span><span class="op">(</span><span class="va">kerenSPE</span><span class="op">)</span><span class="op">[</span><span class="st">"p53"</span>,<span class="op">]</span> <span class="op">&gt;</span> <span class="op">-</span><span class="fl">0.300460</span></span>
+<span></span>
+<span><span class="co"># Find p53+ tumour cells</span></span>
+<span><span class="va">kerenSPE</span><span class="op">$</span><span class="va">cellTypeNew</span><span class="op">[</span><span class="va">kerenSPE</span><span class="op">$</span><span class="va">cellType</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">tumour</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"Tumour"</span></span>
+<span><span class="va">kerenSPE</span><span class="op">$</span><span class="va">cellTypeNew</span><span class="op">[</span><span class="va">p53Pos</span> <span class="op">&amp;</span> <span class="va">kerenSPE</span><span class="op">$</span><span class="va">cellType</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">tumour</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"p53_Tumour"</span></span>
+<span></span>
+<span><span class="co">#Group all immune cells under the name "Immune"</span></span>
+<span></span>
+<span><span class="va">kerenSPE</span><span class="op">$</span><span class="va">cellTypeNew</span><span class="op">[</span><span class="va">kerenSPE</span><span class="op">$</span><span class="va">cellType</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">immune</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"Immune"</span></span>
+<span></span>
+<span></span>
+<span><span class="co"># Plot image 6</span></span>
+<span></span>
+<span><span class="va">kerenSPE</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">colData</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">imageID</span> <span class="op">==</span> <span class="st">"6"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">cellTypeNew</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Immune"</span>, <span class="st">"Tumour"</span>, <span class="st">"p53_Tumour"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html" class="external-link">arrange</a></span><span class="op">(</span><span class="va">cellTypeNew</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>, y <span class="op">=</span> <span class="va">y</span>, color <span class="op">=</span> <span class="va">cellTypeNew</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_colour_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#505050"</span>, <span class="st">"#64BC46"</span>,<span class="st">"#D6D6D6"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html" class="external-link">guides</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guide_legend.html" class="external-link">guide_legend</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Cell types"</span>, override.aes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>size<span class="op">=</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-6-1.png" width="528"></p>
+<p>The <code>Kontextual</code> function accepts a
+<code>SingleCellExperiment</code> object, or a single image, or list of
+images from a <code>SingleCellExperiment</code> object, this gets passed
+into the <code>cells</code> argument. The two cell types which will be
+evaluated are specified in the <code>to</code> and <code>from</code>
+arguments. A parent population must also be specified in the
+<code>parent</code> argument, note the parent cell population must
+include the <code>to</code> cell type. The argument <code>r</code> will
+specify the radius which the cell relationship will be evaluated on.
+<code>Kontextual</code> supports parallel processing, the number of
+cores can be specified using the <code>cores</code> argument.
+<code>Kontextual</code> can take a single value or multiple values for
+each argument and will test all combinations of the arguments
+specified.</p>
+<p>We can calculate these relationships for a single radius.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">p53_Kontextual</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/Kontextual.html" class="external-link">Kontextual</a></span><span class="op">(</span></span>
+<span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
+<span>  image <span class="op">=</span> <span class="fl">6</span>,</span>
+<span>  r <span class="op">=</span> <span class="fl">50</span>,</span>
+<span>  from <span class="op">=</span> <span class="st">"p53_Tumour"</span>,</span>
+<span>  to <span class="op">=</span> <span class="st">"Immune"</span>,</span>
+<span>  parent <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"p53"</span>, <span class="st">"Tumour"</span><span class="op">)</span>,</span>
+<span>  cellType <span class="op">=</span> <span class="st">"cellTypeNew"</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">p53_Kontextual</span></span>
+<span><span class="co">#&gt;   imageID               test  original kontextual  r weightQuantile inhom  edge</span></span>
+<span><span class="co">#&gt; 1       6 p53_Tumour__Immune -21.42647   2.690005 50            0.8  TRUE FALSE</span></span>
+<span><span class="co">#&gt;   includeZeroCells window window.length</span></span>
+<span><span class="co">#&gt; 1             TRUE convex            NA</span></span></code></pre></div>
+<p>The <code>kontextCurve</code> calculates the L-function value and
+Kontextual values over a range of radii. While <code>kontextPlot</code>
+plots these values. If the points lie above the red line (expected
+pattern) then localisation is indicated for that radius, if the points
+lie below the red line then dispersion is indicated. As seen in the
+following plot Kontextual is able to correctly identify localisation
+between p53+ tumour cells and immune cells in the example image for a
+certain range of radii. The original L-function does not able to
+identify localisation at any value of radii.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">curves</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/kontextCurve.html" class="external-link">kontextCurve</a></span><span class="op">(</span></span>
+<span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
+<span>  image <span class="op">=</span> <span class="st">"6"</span>,</span>
+<span>  from <span class="op">=</span> <span class="st">"p53_Tumour"</span>,</span>
+<span>  to <span class="op">=</span> <span class="st">"Immune"</span>,</span>
+<span>  parent <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"p53+Tumour"</span>, <span class="st">"Tumour"</span><span class="op">)</span>,</span>
+<span>  rs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">510</span>, <span class="fl">100</span><span class="op">)</span>,</span>
+<span>  cellType <span class="op">=</span> <span class="st">"cellTypeNew"</span>,</span>
+<span>  cores <span class="op">=</span> <span class="va">nCores</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/Statial/man/kontextPlot.html" class="external-link">kontextPlot</a></span><span class="op">(</span><span class="va">curves</span><span class="op">)</span></span></code></pre></div>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-8-1.png" width="700"></p>
+<p>Alternatively all pairwise cell relationships and their corresponding
+parent in the dataset can be tested. A data frame with all pairwise
+combinations can be creating using the <code>parentCombinations</code>
+function. This function takes in a vector of all the cells, as well as
+all the parent vectors set up earlier. As shown below the output is a
+data frame specifying the <code>to</code>, <code>from</code>, and
+<code>parent</code> arguments for <code>Kontextual</code>.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Get all relationships between cell types and their parents</span></span>
+<span><span class="va">parentDf</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/parentCombinations.html" class="external-link">parentCombinations</a></span><span class="op">(</span></span>
+<span>  all <span class="op">=</span> <span class="va">all</span>,</span>
+<span>  <span class="va">tumour</span>,</span>
+<span>  <span class="va">bcells</span>,</span>
+<span>  <span class="va">tcells</span>,</span>
+<span>  <span class="va">myeloid</span>,</span>
+<span>  <span class="va">endothelial</span>,</span>
+<span>  <span class="va">mesenchymal</span>,</span>
+<span>  <span class="va">tissue</span>,</span>
+<span>  <span class="va">immune</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>Rather than specifying <code>to</code>, <code>from</code>, and
+<code>parent</code> in Kontextual, the output from
+<code>parentCombinations</code> can be inputed into
+<code>Kontextual</code> using the <code>parentDf</code> argument, to
+examine all pairwise relationships in the dataset. This chunk will take
+a signficant amount of time to run (~20 minutes), for demonstration the
+results have been saved and are loaded in.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Running Kontextual on all relationships across all images.</span></span>
+<span><span class="va">kerenKontextual</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/Kontextual.html" class="external-link">Kontextual</a></span><span class="op">(</span></span>
+<span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
+<span>  parentDf <span class="op">=</span> <span class="va">parentDf</span>,</span>
+<span>  r <span class="op">=</span> <span class="fl">50</span>,</span>
+<span>  cores <span class="op">=</span> <span class="va">nCores</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"kerenKontextual"</span>, package <span class="op">=</span> <span class="st">"StatialBioc2023"</span><span class="op">)</span></span>
+<span><span class="va">bigDiff</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">kerenKontextual</span><span class="op">$</span><span class="va">original</span> <span class="op">-</span> <span class="va">kerenKontextual</span><span class="op">$</span><span class="va">kontextual</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">kerenKontextual</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html" class="external-link">order</a></span><span class="op">(</span><span class="va">bigDiff</span><span class="op">)</span>,<span class="op">]</span>, <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="co">#&gt;       imageID                                test   original kontextual  r</span></span>
+<span><span class="co">#&gt; 12252      18      dn_T_cell__Mesenchymal__tcells  42.540392   291.9508 50</span></span>
+<span><span class="co">#&gt; 14929      23           Tumour__dn_T_cell__tumour  96.667594   325.5462 50</span></span>
+<span><span class="co">#&gt; 14846       5         Tumour__Endothelial__tumour -22.329210   181.6454 50</span></span>
+<span><span class="co">#&gt; 14968      32          Tumour__CD4_T_cell__tumour  37.890443   226.8310 50</span></span>
+<span><span class="co">#&gt; 14902      32              Tumour__B_cell__tumour  71.070831   239.4044 50</span></span>
+<span><span class="co">#&gt; 15193      23        Tumour__Other_Immune__tumour 102.570063   265.9990 50</span></span>
+<span><span class="co">#&gt; 6879       28       Tregs__Keratin_Tumour__immune  -9.816640   145.2949 50</span></span>
+<span><span class="co">#&gt; 4767       28 Mono_or_Neu__Keratin_Tumour__immune  -1.959462   150.8993 50</span></span>
+<span><span class="co">#&gt; 12687      28       Tregs__Keratin_Tumour__tcells  -9.816640   136.9530 50</span></span>
+<span><span class="co">#&gt; 15143       5         Tumour__Mono_or_Neu__tumour  -8.341033   126.4892 50</span></span>
+<span><span class="co">#&gt;       weightQuantile inhom  edge includeZeroCells window window.length</span></span>
+<span><span class="co">#&gt; 12252            0.8  TRUE FALSE             TRUE convex            NA</span></span>
+<span><span class="co">#&gt; 14929            0.8  TRUE FALSE             TRUE convex            NA</span></span>
+<span><span class="co">#&gt; 14846            0.8  TRUE FALSE             TRUE convex            NA</span></span>
+<span><span class="co">#&gt; 14968            0.8  TRUE FALSE             TRUE convex            NA</span></span>
+<span><span class="co">#&gt; 14902            0.8  TRUE FALSE             TRUE convex            NA</span></span>
+<span><span class="co">#&gt; 15193            0.8  TRUE FALSE             TRUE convex            NA</span></span>
+<span><span class="co">#&gt; 6879             0.8  TRUE FALSE             TRUE convex            NA</span></span>
+<span><span class="co">#&gt; 4767             0.8  TRUE FALSE             TRUE convex            NA</span></span>
+<span><span class="co">#&gt; 12687            0.8  TRUE FALSE             TRUE convex            NA</span></span>
+<span><span class="co">#&gt; 15143            0.8  TRUE FALSE             TRUE convex            NA</span></span></code></pre></div>
+</div>
+<div class="section level5">
+<h5 id="associate-with-a-patient-outcome">Associate with a patient outcome<a class="anchor" aria-label="anchor" href="#associate-with-a-patient-outcome"></a>
+</h5>
+<p>To examine whether the features obtained from <code>Statial</code>
+are associated with patient outcomes or groupings, we can use the
+<code>colTest</code> function from <code>SpicyR</code>. To understand if
+features differ significantly between 2 patient groups, specify
+<code>type = "ttest"</code> in <code>colTest</code>. Here we examine
+which features are most associated with patient survival using the
+Kontextual values as example. To do so, the survival data is extracted
+from <code>kerenSPE</code> and converted to a survival object.</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="co"># Extracting survival data</span></span>
+<span><span class="va">survData</span> <span class="op">=</span> <span class="va">kerenSPE</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">colData</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">imageID</span>, <span class="va">Survival_days_capped.</span>, <span class="va">Censored</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Creating survival vector</span></span>
+<span><span class="va">kerenSurv</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">survData</span><span class="op">$</span><span class="va">Survival_days_capped</span>, <span class="va">survData</span><span class="op">$</span><span class="va">Censored</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">kerenSurv</span><span class="op">)</span> <span class="op">=</span> <span class="va">survData</span><span class="op">$</span><span class="va">imageID</span></span></code></pre></div>
+<p>In addition to this, the Kontextual results must be converted from a
+<code>data.frame</code> to a wide <code>matrix</code>, this can be done
+using <code>prepKontextMat</code>. Note, to extract the original
+L-function values, specify <code>type = "original"</code> in
+<code>prepKontextMat</code>.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Converting Kontextual result into data matrix</span></span>
+<span><span class="va">kontextMat</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/prepMatrix.html" class="external-link">prepMatrix</a></span><span class="op">(</span><span class="va">kerenKontextual</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Ensuring rownames of kontextMat match up with rownames of the survival vector </span></span>
+<span><span class="va">kontextMat</span> <span class="op">=</span> <span class="va">kontextMat</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">kerenSurv</span><span class="op">)</span>, <span class="op">]</span></span>
+<span></span>
+<span><span class="co"># Replace NAs with 0</span></span>
+<span><span class="va">kontextMat</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">kontextMat</span> <span class="op">)</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">0</span></span></code></pre></div>
+<p>Finally, both the Kontextual matrix and survival object are passed
+into <code>colTest</code>, with <code>type = "survival"</code> to obtain
+the survival results.</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Running survival analysis</span></span>
+<span><span class="va">survivalResults</span> <span class="op">=</span> <span class="fu">spicyR</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/spicyR/man/colTest.html" class="external-link">colTest</a></span><span class="op">(</span><span class="va">kontextMat</span>, <span class="va">kerenSurv</span>, type <span class="op">=</span> <span class="st">"survival"</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">survivalResults</span><span class="op">)</span></span>
+<span><span class="co">#&gt;                                     coef se.coef    pval adjPval</span></span>
+<span><span class="co">#&gt; Mesenchymal__Macrophages__tissue  -0.130  0.0340 0.00017   0.069</span></span>
+<span><span class="co">#&gt; CD4_T_cell__CD8_T_cell__tcells     0.260  0.0790 0.00094   0.150</span></span>
+<span><span class="co">#&gt; Endothelial__Mono_or_Neu__tissue  -0.035  0.0110 0.00110   0.150</span></span>
+<span><span class="co">#&gt; Mesenchymal__Other_Immune__tissue  0.068  0.0220 0.00230   0.200</span></span>
+<span><span class="co">#&gt; Tumour__CD4_T_cell__tumour         0.011  0.0036 0.00320   0.200</span></span>
+<span><span class="co">#&gt; dn_T_cell__CD8_T_cell__immune      0.098  0.0330 0.00340   0.200</span></span>
+<span><span class="co">#&gt;                                                             cluster</span></span>
+<span><span class="co">#&gt; Mesenchymal__Macrophages__tissue   Mesenchymal__Macrophages__tissue</span></span>
+<span><span class="co">#&gt; CD4_T_cell__CD8_T_cell__tcells       CD4_T_cell__CD8_T_cell__tcells</span></span>
+<span><span class="co">#&gt; Endothelial__Mono_or_Neu__tissue   Endothelial__Mono_or_Neu__tissue</span></span>
+<span><span class="co">#&gt; Mesenchymal__Other_Immune__tissue Mesenchymal__Other_Immune__tissue</span></span>
+<span><span class="co">#&gt; Tumour__CD4_T_cell__tumour               Tumour__CD4_T_cell__tumour</span></span>
+<span><span class="co">#&gt; dn_T_cell__CD8_T_cell__immune         dn_T_cell__CD8_T_cell__immune</span></span></code></pre></div>
+<p>As we can see from the results
+<code>Mesenchymal__Macrophages__tissue</code> is the most significant
+pairwise relationship which contributes to patient survival. That is the
+relationship between Mesenchymal cells and macrophage cells, relative to
+the parent population of all tissue cells. We can see that there is a
+negative coefficient associated with this relationship, which tells us a
+decrease in localisation of Mesenchymal and Macrophages leads to poorer
+survival outcomes for patients.</p>
+<p>The association between <code>Mesenchymal__Macrophages__tissue</code>
+and survival can also be visualised on a Kaplan-Meier curve. We must
+first extract the Kontextual values of this relationship across all
+images. Next we determine if Mesenchymal and Macrophages are relatively
+attracted or avoiding in each image, by comparing the Kontextual value
+in each image to the median Kontextual value. Finally we plot the
+Kaplan-Meier curve using the <code>ggsurvfit</code> package.</p>
+<p>As shown below, when Mesenchymal and Macrophages are relatively more
+dispersed to one another, patients tend to have worse survival
+outcomes.</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Selecting most significant relationship</span></span>
+<span><span class="va">survRelationship</span> <span class="op">=</span> <span class="va">kontextMat</span><span class="op">[[</span><span class="st">"Mesenchymal__Macrophages__tissue"</span><span class="op">]</span><span class="op">]</span></span>
+<span><span class="va">survRelationship</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">survRelationship</span> <span class="op">&gt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html" class="external-link">median</a></span><span class="op">(</span><span class="va">survRelationship</span><span class="op">)</span>, <span class="st">"Localised"</span>, <span class="st">"Dispersed"</span><span class="op">)</span></span>
+<span>    </span>
+<span><span class="co"># Plotting Kaplan-Meier curve</span></span>
+<span><span class="fu"><a href="http://www.danieldsjoberg.com/ggsurvfit/reference/survfit2.html" class="external-link">survfit2</a></span><span class="op">(</span><span class="va">kerenSurv</span> <span class="op">~</span> <span class="va">survRelationship</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="http://www.danieldsjoberg.com/ggsurvfit/reference/ggsurvfit.html" class="external-link">ggsurvfit</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="http://www.danieldsjoberg.com/ggsurvfit/reference/add_pvalue.html" class="external-link">add_pvalue</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">"Mesenchymal__Macrophages__tissue"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-15-1.png" width="700"></p>
+</div>
+</div>
+<div class="section level4">
+<h4 id="identifying-continuous-changes-in-cell-state">Identifying continuous changes in cell state<a class="anchor" aria-label="anchor" href="#identifying-continuous-changes-in-cell-state"></a>
+</h4>
 <p>Changes in cell states can be analytically framed as the change in
 abundance of a gene or protein within a particular cell type. We can
 look to see if a cell type changes state when in close proximity to
@@ -262,53 +633,383 @@ cells.</p>
 <p><img src="images/cts1.png" alt="cts1" style="width: 50%; border: 0px"><img src="images/cts2.png" alt="cts2" style="width: 35%; border: 0px"></p>
 <p>We can use Statial to quantify and test for these types of
 relationships.</p>
+<div class="section level5">
+<h5 id="a-change-in-state-within-a-single-image-">A change in state within a single image.<a class="anchor" aria-label="anchor" href="#a-change-in-state-within-a-single-image-"></a>
+</h5>
+<p>The first step in analysing these changes is to calculate the spatial
+proximity (<code>getDistances</code>) and abundance
+(<code>getAbundances</code>) of each cell to every cell type. These
+values will then be stored in the <code>reducedDims</code> slot of the
+<code>SpatialExperiment</code> object under the names
+<code>distances</code> and <code>abundances</code> respectively.</p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">kerenSPE</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/getDistances.html" class="external-link">getDistances</a></span><span class="op">(</span><span class="va">kerenSPE</span>,</span>
+<span>                    maxDist <span class="op">=</span> <span class="fl">200</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">kerenSPE</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/getAbundances.html" class="external-link">getAbundances</a></span><span class="op">(</span><span class="va">kerenSPE</span>,</span>
+<span>                     r <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span></code></pre></div>
+<p>First, let’s examine the same effect observed earlier with
+Kontextual. To avoid redifing cell types we’ll examine the distance
+between p53-positive tumour cells and macrophages in the context of
+total keratin/tumour cells for image 6.</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#This function takes approximately 5 minutes to run with 40 cores. </span></span>
+<span><span class="va">stateChanges</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/getStateChanges.html" class="external-link">calcStateChanges</a></span><span class="op">(</span></span>
+<span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
+<span>  type <span class="op">=</span> <span class="st">"distances"</span>,</span>
+<span>  image <span class="op">=</span> <span class="st">"6"</span>,</span>
+<span>  from <span class="op">=</span> <span class="st">"Keratin_Tumour"</span>,</span>
+<span>  to <span class="op">=</span> <span class="st">"Macrophages"</span>,</span>
+<span>  marker <span class="op">=</span> <span class="st">"p53"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">stateChanges</span></span>
+<span><span class="co">#&gt;   imageID primaryCellType otherCellType marker         coef      tval</span></span>
+<span><span class="co">#&gt; 1       6  Keratin_Tumour   Macrophages    p53 -0.001402178 -7.010113</span></span>
+<span><span class="co">#&gt;           pval          fdr</span></span>
+<span><span class="co">#&gt; 1 2.868257e-12 2.868257e-12</span></span></code></pre></div>
+<p>Statial provides a convenient function for observing this interaction
+- <code>plotStateChanges</code>. Here, we can specify the
+<code>imageID</code> and our main cell of interest,
+<code>primaryCellType</code> and our interacting cell type
+<code>otherCellType</code> and our marker of interest
+<code>marker</code>, in this case p53.</p>
+<p>Through this analysis, we can observe that keratin/tumour cells
+closer to a group of macrophages tend to have higher expression of p53,
+as observed in the first graph. This relationship is outlined with the
+second graph, showing an overall decrease of p53 expression in
+keratin/tumour cells over distance to macrophages. The pvalue provided
+also shows us that this correlative interaction is statistically
+significant.</p>
+<p>These results are similar to those provided with Kontextual, which
+calculates a similar localisation between p53+ keratin/tumour cells and
+macrophages.</p>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/plotStateChanges.html" class="external-link">plotStateChanges</a></span><span class="op">(</span></span>
+<span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
+<span>  type <span class="op">=</span> <span class="st">"distances"</span>,</span>
+<span>  image <span class="op">=</span> <span class="st">"6"</span>,</span>
+<span>  from <span class="op">=</span> <span class="st">"Keratin_Tumour"</span>,</span>
+<span>  to <span class="op">=</span> <span class="st">"Macrophages"</span>,</span>
+<span>  marker <span class="op">=</span> <span class="st">"p53"</span>,</span>
+<span>  size <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>  shape <span class="op">=</span> <span class="fl">19</span>,</span>
+<span>  interactive <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  plotModelFit <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">p</span></span>
+<span><span class="co">#&gt; $image</span></span>
+<span><span class="co">#&gt; Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Please use `after_stat(density)` instead.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> The deprecated feature was likely used in the <span style="color: #0000BB;">Statial</span> package.</span></span>
+<span><span class="co">#&gt;   Please report the issue to the authors.</span></span>
+<span><span class="co">#&gt; <span style="color: #555555;">This warning is displayed once every 8 hours.</span></span></span>
+<span><span class="co">#&gt; <span style="color: #555555;">Call `lifecycle::last_lifecycle_warnings()` to see where this warning was</span></span></span>
+<span><span class="co">#&gt; <span style="color: #555555;">generated.</span></span></span></code></pre></div>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-18-1.png" width="700"></p>
+<pre><code><span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $scatter</span></span>
+<span><span class="co">#&gt; `geom_smooth()` using formula = 'y ~ x'</span></span></code></pre>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-18-2.png" width="700"></p>
+<p>Beyond looking at single cell-to-cell interactions for a single
+image, we can also look at all interactions across all images. Statial
+provides the <code>getStateChanges</code> function for this exact
+purpose, allowing us to examine the most significant correlations
+between distance and marker expression. Here, we will focus on the most
+significant interactions in image 6 of the Keren et al. breast cancer
+dataset.</p>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">stateChanges</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/getStateChanges.html" class="external-link">calcStateChanges</a></span><span class="op">(</span></span>
+<span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
+<span>  type <span class="op">=</span> <span class="st">"distances"</span>,</span>
+<span>  minCells <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">stateChanges</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">imageID</span> <span class="op">==</span> <span class="fl">6</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="co">#&gt;    imageID primaryCellType otherCellType       marker         coef      tval</span></span>
+<span><span class="co">#&gt; 1        6  Keratin_Tumour  Unidentified           Na  0.004218419  25.03039</span></span>
+<span><span class="co">#&gt; 2        6  Keratin_Tumour   Macrophages  HLA_Class_1 -0.003823497 -24.69629</span></span>
+<span><span class="co">#&gt; 3        6  Keratin_Tumour    CD4_T_cell  HLA_Class_1 -0.003582774 -23.87797</span></span>
+<span><span class="co">#&gt; 4        6  Keratin_Tumour  Unidentified Beta.catenin  0.005893120  23.41953</span></span>
+<span><span class="co">#&gt; 5        6  Keratin_Tumour    CD8_T_cell  HLA_Class_1 -0.003154544 -23.13804</span></span>
+<span><span class="co">#&gt; 6        6  Keratin_Tumour    DC_or_Mono  HLA_Class_1 -0.003353834 -22.98944</span></span>
+<span><span class="co">#&gt; 7        6  Keratin_Tumour     dn_T_cell  HLA_Class_1 -0.003123446 -22.63197</span></span>
+<span><span class="co">#&gt; 8        6  Keratin_Tumour        Tumour  HLA_Class_1  0.003684079  21.94265</span></span>
+<span><span class="co">#&gt; 9        6  Keratin_Tumour    CD4_T_cell           Fe -0.003457338 -21.43550</span></span>
+<span><span class="co">#&gt; 10       6  Keratin_Tumour    CD4_T_cell   phospho.S6 -0.002892457 -20.50767</span></span>
+<span><span class="co">#&gt;             pval           fdr</span></span>
+<span><span class="co">#&gt; 1  6.971648e-127 3.397226e-123</span></span>
+<span><span class="co">#&gt; 2  7.814253e-124 3.427038e-120</span></span>
+<span><span class="co">#&gt; 3  1.745242e-116 5.669614e-113</span></span>
+<span><span class="co">#&gt; 4  1.917245e-112 5.798841e-109</span></span>
+<span><span class="co">#&gt; 5  5.444541e-110 1.516046e-106</span></span>
+<span><span class="co">#&gt; 6  1.053130e-108 2.842235e-105</span></span>
+<span><span class="co">#&gt; 7  1.237988e-105 3.016305e-102</span></span>
+<span><span class="co">#&gt; 8  8.188258e-100  1.710030e-96</span></span>
+<span><span class="co">#&gt; 9   1.287478e-95  2.352664e-92</span></span>
+<span><span class="co">#&gt; 10  3.928912e-88  5.890849e-85</span></span></code></pre></div>
+<p>Let’s take a look at the top 10 most significant gene-to-distance
+pairwise interactions. In image 6, the majority of the top 10 most
+significant interactions occur between keratin/tumour cells and an
+immune population, and many of these interactions appear to involve the
+HLA class I ligand.</p>
+<p>We can examine some of these interactions further with the
+<code>plotStateChanges</code> function. Taking a closer examination of
+the relationship between macrophages and keratin/tumour HLA class I
+expression, the plot below shows us a clear visual correlation - as
+macrophage density increases, keratin/tumour cells increase their
+expression HLA class I.</p>
+<p>Biologically, HLA Class I is a ligand which exists on all nucleated
+cells, tasked with presenting internal cell antigens for recognition by
+the immune system, marking aberrant cells for destruction by either CD8+
+T cells or NK cells.</p>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/plotStateChanges.html" class="external-link">plotStateChanges</a></span><span class="op">(</span></span>
+<span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
+<span>  type <span class="op">=</span> <span class="st">"distances"</span>,</span>
+<span>  image <span class="op">=</span> <span class="st">"6"</span>,</span>
+<span>  from <span class="op">=</span> <span class="st">"Keratin_Tumour"</span>,</span>
+<span>  to <span class="op">=</span> <span class="st">"Macrophages"</span>,</span>
+<span>  marker <span class="op">=</span> <span class="st">"HLA_Class_1"</span>,</span>
+<span>  size <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>  shape <span class="op">=</span> <span class="fl">19</span>,</span>
+<span>  interactive <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  plotModelFit <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">p</span></span>
+<span><span class="co">#&gt; $image</span></span></code></pre></div>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-20-1.png" width="700"></p>
+<pre><code><span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $scatter</span></span>
+<span><span class="co">#&gt; `geom_smooth()` using formula = 'y ~ x'</span></span>
+<span><span class="co">#&gt; Warning: Removed 1359 rows containing non-finite values</span></span>
+<span><span class="co">#&gt; (`stat_smooth()`).</span></span>
+<span><span class="co">#&gt; Warning: Removed 1359 rows containing missing values (`geom_point()`).</span></span></code></pre>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-20-2.png" width="700"></p>
+<p>Now, we can take a look at the top 10 most significant results across
+all images.</p>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">stateChanges</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="co">#&gt;        imageID primaryCellType otherCellType     marker         coef</span></span>
+<span><span class="co">#&gt; 71820       37     Endothelial        Tumour       Lag3 -0.001621517</span></span>
+<span><span class="co">#&gt; 146511      11     Neutrophils            NK       CD56 -0.059936866</span></span>
+<span><span class="co">#&gt; 19570       35      CD4_T_cell        B_cell       CD20 -0.029185750</span></span>
+<span><span class="co">#&gt; 19666       35      CD4_T_cell    DC_or_Mono       CD20  0.019125946</span></span>
+<span><span class="co">#&gt; 5707        35          B_cell    DC_or_Mono phospho.S6  0.005282065</span></span>
+<span><span class="co">#&gt; 19675       35      CD4_T_cell    DC_or_Mono phospho.S6  0.004033218</span></span>
+<span><span class="co">#&gt; 5701        35          B_cell    DC_or_Mono     HLA.DR  0.011120703</span></span>
+<span><span class="co">#&gt; 5859        35          B_cell  Other_Immune          P  0.011182182</span></span>
+<span><span class="co">#&gt; 19522       35      CD4_T_cell     dn_T_cell       CD20  0.016349492</span></span>
+<span><span class="co">#&gt; 5704        35          B_cell    DC_or_Mono     H3K9ac  0.005096632</span></span>
+<span><span class="co">#&gt;                 tval          pval           fdr</span></span>
+<span><span class="co">#&gt; 71820  -5.639068e+14  0.000000e+00  0.000000e+00</span></span>
+<span><span class="co">#&gt; 146511 -4.011535e+16  0.000000e+00  0.000000e+00</span></span>
+<span><span class="co">#&gt; 19570  -4.057355e+01 7.019343e-282 4.104561e-277</span></span>
+<span><span class="co">#&gt; 19666   4.053436e+01 1.891267e-281 8.294389e-277</span></span>
+<span><span class="co">#&gt; 5707    4.041385e+01 5.306590e-278 1.861817e-273</span></span>
+<span><span class="co">#&gt; 19675   3.472882e+01 4.519947e-219 1.321520e-214</span></span>
+<span><span class="co">#&gt; 5701    3.415344e+01 8.401034e-212 2.105359e-207</span></span>
+<span><span class="co">#&gt; 5859    3.414375e+01 1.056403e-211 2.316494e-207</span></span>
+<span><span class="co">#&gt; 19522   3.391901e+01 1.219488e-210 2.376985e-206</span></span>
+<span><span class="co">#&gt; 5704    3.399856e+01 3.266533e-210 5.730315e-206</span></span></code></pre></div>
+<p>Immediately, we can appreciate that a couple of interactions appear a
+bit strange. One of the most significant interactions occurs between B
+cells and CD4 T cells, where CD4 T cells are found to increase in CD20
+expression when in close proximity to B cells. Biologically, CD20 is a
+highly specific ligand for B cells, and under healthy circumstances are
+usually not expressed in T cells.</p>
+<p>Could this potentially be an artefact of
+<code>getStateChanges</code>? We can examine the image through the
+<code>plotStateChanges</code> function, where we indeed observe an
+apparent localisation between B cells and T cells.</p>
+<p>QUESTIONBOX: Feel free to play around with the imageID parameter to
+observe the effect in other imageIDs.</p>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/plotStateChanges.html" class="external-link">plotStateChanges</a></span><span class="op">(</span></span>
+<span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
+<span>  type <span class="op">=</span> <span class="st">"distances"</span>,</span>
+<span>  image <span class="op">=</span> <span class="st">"35"</span>,</span>
+<span>  from <span class="op">=</span> <span class="st">"CD4_T_cell"</span>,</span>
+<span>  to <span class="op">=</span> <span class="st">"B_cell"</span>,</span>
+<span>  marker <span class="op">=</span> <span class="st">"CD20"</span>,</span>
+<span>  size <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>  shape <span class="op">=</span> <span class="fl">19</span>,</span>
+<span>  interactive <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  plotModelFit <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">p</span></span>
+<span><span class="co">#&gt; $image</span></span></code></pre></div>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-22-1.png" width="700"></p>
+<pre><code><span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $scatter</span></span>
+<span><span class="co">#&gt; `geom_smooth()` using formula = 'y ~ x'</span></span>
+<span><span class="co">#&gt; Warning: Removed 26 rows containing missing values (`geom_smooth()`).</span></span></code></pre>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-22-2.png" width="700"></p>
+<p>So why are T cells expressing CD20? This brings us to a key problem
+of cell segmentation - contamination.</p>
+</div>
+</div>
+</div>
+<div class="section level2">
+<h2 id="contamination">Contamination<a class="anchor" aria-label="anchor" href="#contamination"></a>
+</h2>
+<p>Contamination, or lateral marker spill over is an issue that results
+in a cell’s marker expressions being wrongly attributed to another
+adjacent cell. This issue arises from incorrect segmentation where
+components of one cell are wrongly determined as belonging to another
+cell. Alternatively, this issue can arise when antibodies used to tag
+and measure marker expressions don’t latch on properly to a cell of
+interest, thereby resulting in residual markers being wrongly assigned
+as belonging to a cell near the intended target cell. It is important
+that we either correct or account for this incorrect attribution of
+markers in our modelling process. This is critical in understanding
+whether significant cell-cell interactions detected are an artefact of
+technical measurement errors driven by spill over or are real biological
+changes that represent a shift in a cell’s state.</p>
+<p>To circumvent this problem, Statial provides a function that predicts
+the probability that a cell is any particular cell type -
+<code>calcContamination</code>. <code>calcContamination</code> returns a
+dataframe of probabilities demarcating the chance of a cell being any
+particular cell type. This dataframe is stored under
+<code>contaminations</code> in the <code>reducedDim</code> slot of the
+<code>SpatialExperiment</code> object. It also provides the
+<code>rfMainCellProb</code> column, which provides the probability that
+a cell is indeed the cell type it has been designated. E.g. For a cell
+designated as a CD8+ T cell, rfMainCellProb could give a 80% chance that
+the cell is indeed CD8+ T cell, due to contamination.</p>
+<p>We can then introduce these probabilities as covariates into our
+linear model by setting <code>contamination = TRUE</code> as a parameter
+in our <code>calcStateChanges</code> function. However, this is not a
+perfect solution for the issue of contamination. As we can see, despite
+factoring in contamination into our linear model, the correlation
+between B cell density and CD20 expression in CD4+ T cells remains one
+of the most significant interactions in our model.</p>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">kerenSPE</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/calcContamination.html" class="external-link">calcContamination</a></span><span class="op">(</span><span class="va">kerenSPE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Growing trees.. Progress: 27%. Estimated remaining time: 1 minute, 29 seconds.</span></span>
+<span><span class="co">#&gt; Growing trees.. Progress: 53%. Estimated remaining time: 56 seconds.</span></span>
+<span><span class="co">#&gt; Growing trees.. Progress: 79%. Estimated remaining time: 25 seconds.</span></span>
+<span></span>
+<span><span class="va">stateChangesCorrected</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/getStateChanges.html" class="external-link">calcStateChanges</a></span><span class="op">(</span></span>
+<span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
+<span>  type <span class="op">=</span> <span class="st">"distances"</span>,</span>
+<span>  minCells <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>  contamination <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">stateChangesCorrected</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span>
+<span><span class="co">#&gt;        imageID primaryCellType otherCellType      marker         coef</span></span>
+<span><span class="co">#&gt; 71820       37     Endothelial        Tumour        Lag3 -0.001621517</span></span>
+<span><span class="co">#&gt; 146511      11     Neutrophils            NK        CD56 -0.059936866</span></span>
+<span><span class="co">#&gt; 19570       35      CD4_T_cell        B_cell        CD20 -0.025398144</span></span>
+<span><span class="co">#&gt; 19666       35      CD4_T_cell    DC_or_Mono        CD20  0.016413129</span></span>
+<span><span class="co">#&gt; 19522       35      CD4_T_cell     dn_T_cell        CD20  0.014025591</span></span>
+<span><span class="co">#&gt; 19675       35      CD4_T_cell    DC_or_Mono  phospho.S6  0.003688643</span></span>
+<span><span class="co">#&gt; 19525       35      CD4_T_cell     dn_T_cell      HLA.DR  0.010517051</span></span>
+<span><span class="co">#&gt; 5707        35          B_cell    DC_or_Mono  phospho.S6  0.004282908</span></span>
+<span><span class="co">#&gt; 5329        28          B_cell            NK          Na -0.004482775</span></span>
+<span><span class="co">#&gt; 74980        3  Keratin_Tumour            DC          Ca -0.013791485</span></span>
+<span><span class="co">#&gt; 5557        35          B_cell     dn_T_cell      HLA.DR  0.009037270</span></span>
+<span><span class="co">#&gt; 87358       23  Keratin_Tumour  Unidentified HLA_Class_1  0.003110781</span></span>
+<span><span class="co">#&gt; 86254       20  Keratin_Tumour        Tumour HLA_Class_1  0.002885592</span></span>
+<span><span class="co">#&gt; 19531       35      CD4_T_cell     dn_T_cell  phospho.S6  0.003013648</span></span>
+<span><span class="co">#&gt; 87017       21  Keratin_Tumour            DC Pan.Keratin -0.005995786</span></span>
+<span><span class="co">#&gt; 5701        35          B_cell    DC_or_Mono      HLA.DR  0.008861152</span></span>
+<span><span class="co">#&gt; 19659       35      CD4_T_cell    DC_or_Mono      CSF.1R  0.008562168</span></span>
+<span><span class="co">#&gt; 76945        6  Keratin_Tumour  Unidentified          Na  0.004208352</span></span>
+<span><span class="co">#&gt; 5563        35          B_cell     dn_T_cell  phospho.S6  0.003675330</span></span>
+<span><span class="co">#&gt; 86209       20  Keratin_Tumour        Tumour          Na  0.002527345</span></span>
+<span><span class="co">#&gt;                 tval          pval           fdr</span></span>
+<span><span class="co">#&gt; 71820  -3.329560e+14  0.000000e+00  0.000000e+00</span></span>
+<span><span class="co">#&gt; 146511 -4.562088e+16  0.000000e+00  0.000000e+00</span></span>
+<span><span class="co">#&gt; 19570  -3.553996e+01 2.285165e-227 1.336250e-222</span></span>
+<span><span class="co">#&gt; 19666   3.471846e+01 9.384530e-219 4.115703e-214</span></span>
+<span><span class="co">#&gt; 19522   3.045663e+01 1.961919e-175 6.883393e-171</span></span>
+<span><span class="co">#&gt; 19675   3.041928e+01 4.580343e-175 1.339178e-170</span></span>
+<span><span class="co">#&gt; 19525   2.969336e+01 5.914866e-168 1.482308e-163</span></span>
+<span><span class="co">#&gt; 5707    2.976582e+01 7.726267e-168 1.694225e-163</span></span>
+<span><span class="co">#&gt; 5329   -2.927426e+01 8.748864e-160 1.705300e-155</span></span>
+<span><span class="co">#&gt; 74980  -2.903630e+01 1.617502e-157 2.837504e-153</span></span>
+<span><span class="co">#&gt; 5557    2.624782e+01 6.260787e-135 9.984533e-131</span></span>
+<span><span class="co">#&gt; 87358   2.537120e+01 1.997034e-130 2.919414e-126</span></span>
+<span><span class="co">#&gt; 86254   2.527482e+01 2.869758e-129 3.872517e-125</span></span>
+<span><span class="co">#&gt; 19531   2.543568e+01 3.797668e-128 4.758613e-124</span></span>
+<span><span class="co">#&gt; 87017  -2.472415e+01 5.391637e-127 6.305520e-123</span></span>
+<span><span class="co">#&gt; 5701    2.527712e+01 2.914919e-126 3.195935e-122</span></span>
+<span><span class="co">#&gt; 19659   2.515207e+01 1.267474e-125 1.307921e-121</span></span>
+<span><span class="co">#&gt; 76945   2.461969e+01 4.305673e-123 4.196237e-119</span></span>
+<span><span class="co">#&gt; 5563    2.478415e+01 6.184948e-122 5.710498e-118</span></span>
+<span><span class="co">#&gt; 86209   2.425643e+01 5.578303e-120 4.892869e-116</span></span></code></pre></div>
+<p>However, this does not mean factoring in contamination into our
+linear model was ineffective. In general, cell type specific markers
+such as CD68, CD45, and CD20 should not change in cells they are not
+specific to. Therefore, relationships detected to be significant
+involving these cell type markers are likely false positives and will be
+treated as such for the purposes of evaluation.</p>
+<p>Plotting the relationship between false positives and true positives,
+we’d expect the contamination correction to be greatest in the
+relationships with the top 100 lowest p values, where we indeed see more
+true positives than false positives with contamination correction.</p>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">cellTypeMarkers</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"CD3"</span>, <span class="st">"CD4"</span>, <span class="st">"CD8"</span>, <span class="st">"CD56"</span>, <span class="st">"CD11c"</span>, <span class="st">"CD68"</span>, <span class="st">"CD45"</span>, <span class="st">"CD20"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">values</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"blue"</span>, <span class="st">"red"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">values</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"None"</span>, <span class="st">"Corrected"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">rbind</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>TP <span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/cumsum.html" class="external-link">cumsum</a></span><span class="op">(</span><span class="va">stateChanges</span><span class="op">$</span><span class="va">marker</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">cellTypeMarkers</span><span class="op">)</span>, FP <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cumsum.html" class="external-link">cumsum</a></span><span class="op">(</span><span class="op">!</span><span class="va">stateChanges</span><span class="op">$</span><span class="va">marker</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">cellTypeMarkers</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"None"</span><span class="op">)</span>,</span>
+<span>            <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>TP <span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/cumsum.html" class="external-link">cumsum</a></span><span class="op">(</span><span class="va">stateChangesCorrected</span><span class="op">$</span><span class="va">marker</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">cellTypeMarkers</span><span class="op">)</span>, FP <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cumsum.html" class="external-link">cumsum</a></span><span class="op">(</span><span class="op">!</span><span class="va">stateChangesCorrected</span><span class="op">$</span><span class="va">marker</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">cellTypeMarkers</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"Corrected"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">TP</span>, y <span class="op">=</span> <span class="va">FP</span>, colour <span class="op">=</span> <span class="va">type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"Cell state marker"</span>, x <span class="op">=</span> <span class="st">"Cell type marker"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_colour_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">values</span><span class="op">)</span></span></code></pre></div>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-24-1.png" width="480"></p>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">TP</span>, y <span class="op">=</span> <span class="va">FP</span>, colour <span class="op">=</span> <span class="va">type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html" class="external-link">xlim</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">100</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html" class="external-link">ylim</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1000</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"Cell state marker"</span>, x <span class="op">=</span> <span class="st">"Cell type marker"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_colour_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">values</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning: Removed 349000 rows containing missing values (`geom_line()`).</span></span></code></pre></div>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-24-2.png" width="480"></p>
+<div class="section level5">
+<h5 id="associations-with-survival">Associations with survival<a class="anchor" aria-label="anchor" href="#associations-with-survival"></a>
+</h5>
+<p>The next steps will involve comparing survival time to see if these
+distance-marker interactions are practically useful.</p>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Preparing features for Statial</span></span>
+<span><span class="va">stateMat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/prepMatrix.html" class="external-link">prepMatrix</a></span><span class="op">(</span><span class="va">stateChanges</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Ensuring rownames of stateMat match up with rownames of the survival vector </span></span>
+<span><span class="va">stateMat</span> <span class="op">&lt;-</span> <span class="va">stateMat</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">kerenSurv</span><span class="op">)</span>, <span class="op">]</span></span>
+<span></span>
+<span></span>
+<span><span class="co"># Remove some very small values</span></span>
+<span><span class="va">stateMat</span> <span class="op">&lt;-</span> <span class="va">stateMat</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colMeans</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">stateMat</span><span class="op">)</span><span class="op">&gt;</span><span class="fl">0.0001</span><span class="op">)</span><span class="op">&gt;</span><span class="fl">.8</span><span class="op">]</span></span>
+<span></span>
+<span><span class="va">survivalResults</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/spicyR/man/colTest.html" class="external-link">colTest</a></span><span class="op">(</span><span class="va">stateMat</span>, <span class="va">kerenSurv</span>, type <span class="op">=</span> <span class="st">"survival"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">survivalResults</span><span class="op">)</span></span>
+<span><span class="co">#&gt;                                            coef se.coef   pval adjPval</span></span>
+<span><span class="co">#&gt; Keratin_Tumour__Mesenchymal__HLA_Class_1   -800     230 0.0005    0.28</span></span>
+<span><span class="co">#&gt; Macrophages__Endothelial__CD31             -390     120 0.0019    0.28</span></span>
+<span><span class="co">#&gt; Macrophages__dn_T_cell__P                  -400     130 0.0026    0.28</span></span>
+<span><span class="co">#&gt; Macrophages__CD4_T_cell__H3K9ac            -560     190 0.0029    0.28</span></span>
+<span><span class="co">#&gt; Keratin_Tumour__dn_T_cell__HLA_Class_1     -560     190 0.0032    0.28</span></span>
+<span><span class="co">#&gt; Keratin_Tumour__Keratin_Tumour__phospho.S6  170      59 0.0040    0.28</span></span>
+<span><span class="co">#&gt;                                                                               cluster</span></span>
+<span><span class="co">#&gt; Keratin_Tumour__Mesenchymal__HLA_Class_1     Keratin_Tumour__Mesenchymal__HLA_Class_1</span></span>
+<span><span class="co">#&gt; Macrophages__Endothelial__CD31                         Macrophages__Endothelial__CD31</span></span>
+<span><span class="co">#&gt; Macrophages__dn_T_cell__P                                   Macrophages__dn_T_cell__P</span></span>
+<span><span class="co">#&gt; Macrophages__CD4_T_cell__H3K9ac                       Macrophages__CD4_T_cell__H3K9ac</span></span>
+<span><span class="co">#&gt; Keratin_Tumour__dn_T_cell__HLA_Class_1         Keratin_Tumour__dn_T_cell__HLA_Class_1</span></span>
+<span><span class="co">#&gt; Keratin_Tumour__Keratin_Tumour__phospho.S6 Keratin_Tumour__Keratin_Tumour__phospho.S6</span></span></code></pre></div>
+</div>
 <div class="section level4">
-<h4 id="a-change-in-state-within-a-single-image-">A change in state within a single image.<a class="anchor" aria-label="anchor" href="#a-change-in-state-within-a-single-image-"></a>
-</h4>
-<div class="section level6">
-<h6 id="code-to-run-for-everything-e-g--dont-specify-for-relationships">Code to run for everything (e.g. don’t specify for
-relationships)<a class="anchor" aria-label="anchor" href="#code-to-run-for-everything-e-g--dont-specify-for-relationships"></a>
-</h6>
-</div>
-<div class="section level6">
-<h6 id="which-interactions-dont-make-sense">Which interactions don’t make sense<a class="anchor" aria-label="anchor" href="#which-interactions-dont-make-sense"></a>
-</h6>
-</div>
-<div class="section level6">
-<h6 id="marker-contamination-from-lateral-spillover">Marker contamination from lateral spillover<a class="anchor" aria-label="anchor" href="#marker-contamination-from-lateral-spillover"></a>
-</h6>
-</div>
-<div class="section level5">
-<h5 id="correcting-for-lateral-spillover-with-cell-type-deconvolution-">Correcting for lateral spillover with cell type deconvolution.<a class="anchor" aria-label="anchor" href="#correcting-for-lateral-spillover-with-cell-type-deconvolution-"></a>
-</h5>
-</div>
-</div>
-<div class="section level4">
-<h4 id="identify-change-in-state-consistent-across-images-">Identify change in state consistent across images.<a class="anchor" aria-label="anchor" href="#identify-change-in-state-consistent-across-images-"></a>
-</h4>
-<div class="section level5">
-<h5 id="mixed-model">Mixed model<a class="anchor" aria-label="anchor" href="#mixed-model"></a>
-</h5>
-</div>
-</div>
-<div class="section level4">
-<h4 id="associate-these-changes-with-a-patient-outcome">Associate these changes with a patient outcome<a class="anchor" aria-label="anchor" href="#associate-these-changes-with-a-patient-outcome"></a>
-</h4>
-<div class="section level5">
-<h5 id="proportionalhazards-models">ProportionalHazards Models<a class="anchor" aria-label="anchor" href="#proportionalhazards-models"></a>
-</h5>
-</div>
-<div class="section level5">
-<h5 id="generate-imagemodels-and-see-if-the-image-features-are-associated-with-survival-with-spicyrcoltest">Generate imageModels and see if the image features are associated
-with survival with spicyR::colTest<a class="anchor" aria-label="anchor" href="#generate-imagemodels-and-see-if-the-image-features-are-associated-with-survival-with-spicyrcoltest"></a>
-</h5>
-</div>
-</div>
-</div>
-<div class="section level3">
-<h3 id="identifying-continuous-changes-in-cell-state-within-spatial-domains">Identifying continuous changes in cell state within spatial
+<h4 id="identifying-continuous-changes-in-cell-state-within-spatial-domains">Identifying continuous changes in cell state within spatial
 domains<a class="anchor" aria-label="anchor" href="#identifying-continuous-changes-in-cell-state-within-spatial-domains"></a>
-</h3>
+</h4>
 <p>We can look at changes of cell state relative to membership of
 different spatial domains. These domains can represent distinct tissue
 microenvironments where cells will potentially be interacting with
@@ -316,70 +1017,886 @@ different types cells.</p>
 <p><img src="images/region.png" alt="cts1" style="width: 70%; border: 0px"></p>
 <p>Here we see the abundance of a marker being higher in cell type 2
 within spatial region 1 than spatial region 2.</p>
+<div class="section level5">
+<h5 id="identify-spatial-domains-with-lisaclust">Identify spatial domains with lisaClust<a class="anchor" aria-label="anchor" href="#identify-spatial-domains-with-lisaclust"></a>
+</h5>
+<p>We can cluster areas with similar spatial interactions to identify
+regions using the <code>lisaClust</code> package on Bioconductor. Here
+we set <code>k = 5</code> to identify 5 regions.</p>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">51773</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Preparing features for lisaClust</span></span>
+<span><span class="va">kerenSPE</span> <span class="op">&lt;-</span> <span class="fu">lisaClust</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/lisaClust/man/lisaClust.html" class="external-link">lisaClust</a></span><span class="op">(</span><span class="va">kerenSPE</span>, k <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Generating local L-curves. If you run out of memory, try 'fast = FALSE'.</span></span></code></pre></div>
+<p>The regions identified by lisaClust can be visualised using the
+<code>hatchingPlot</code> function.</p>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Use hatching to visualise regions and cell types.</span></span>
+<span><span class="fu">lisaClust</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/lisaClust/man/hatchingPlot.html" class="external-link">hatchingPlot</a></span><span class="op">(</span><span class="va">kerenSPE</span>,</span>
+<span>  useImages <span class="op">=</span> <span class="st">"5"</span>,</span>
+<span>  line.spacing <span class="op">=</span> <span class="fl">41</span>, <span class="co"># spacing of lines</span></span>
+<span>  nbp <span class="op">=</span> <span class="fl">100</span> <span class="co"># smoothness of lines</span></span>
+<span><span class="op">)</span> </span>
+<span><span class="co">#&gt; There is no cellID. I'll create these</span></span>
+<span><span class="co">#&gt; There is no image specific imageCellID. I'll create these</span></span>
+<span><span class="co">#&gt; Creating variable region</span></span>
+<span><span class="co">#&gt; Concave windows are temperamental. Try choosing values of window.length &gt; and &lt; 1 if you have problems.</span></span>
+<span><span class="co">#&gt; Warning in split.default(x = seq_len(nrow(x)), f = f, drop = drop, ...): data</span></span>
+<span><span class="co">#&gt; length is not a multiple of split variable</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in split.default(x = seq_len(nrow(x)), f = f, drop = drop, ...): data</span></span>
+<span><span class="co">#&gt; length is not a multiple of split variable</span></span></code></pre></div>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-27-1.png" width="624"></p>
+</div>
+</div>
+</div>
+<div class="section level2">
+<h2 id="marker-means">Marker Means<a class="anchor" aria-label="anchor" href="#marker-means"></a>
+</h2>
+<p><code>Statial</code> provides functionality to identify the average
+marker expression of a given cell type in a given region, using the
+<code>getMarkerMeans</code> function. Similar to the analysis above,
+these features can also be used for survival analysis.</p>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">cellTypeRegionMeans</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/getMarkerMeans.html" class="external-link">getMarkerMeans</a></span><span class="op">(</span><span class="va">kerenSPE</span>,</span>
+<span>                              imageID <span class="op">=</span> <span class="st">"imageID"</span>,</span>
+<span>                              cellType <span class="op">=</span> <span class="st">"cellType"</span>,</span>
+<span>                              region <span class="op">=</span> <span class="st">"region"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">survivalResults</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/spicyR/man/colTest.html" class="external-link">colTest</a></span><span class="op">(</span><span class="va">cellTypeRegionMeans</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">kerenSurv</span><span class="op">)</span>,<span class="op">]</span>, <span class="va">kerenSurv</span>, type <span class="op">=</span> <span class="st">"survival"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">survivalResults</span><span class="op">)</span></span>
+<span><span class="co">#&gt;                                     coef se.coef    pval adjPval</span></span>
+<span><span class="co">#&gt; phospho.S6__Unidentified__region_3 -3.10    0.86 0.00034    0.33</span></span>
+<span><span class="co">#&gt; CD8__Mono_or_Neu__region_1          7.40    2.10 0.00041    0.33</span></span>
+<span><span class="co">#&gt; Au__Tumour__region_3                0.97    0.29 0.00081    0.33</span></span>
+<span><span class="co">#&gt; Ta__Tumour__region_3                0.95    0.29 0.00088    0.33</span></span>
+<span><span class="co">#&gt; CD31__Mesenchymal__region_5        21.00    6.30 0.00110    0.33</span></span>
+<span><span class="co">#&gt; P__Unidentified__region_3          -1.10    0.35 0.00130    0.33</span></span>
+<span><span class="co">#&gt;                                                               cluster</span></span>
+<span><span class="co">#&gt; phospho.S6__Unidentified__region_3 phospho.S6__Unidentified__region_3</span></span>
+<span><span class="co">#&gt; CD8__Mono_or_Neu__region_1                 CD8__Mono_or_Neu__region_1</span></span>
+<span><span class="co">#&gt; Au__Tumour__region_3                             Au__Tumour__region_3</span></span>
+<span><span class="co">#&gt; Ta__Tumour__region_3                             Ta__Tumour__region_3</span></span>
+<span><span class="co">#&gt; CD31__Mesenchymal__region_5               CD31__Mesenchymal__region_5</span></span>
+<span><span class="co">#&gt; P__Unidentified__region_3                   P__Unidentified__region_3</span></span></code></pre></div>
 <div class="section level4">
-<h4 id="identify-spatial-domains-with-lisaclust">Identify spatial domains with lisaClust<a class="anchor" aria-label="anchor" href="#identify-spatial-domains-with-lisaclust"></a>
+<h4 id="patient-classification">Patient classification<a class="anchor" aria-label="anchor" href="#patient-classification"></a>
 </h4>
+<p>Finally we demonstrate how we can use the Bioconductor package
+<code>ClassifyR</code> to perform patient classification with the
+features generated from <code>Statial</code>. In addition to the
+kontextual, state changes, and marker means values, we also calculate
+cell type proportions and region proportions using the
+<code>getProp</code> function in <code>spicyR</code>. Here we perform 3
+fold cross validation with 10 repeats, using a CoxPH model for survival
+classification, feature selection is also performed by selecting the top
+10 features per fold using a CoxPH model.</p>
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="co"># Calculate cell type and region proportions</span></span>
+<span><span class="va">cellTypeProp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/spicyR/man/getProp.html" class="external-link">getProp</a></span><span class="op">(</span><span class="va">kerenSPE</span>, </span>
+<span>                       feature <span class="op">=</span> <span class="st">"cellType"</span>,</span>
+<span>                       imageID <span class="op">=</span> <span class="st">"imageID"</span><span class="op">)</span></span>
+<span><span class="va">regionProp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/spicyR/man/getProp.html" class="external-link">getProp</a></span><span class="op">(</span><span class="va">kerenSPE</span>, </span>
+<span>                       feature <span class="op">=</span> <span class="st">"region"</span>,</span>
+<span>                       imageID <span class="op">=</span> <span class="st">"imageID"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Combine all the features into a list for classification </span></span>
+<span><span class="va">featureList</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>states <span class="op">=</span> <span class="va">stateMat</span>, </span>
+<span>                     kontextual <span class="op">=</span> <span class="va">kontextMat</span>,</span>
+<span>                     regionMarkerMeans <span class="op">=</span> <span class="va">cellTypeRegionMeans</span>,</span>
+<span>                     cellTypeProp <span class="op">=</span> <span class="va">cellTypeProp</span>,</span>
+<span>                     regionProp <span class="op">=</span> <span class="va">regionProp</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Ensure the rownames of the features match the order of the survival vector</span></span>
+<span><span class="va">featureList</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">featureList</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="va">x</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">kerenSurv</span><span class="op">)</span>,<span class="op">]</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">51773</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">kerenCV</span> <span class="op">=</span> <span class="fu"><a href="https://sydneybiox.github.io/ClassifyR/reference/crossValidate.html" class="external-link">crossValidate</a></span><span class="op">(</span></span>
+<span>  measurements <span class="op">=</span> <span class="va">featureList</span>,</span>
+<span>  outcome <span class="op">=</span> <span class="va">kerenSurv</span>,</span>
+<span>  classifier <span class="op">=</span> <span class="st">"CoxPH"</span>,</span>
+<span>  selectionMethod  <span class="op">=</span> <span class="st">"CoxPH"</span>,</span>
+<span>  nFolds <span class="op">=</span> <span class="fl">5</span>,</span>
+<span>  nFeatures <span class="op">=</span> <span class="fl">10</span>,</span>
+<span>  nRepeats <span class="op">=</span> <span class="fl">20</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in .local(measurements, ...): 1 cross-validations, but not all, had an</span></span>
+<span><span class="co">#&gt; error and have been removed from the results.</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Loglik converged before variable 2,3,4,5,6,7 ; coefficient may be infinite.</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Loglik converged before variable 2,3,4,5,6,7 ; coefficient may be infinite.</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; Ran out of iterations and did not converge</span></span>
+<span><span class="co">#&gt; Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights, :</span></span>
+<span><span class="co">#&gt; one or more coefficients may be infinite</span></span></code></pre></div>
+<p>Here, we use the <code>performancePlot</code> function to assess the
+C-index from each repeat of the 3-fold cross-validation. We can see the
+resulting C-indexes are very variable due to the dataset only containing
+10 images.</p>
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Calculate AUC for each cross-validation repeat and plot.</span></span>
+<span><span class="fu"><a href="https://sydneybiox.github.io/ClassifyR/reference/performancePlot.html" class="external-link">performancePlot</a></span><span class="op">(</span><span class="va">kerenCV</span>,</span>
+<span>  characteristicsList <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Assay Name"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, vjust <span class="op">=</span> <span class="fl">1</span>, hjust<span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in .local(results, ...): C-index not found in all elements of results.</span></span>
+<span><span class="co">#&gt; Calculating it now.</span></span></code></pre></div>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-29-1.png" width="700"></p>
 </div>
-<div class="section level4">
-<h4 id="test-between-spatial-domains">Test between spatial domains<a class="anchor" aria-label="anchor" href="#test-between-spatial-domains"></a>
-</h4>
 </div>
-<div class="section level4">
-<h4 id="associate-with-a-patient-outcome">Associate with a patient outcome<a class="anchor" aria-label="anchor" href="#associate-with-a-patient-outcome"></a>
-</h4>
+<div class="section level2">
+<h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li><em>Keren, L., Bosse, M., Marquez, D., Angoshtari, R., Jain, S.,
+Varma, S., Yang, S. R., Kurian, A., Van Valen, D., West, R., Bendall, S.
+C., &amp; Angelo, M. (2018). A Structured Tumor-Immune Microenvironment
+in Triple Negative Breast Cancer Revealed by Multiplexed Ion Beam
+Imaging. Cell, 174(6), 1373-1387.e1319. (<a href="https://doi.org/10.1016/j.cell.2018.08.039" class="external-link">DOI</a>)</em></li>
+</ol>
 </div>
-</div>
-<div class="section level3">
-<h3 id="identifying-discrete-changes-in-cell-state-with-kontextual">Identifying discrete changes in cell state with Kontextual<a class="anchor" aria-label="anchor" href="#identifying-discrete-changes-in-cell-state-with-kontextual"></a>
-</h3>
-<p>Cells states can also be modelled as subclusters of a broader parent
-cell population. These subclusters, or states, are typically identified
-via a hierarchical clustering strategy. By framing cell states as
-discrete clusters, we are able to explore relationships as follows -
-cell type A has two states, with state 2 being closer to cell type
-B.</p>
-<p><img src="images/KontextSpace.png" alt="Kontext" width="35%" style="border: 0px"></p>
-<p>Here we introduce Kontextual. Kontextual models spatial relationships
-between cells in the context of hierarchical cell lineage structures. By
-assessing spatial relationships between pairs of cells in the context of
-other related cell types, Kontextual provides robust quantification of
-cell type relationships which are invariant to changes in tissue
-structure.</p>
-<p><img src="images/Kontextual.png" alt="Kontextual" width="100%" style="border:0px"></p>
-<p>For the purposes of using <code>Kontextual</code> we treat cell
-states as identified clusters of cells, where larger clusters represent
-a “parent” cell population, and finer sub-clusters representing a
-“child” cell population. For example a CD4+ T cell may be considered a
-child to a larger parent population of T cells. <code>Kontextual</code>
-thus aims to see how a child population of cells deviate from the
-spatial behaviour of their parent population, and how that influences
-the localisation between the child cell state and another cell
-state.</p>
-<div class="section level4">
-<h4 id="identify-within-a-single-image">Identify within a single image<a class="anchor" aria-label="anchor" href="#identify-within-a-single-image"></a>
-</h4>
-</div>
-<div class="section level4">
-<h4 id="identify-across-images">Identify across images<a class="anchor" aria-label="anchor" href="#identify-across-images"></a>
-</h4>
-</div>
-<div class="section level4">
-<h4 id="associate-with-a-patient-outcome-1">Associate with a patient outcome<a class="anchor" aria-label="anchor" href="#associate-with-a-patient-outcome-1"></a>
-</h4>
-</div>
-</div>
-<div class="section level3">
-<h3 id="predicting-patient-outcomes">Predicting patient outcomes<a class="anchor" aria-label="anchor" href="#predicting-patient-outcomes"></a>
-</h3>
-<div class="section level4">
-<h4 id="extract-feature-sets">Extract feature sets<a class="anchor" aria-label="anchor" href="#extract-feature-sets"></a>
-</h4>
-</div>
-<div class="section level4">
-<h4 id="run-classifyr">Run classifyR<a class="anchor" aria-label="anchor" href="#run-classifyr"></a>
-</h4>
-</div>
-</div>
+<div class="section level2">
+<h2 id="session-info">Session info<a class="anchor" aria-label="anchor" href="#session-info"></a>
+</h2>
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; R version 4.3.1 (2023-06-16)</span></span>
+<span><span class="co">#&gt; Platform: x86_64-pc-linux-gnu (64-bit)</span></span>
+<span><span class="co">#&gt; Running under: Ubuntu 22.04.2 LTS</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Matrix products: default</span></span>
+<span><span class="co">#&gt; BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 </span></span>
+<span><span class="co">#&gt; LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.20.so;  LAPACK version 3.10.0</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; locale:</span></span>
+<span><span class="co">#&gt;  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              </span></span>
+<span><span class="co">#&gt;  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    </span></span>
+<span><span class="co">#&gt;  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   </span></span>
+<span><span class="co">#&gt;  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 </span></span>
+<span><span class="co">#&gt;  [9] LC_ADDRESS=C               LC_TELEPHONE=C            </span></span>
+<span><span class="co">#&gt; [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; time zone: Etc/UTC</span></span>
+<span><span class="co">#&gt; tzcode source: system (glibc)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; attached base packages:</span></span>
+<span><span class="co">#&gt; [1] stats4    stats     graphics  grDevices utils     datasets  methods  </span></span>
+<span><span class="co">#&gt; [8] base     </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; other attached packages:</span></span>
+<span><span class="co">#&gt;  [1] StatialBioc2023_1.0.1       scater_1.29.0              </span></span>
+<span><span class="co">#&gt;  [3] scuttle_1.11.0              ggsurvfit_0.3.0            </span></span>
+<span><span class="co">#&gt;  [5] tidyr_1.3.0                 dplyr_1.1.2                </span></span>
+<span><span class="co">#&gt;  [7] SpatialExperiment_1.11.0    SingleCellExperiment_1.23.0</span></span>
+<span><span class="co">#&gt;  [9] ggplot2_3.4.2               ClassifyR_3.5.8            </span></span>
+<span><span class="co">#&gt; [11] survival_3.5-5              BiocParallel_1.35.3        </span></span>
+<span><span class="co">#&gt; [13] MultiAssayExperiment_1.27.0 SummarizedExperiment_1.31.1</span></span>
+<span><span class="co">#&gt; [15] GenomicRanges_1.53.1        GenomeInfoDb_1.37.2        </span></span>
+<span><span class="co">#&gt; [17] IRanges_2.35.2              MatrixGenerics_1.13.1      </span></span>
+<span><span class="co">#&gt; [19] matrixStats_1.0.0           S4Vectors_0.39.1           </span></span>
+<span><span class="co">#&gt; [21] generics_0.1.3              lisaClust_1.9.0            </span></span>
+<span><span class="co">#&gt; [23] spicyR_1.12.1               Statial_1.2.1              </span></span>
+<span><span class="co">#&gt; [25] Biobase_2.61.0              BiocGenerics_0.47.0        </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; loaded via a namespace (and not attached):</span></span>
+<span><span class="co">#&gt;   [1] splines_4.3.1             bitops_1.0-7             </span></span>
+<span><span class="co">#&gt;   [3] tibble_3.2.1              R.oo_1.25.0              </span></span>
+<span><span class="co">#&gt;   [5] polyclip_1.10-4           lifecycle_1.0.3          </span></span>
+<span><span class="co">#&gt;   [7] rstatix_0.7.2             edgeR_3.43.7             </span></span>
+<span><span class="co">#&gt;   [9] rprojroot_2.0.3           lattice_0.21-8           </span></span>
+<span><span class="co">#&gt;  [11] MASS_7.3-60               backports_1.4.1          </span></span>
+<span><span class="co">#&gt;  [13] magrittr_2.0.3            limma_3.57.6             </span></span>
+<span><span class="co">#&gt;  [15] plotly_4.10.2             sass_0.4.7               </span></span>
+<span><span class="co">#&gt;  [17] rmarkdown_2.23            jquerylib_0.1.4          </span></span>
+<span><span class="co">#&gt;  [19] yaml_2.3.7                spatstat.sparse_3.0-2    </span></span>
+<span><span class="co">#&gt;  [21] cowplot_1.1.1             minqa_1.2.5              </span></span>
+<span><span class="co">#&gt;  [23] RColorBrewer_1.1-3        abind_1.4-5              </span></span>
+<span><span class="co">#&gt;  [25] zlibbioc_1.47.0           purrr_1.0.1              </span></span>
+<span><span class="co">#&gt;  [27] R.utils_2.12.2            RCurl_1.98-1.12          </span></span>
+<span><span class="co">#&gt;  [29] tweenr_2.0.2              GenomeInfoDbData_1.2.10  </span></span>
+<span><span class="co">#&gt;  [31] ggrepel_0.9.3             irlba_2.3.5.1            </span></span>
+<span><span class="co">#&gt;  [33] spatstat.utils_3.0-3      pheatmap_1.0.12          </span></span>
+<span><span class="co">#&gt;  [35] goftest_1.2-3             spatstat.random_3.1-5    </span></span>
+<span><span class="co">#&gt;  [37] dqrng_0.3.0               pkgdown_2.0.7            </span></span>
+<span><span class="co">#&gt;  [39] DelayedMatrixStats_1.23.0 codetools_0.2-19         </span></span>
+<span><span class="co">#&gt;  [41] DropletUtils_1.21.0       DelayedArray_0.27.10     </span></span>
+<span><span class="co">#&gt;  [43] ggforce_0.4.1             tidyselect_1.2.0         </span></span>
+<span><span class="co">#&gt;  [45] farver_2.1.1              lme4_1.1-34              </span></span>
+<span><span class="co">#&gt;  [47] ScaledMatrix_1.9.1        viridis_0.6.4            </span></span>
+<span><span class="co">#&gt;  [49] spatstat.explore_3.2-1    jsonlite_1.8.7           </span></span>
+<span><span class="co">#&gt;  [51] BiocNeighbors_1.19.0      systemfonts_1.0.4        </span></span>
+<span><span class="co">#&gt;  [53] tools_4.3.1               ragg_1.2.5               </span></span>
+<span><span class="co">#&gt;  [55] Rcpp_1.0.11               glue_1.6.2               </span></span>
+<span><span class="co">#&gt;  [57] gridExtra_2.3             SparseArray_1.1.11       </span></span>
+<span><span class="co">#&gt;  [59] xfun_0.39                 ranger_0.15.1            </span></span>
+<span><span class="co">#&gt;  [61] mgcv_1.9-0                HDF5Array_1.29.3         </span></span>
+<span><span class="co">#&gt;  [63] scam_1.2-14               withr_2.5.0              </span></span>
+<span><span class="co">#&gt;  [65] numDeriv_2016.8-1.1       fastmap_1.1.1            </span></span>
+<span><span class="co">#&gt;  [67] boot_1.3-28.1             rhdf5filters_1.13.5      </span></span>
+<span><span class="co">#&gt;  [69] fansi_1.0.4               digest_0.6.33            </span></span>
+<span><span class="co">#&gt;  [71] rsvd_1.0.5                R6_2.5.1                 </span></span>
+<span><span class="co">#&gt;  [73] textshaping_0.3.6         colorspace_2.1-0         </span></span>
+<span><span class="co">#&gt;  [75] tensor_1.5                spatstat.data_3.0-1      </span></span>
+<span><span class="co">#&gt;  [77] R.methodsS3_1.8.2         utf8_1.2.3               </span></span>
+<span><span class="co">#&gt;  [79] data.table_1.14.8         class_7.3-22             </span></span>
+<span><span class="co">#&gt;  [81] httr_1.4.6                htmlwidgets_1.6.2        </span></span>
+<span><span class="co">#&gt;  [83] S4Arrays_1.1.5            pkgconfig_2.0.3          </span></span>
+<span><span class="co">#&gt;  [85] gtable_0.3.3              XVector_0.41.1           </span></span>
+<span><span class="co">#&gt;  [87] htmltools_0.5.5           carData_3.0-5            </span></span>
+<span><span class="co">#&gt;  [89] scales_1.2.1              knitr_1.43               </span></span>
+<span><span class="co">#&gt;  [91] reshape2_1.4.4            rjson_0.2.21             </span></span>
+<span><span class="co">#&gt;  [93] curl_5.0.1                nlme_3.1-162             </span></span>
+<span><span class="co">#&gt;  [95] nloptr_2.0.3              cachem_1.0.8             </span></span>
+<span><span class="co">#&gt;  [97] rhdf5_2.45.1              stringr_1.5.0            </span></span>
+<span><span class="co">#&gt;  [99] parallel_4.3.1            vipor_0.4.5              </span></span>
+<span><span class="co">#&gt; [101] concaveman_1.1.0          desc_1.4.2               </span></span>
+<span><span class="co">#&gt; [103] pillar_1.9.0              grid_4.3.1               </span></span>
+<span><span class="co">#&gt; [105] vctrs_0.6.3               ggpubr_0.6.0             </span></span>
+<span><span class="co">#&gt; [107] car_3.1-2                 BiocSingular_1.17.1      </span></span>
+<span><span class="co">#&gt; [109] beachmat_2.17.14          beeswarm_0.4.0           </span></span>
+<span><span class="co">#&gt; [111] evaluate_0.21             magick_2.7.4             </span></span>
+<span><span class="co">#&gt; [113] cli_3.6.1                 locfit_1.5-9.8           </span></span>
+<span><span class="co">#&gt; [115] compiler_4.3.1            rlang_1.1.1              </span></span>
+<span><span class="co">#&gt; [117] crayon_1.5.2              ggsignif_0.6.4           </span></span>
+<span><span class="co">#&gt; [119] labeling_0.4.2            plyr_1.8.8               </span></span>
+<span><span class="co">#&gt; [121] fs_1.6.3                  ggbeeswarm_0.7.2         </span></span>
+<span><span class="co">#&gt; [123] stringi_1.7.12            viridisLite_0.4.2        </span></span>
+<span><span class="co">#&gt; [125] deldir_1.0-9              lmerTest_3.1-3           </span></span>
+<span><span class="co">#&gt; [127] munsell_0.5.0             lazyeval_0.2.2           </span></span>
+<span><span class="co">#&gt; [129] spatstat.geom_3.2-4       V8_4.3.3                 </span></span>
+<span><span class="co">#&gt; [131] Matrix_1.6-0              sparseMatrixStats_1.13.0 </span></span>
+<span><span class="co">#&gt; [133] Rhdf5lib_1.23.0           highr_0.10               </span></span>
+<span><span class="co">#&gt; [135] broom_1.0.5               memoise_2.0.1            </span></span>
+<span><span class="co">#&gt; [137] bslib_0.5.0</span></span></code></pre></div>
 </div>
   </div>
 
