@@ -592,7 +592,7 @@ head(survivalResults)
 
 ```
 
-Again, we can also visualise the Kaplan-Meier curve visualisation for the most significant interaction. As `Kontextual` and `calcStateChanges` provides different outputs, localisation here refers to increased localisation between Keratin6 expressing keratin/tumour cells and CD4 cells, i.e. localisation means keratin/tumour cells tend to increase Keratin6 expression nearby CD4 cells, whilst dispersion would mean keratin/tumour cells do not tend to express Keratin6 near CD4 cell populations.
+Similar to `Kontextual`, we can also visualise the Kaplan-Meier curve visualisation for the most significant interaction. As `Kontextual` and `calcStateChanges` provides different outputs, localisation here refers to increased localisation between Keratin6 expressing keratin/tumour cells and CD4 cells, i.e. localisation means keratin/tumour cells tend to increase Keratin6 expression nearby CD4 cells, whilst dispersion would mean keratin/tumour cells do not tend to express Keratin6 near CD4 cell populations.
 
 As shown below, increased keratin6 expression in keratin/tumour cells near CD4 populations tends to worsen survival outcomes, whilst lower keratin6 expression appears to improve survival outcomes.
 
