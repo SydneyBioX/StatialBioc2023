@@ -160,7 +160,7 @@ scater::plotReducedDim(kerenSPE, dimred = "UMAP", colour_by = "cellType")
 
 Cells states can be modelled as subclusters of a broader parent cell population. These subclusters, or states, are typically identified via a hierarchical clustering strategy. By framing cell states as discrete clusters, we are able to explore relationships as follows - cell type A has two states, with state 2 being closer to cell type B.
 
-<img src="images/KontextSpace.png" alt="Kontext" style="width 4in; border: 0px"/>
+<img src="images/KontextSpace.png" alt="Kontext" style="width 3in; border: 0px"/>
 
 Here we introduce Kontextual. Kontextual models spatial relationships between cells in the context of hierarchical cell lineage structures. By assessing spatial relationships between pairs of cells in the context of other related cell types, Kontextual provides robust quantification of cell type relationships which are invariant to changes in tissue structure.
 
@@ -522,7 +522,7 @@ p
 So why are T cells expressing CD20?
 This brings us to a key problem of cell segmentation - contamination.
 
-# Contamination
+#### Contamination
 Contamination, or lateral marker spill over is an issue that results in a cell’s marker expressions being wrongly attributed to another adjacent cell. This issue arises from incorrect segmentation where components of one cell are wrongly determined as belonging to another cell. 
 Alternatively, this issue can arise when antibodies used to tag and measure marker expressions don't latch on properly to a cell of interest, thereby resulting in residual markers being wrongly assigned as belonging to a cell near the intended target cell. It is important that we either correct or account for this incorrect attribution of markers in our modelling process. This is critical in understanding whether significant cell-cell interactions detected are an artefact of technical measurement errors driven by spill over or are real biological changes that represent a shift in a cell’s state.
 
@@ -619,7 +619,7 @@ lisaClust::hatchingPlot(kerenSPE,
 
 ```
 
-# Marker Means
+##### Marker Means
 
 `Statial` provides functionality to identify the average marker expression of a given cell type in a given region, using the `getMarkerMeans` function. Similar to the analysis above, these features can also be used for survival analysis. 
 
@@ -639,9 +639,9 @@ head(survivalResults)
 
 ### Patient classification
 
-Finally we demonstrate how we can use the Bioconductor package `ClassifyR` to perform patient classification with the features generated from `Statial`. In addition to the kontextual, state changes, and marker means values, we also calculate cell type proportions and region proportions using the `getProp` function in `spicyR`. Here we perform 3 fold cross validation with 10 repeats, using a CoxPH model for survival classification, feature selection is also performed by selecting the top 10 features per fold using a CoxPH model.
+Finally we demonstrate how we can use the Bioconductor package `ClassifyR` to perform patient classification with the features generated from `Statial`. In addition to the kontextual, state changes, and marker means values, we also calculate cell type proportions and region proportions using the `getProp` function in `spicyR`. Here we perform 5 fold cross validation with 20 repeats, using a CoxPH model for survival classification.
 
-```{r}
+```{r, warning=FALSE}
 
 # Calculate cell type and region proportions
 cellTypeProp <- getProp(kerenSPE, 
@@ -678,7 +678,7 @@ kerenCV = crossValidate(
 
 
 
-Here, we use the `performancePlot` function to assess the C-index from each repeat of the 3-fold cross-validation. We can see the resulting C-indexes are very variable due to the dataset only containing 10 images. 
+Here, we use the `performancePlot` function to assess the C-index from each repeat of the 5-fold cross-validation. We can see that in this case cell type proportions are not a reliable predictor of survival. However the proportion of each spatial domain region in an image or the states estimated by Kontextual could be.
 
 
 ```{r}
