@@ -20,3 +20,19 @@
 #'
 "kerenSPE"
 
+
+#' Kontextual results from kerenSPE
+#'
+#' @description
+#' This is a kontextual results data.frame created using Kontextual on the kerenSPE dataset.
+#'
+#'
+#' @usage data(kerenKontextual)
+#'
+#' @format kerenKontextual a kontextual results object.
+#' @aliases
+#' kerenKontextual
+#'
+#'
+#'
+"kerenKontextual"
