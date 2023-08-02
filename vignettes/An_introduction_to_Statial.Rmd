@@ -72,14 +72,13 @@ An example for a 45-minute workshop:
 
 The expected timing of the workshop:
 
-| Activity                     | Time |
-|------------------------------|------|
-| Introduction                 | 5m  |
-| Discrete cell states         | 10m  |
-| Continuous cell states       | 10m   |
-| Tissue microenvironments     | 5m   |
-| Classification               | 5m  |  
-
+| Activity                 | Time |
+|--------------------------|------|
+| Introduction             | 5m   |
+| Discrete cell states     | 10m  |
+| Continuous cell states   | 10m  |
+| Tissue microenvironments | 5m   |
+| Classification           | 5m   |
 
 ### Workshop goals and objectives
 
@@ -164,8 +163,7 @@ scater::plotReducedDim(kerenSPE, dimred = "UMAP", colour_by = "cellType")
 
 Cells states can be modelled as subclusters of a broader parent cell population. These subclusters, or states, are typically identified via a hierarchical clustering strategy. By framing cell states as discrete clusters, we are able to explore relationships as follows - cell type A has two states, with state 2 being closer to cell type B.
 
-
-![Kontext](images/KontextSpace.png){style="width 4in; border: 0px"}
+![Kontext](images/KontextSpace.png){style="width: 4in; border: 0px"}
 
 Here we introduce Kontextual. Kontextual models spatial relationships between cells in the context of hierarchical cell lineage structures. By assessing spatial relationships between pairs of cells in the context of other related cell types, Kontextual provides robust quantification of cell type relationships which are invariant to changes in tissue structure.
 
@@ -259,7 +257,7 @@ p53_Kontextual
 
 The `kontextCurve` calculates the L-function value and Kontextual values over a range of radii. While `kontextPlot` plots these values. If the points lie above the red line (expected pattern) then localisation is indicated for that radius, if the points lie below the red line then dispersion is indicated. As seen in the following plot Kontextual is able to correctly identify localisation between p53+ tumour cells and immune cells in the example image for a certain range of radii. The original L-function is not able to identify localisation at any value of radii.
 
-```{r}
+```{r, fig.width=6, fig.height=4}
 
 curves <- kontextCurve(
   cells = kerenSPE,
@@ -363,7 +361,7 @@ The association between `Mesenchymal__Macrophages__tissue` and survival can also
 
 As shown below, when Mesenchymal and Macrophages are relatively more dispersed to one another, patients tend to have worse survival outcomes.
 
-```{r}
+```{r, fig.width=5, fig.height=4}
 # Selecting most significant relationship
 survRelationship = kontextMat[["Mesenchymal__Macrophages__tissue"]]
 survRelationship = ifelse(survRelationship > median(survRelationship), "Localised", "Dispersed")
@@ -418,7 +416,7 @@ Through this analysis, we can observe that keratin/tumour cells closer to a grou
 
 These results allow us to essentially arrive at the same result as Kontextual, which calculated a localisation between p53+ keratin/tumour cells and macrophages in the wider context of keratin/tumour cells.
 
-```{r}
+```{r, fig.width=6, fig.height=4}
 p <- plotStateChanges(
   cells = kerenSPE,
   type = "distances",
@@ -465,7 +463,7 @@ We can examine some of these interactions further with the `plotStateChanges` fu
 
 Biologically, HLA Class I is a ligand which exists on all nucleated cells, tasked with presenting internal cell antigens for recognition by the immune system, marking aberrant cells for destruction by either CD8+ T cells or NK cells.
 
-```{r}
+```{r, fig.width=6, fig.height=4}
 
 p <- plotStateChanges(
   cells = kerenSPE,
@@ -499,14 +497,16 @@ Could this potentially be an artefact of `calcStateChanges`? We can examine the 
 ::: question
 **Question**
 
-1.  Are there any other interactions here that you think might not make biological sense?  
-2.  Does the relationship between T cell CD20 expression and B cell proximity occur across images?  
-3.  Why are the majority of most significant interactions occurring in image 35?  
+1.  Are there any other interactions here that you think might not make biological sense?\
+
+2.  Does the relationship between T cell CD20 expression and B cell proximity occur across images?\
+
+3.  Why are the majority of most significant interactions occurring in image 35?
 
     HINT: Configure the parameters of `plotStateChanges` to examine some these other significant interactions. Do they look like artefacts?
 :::
 
-```{r}
+```{r, fig.width=6, fig.height=4}
 
 p <- plotStateChanges(
   cells = kerenSPE,
@@ -527,12 +527,11 @@ p
 
 So why are T cells expressing CD20? This brings us to a key limitation of cell segmentation.
 
-
 ### Contamination (Lateral marker spill over)
 
 Contamination, or more specifically known as lateral marker spill over, is an issue that results in a cell's marker expressions being wrongly attributed to another adjacent cell. This issue arises from incorrect segmentation where components of one cell are wrongly determined as belonging to another cell. Alternatively, this issue can arise when antibodies used to tag and measure marker expressions do not latch on properly to a cell of interest, thereby resulting in residual markers being wrongly assigned as belonging to a cell near the intended target cell. It is important that we either correct or account for this incorrect attribution of markers in our modelling process. This is critical in understanding whether significant cell-cell interactions detected are an artifact of technical measurement errors driven by spill over or are real biological changes that represent a shift in a cell's state.
 
-<img src="images/Contamination.png" alt="Contamination" style="border: 0px"/>
+<img src="images/Contamination.png" alt="Contamination" style="width: 4in; border: 0px"/>
 
 To circumvent this problem, Statial provides a function that predicts the probability that a cell is any particular cell type - `calcContamination`. `calcContamination` returns a dataframe of probabilities demarcating the chance of a cell being any particular cell type. This dataframe is stored under `contaminations` in the `reducedDim` slot of the `SpatialExperiment` object. It also provides the `rfMainCellProb` column, which provides the probability that a cell is indeed the cell type it has been designated. E.g. For a cell designated as a CD8+ T cell, rfMainCellProb could give a 80% chance that the cell is indeed CD8+ T cell, due to contamination.
 
@@ -569,7 +568,7 @@ ggplot(df, aes(x = TP, y = FP, colour = type)) + geom_line()+ labs(y = "Cell sta
 
 Here, we zoom in on the ROC curve where the top 100 lowest p values occur, where we indeed see more true positives than false positives with contamination correction.
 
-```{r}
+```{r, fig.height=3.5, fig.width=5}
 ggplot(df, aes(x = TP, y = FP, colour = type)) + geom_line()+ xlim(0,100) + ylim(0,1000)+ labs(y = "Cell state marker", x = "Cell type marker") + scale_colour_manual(values = values)
             
 
@@ -603,7 +602,7 @@ head(survivalResults)
 
 For our state changes results, `Keratin_Tumour__Mesenchymal__HLA_Class_1` is the most significant pairwise relationship which contributes to patient survival. That is, the relationship between HLA class I expression in keratin/tumour cells and their spatial proximity to mesenchymal cells. As there is a negative coeffcient associated with this relationship, which tells us that higher HLA class I expression in keratin/tumour cells nearby mesenchymal cell populations lead to poorer survival outcomes for patients.
 
-```{r}
+```{r, fig.width=5, fig.height=4}
 # Selecting the most significant relationship
 survRelationship = stateMat[["Keratin_Tumour__Mesenchymal__HLA_Class_1"]]
 survRelationship = ifelse(survRelationship > median(survRelationship), "Higher expressed in close cells", "Lower expressed in close cells")
@@ -615,7 +614,6 @@ survfit2(kerenSurv ~ survRelationship) |>
     ggtitle("Keratin_Tumour__Mesenchymal__HLA_Class_1")
 
 ```
-
 
 ::: question
 **Question**
@@ -657,7 +655,6 @@ lisaClust::hatchingPlot(kerenSPE,
 
 ```
 
-
 ### Changes in marker means
 
 `Statial` provides functionality to identify the average marker expression of a given cell type in a given region, using the `getMarkerMeans` function. Similar to the analysis above, these features can also be used for survival analysis.
@@ -678,7 +675,6 @@ head(survivalResults)
 ## Patient classification
 
 Finally we demonstrate how we can use the Bioconductor package `ClassifyR` to perform patient classification with the features generated from `Statial`. In addition to the kontextual, state changes, and marker means values, we also calculate cell type proportions and region proportions using the `getProp` function in `spicyR`. Here we perform 5 fold cross validation with 20 repeats, using a CoxPH model for survival classification.
-
 
 ```{r, warning=FALSE}
 
@@ -715,11 +711,9 @@ kerenCV = crossValidate(
 
 ```
 
-
 Here, we use the `performancePlot` function to assess the C-index from each repeat of the 5-fold cross-validation. We can see that in this case cell type proportions are not a reliable predictor of survival. However the proportion of each spatial domain region in an image or the states estimated by Kontextual could be.
 
-
-```{r}
+```{r, fig.width=6, fig.height=4}
 # Calculate AUC for each cross-validation repeat and plot.
 performancePlot(kerenCV,
   characteristicsList = list(x = "Assay Name")
