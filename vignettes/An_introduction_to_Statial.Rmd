@@ -70,12 +70,16 @@ While this workshop will focus on the functionality of Statial, it will tangenti
 
 An example for a 45-minute workshop:
 
+The expected timing of the workshop:
+
 | Activity                     | Time |
 |------------------------------|------|
-| Packages                     | 15m  |
-| Package Development          | 15m  |
-| Contributing to Bioconductor | 5m   |
-| Best Practices               | 10m  |
+| Introduction                 | 5m  |
+| Discrete cell states         | 10m  |
+| Continuous cell states       | 10m   |
+| Tissue microenvironments     | 5m   |
+| Classification               | 5m  |  
+
 
 ### Workshop goals and objectives
 
