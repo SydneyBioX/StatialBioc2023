@@ -168,6 +168,7 @@ and <a href="https://www.bioconductor.org/packages/release/bioc/html/ClassifyR.h
 <h4 id="time-outline">Time outline<a class="anchor" aria-label="anchor" href="#time-outline"></a>
 </h4>
 <p>An example for a 45-minute workshop:</p>
+<p>The expected timing of the workshop:</p>
 <table class="table">
 <thead><tr class="header">
 <th>Activity</th>
@@ -175,20 +176,24 @@ and <a href="https://www.bioconductor.org/packages/release/bioc/html/ClassifyR.h
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>Packages</td>
-<td>15m</td>
-</tr>
-<tr class="even">
-<td>Package Development</td>
-<td>15m</td>
-</tr>
-<tr class="odd">
-<td>Contributing to Bioconductor</td>
+<td>Introduction</td>
 <td>5m</td>
 </tr>
 <tr class="even">
-<td>Best Practices</td>
+<td>Discrete cell states</td>
 <td>10m</td>
+</tr>
+<tr class="odd">
+<td>Continuous cell states</td>
+<td>10m</td>
+</tr>
+<tr class="even">
+<td>Tissue microenvironments</td>
+<td>5m</td>
+</tr>
+<tr class="odd">
+<td>Classification</td>
+<td>5m</td>
 </tr>
 </tbody>
 </table>
@@ -329,7 +334,7 @@ hierarchical clustering strategy. By framing cell states as discrete
 clusters, we are able to explore relationships as follows - cell type A
 has two states, with state 2 being closer to cell type B.</p>
 <div class="float">
-<img src="images/KontextSpace.png" style="width 4in; border: 0px" alt="Kontext"><div class="figcaption">Kontext</div>
+<img src="images/KontextSpace.png" style="width: 4in; border: 0px" alt="Kontext"><div class="figcaption">Kontext</div>
 </div>
 <p>Here we introduce Kontextual. Kontextual models spatial relationships
 between cells in the context of hierarchical cell lineage structures. By
@@ -469,7 +474,7 @@ localisation at any value of radii.</p>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/Statial/man/kontextPlot.html" class="external-link">kontextPlot</a></span><span class="op">(</span><span class="va">curves</span><span class="op">)</span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-8-1.png" width="700"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-8-1.png" width="576"></p>
 <p>Alternatively all pairwise cell relationships and their corresponding
 parents in the dataset can be tested. A data frame with all pairwise
 combinations can be creating using the <code>parentCombinations</code>
@@ -625,7 +630,7 @@ outcomes.</p>
 <span>    <span class="fu"><a href="http://www.danieldsjoberg.com/ggsurvfit/reference/ggsurvfit.html" class="external-link">ggsurvfit</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="http://www.danieldsjoberg.com/ggsurvfit/reference/add_pvalue.html" class="external-link">add_pvalue</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">"Mesenchymal__Macrophages__tissue"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-15-1.png" width="700"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-15-1.png" width="480"></p>
 </div>
 </div>
 <div class="section level3">
@@ -717,19 +722,12 @@ cells and macrophages in the wider context of keratin/tumour cells.</p>
 <span>  method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">p</span></span>
-<span><span class="co">#&gt; $image</span></span>
-<span><span class="co">#&gt; Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.</span></span>
-<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Please use `after_stat(density)` instead.</span></span>
-<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> The deprecated feature was likely used in the <span style="color: #0000BB;">Statial</span> package.</span></span>
-<span><span class="co">#&gt;   Please report the issue to the authors.</span></span>
-<span><span class="co">#&gt; <span style="color: #555555;">This warning is displayed once every 8 hours.</span></span></span>
-<span><span class="co">#&gt; <span style="color: #555555;">Call `lifecycle::last_lifecycle_warnings()` to see where this warning was</span></span></span>
-<span><span class="co">#&gt; <span style="color: #555555;">generated.</span></span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-18-1.png" width="700"></p>
+<span><span class="co">#&gt; $image</span></span></code></pre></div>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-18-1.png" width="576"></p>
 <pre><code><span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $scatter</span></span>
 <span><span class="co">#&gt; `geom_smooth()` using formula = 'y ~ x'</span></span></code></pre>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-18-2.png" width="700"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-18-2.png" width="576"></p>
 <div class="question">
 <p><strong>Question</strong></p>
 <ol style="list-style-type: decimal">
@@ -816,14 +814,14 @@ T cells or NK cells.</p>
 <span></span>
 <span><span class="va">p</span></span>
 <span><span class="co">#&gt; $image</span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-20-1.png" width="700"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-20-1.png" width="576"></p>
 <pre><code><span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $scatter</span></span>
 <span><span class="co">#&gt; `geom_smooth()` using formula = 'y ~ x'</span></span>
 <span><span class="co">#&gt; Warning: Removed 1359 rows containing non-finite values</span></span>
 <span><span class="co">#&gt; (`stat_smooth()`).</span></span>
 <span><span class="co">#&gt; Warning: Removed 1359 rows containing missing values (`geom_point()`).</span></span></code></pre>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-20-2.png" width="700"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-20-2.png" width="576"></p>
 <p>Now, we can take a look at the top 10 most significant results across
 all images.</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
@@ -894,12 +892,12 @@ artefacts?</p>
 <span></span>
 <span><span class="va">p</span></span>
 <span><span class="co">#&gt; $image</span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-22-1.png" width="700"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-22-1.png" width="576"></p>
 <pre><code><span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $scatter</span></span>
 <span><span class="co">#&gt; `geom_smooth()` using formula = 'y ~ x'</span></span>
 <span><span class="co">#&gt; Warning: Removed 26 rows containing missing values (`geom_smooth()`).</span></span></code></pre>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-22-2.png" width="700"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-22-2.png" width="576"></p>
 <p>So why are T cells expressing CD20? This brings us to a key
 limitation of cell segmentation.</p>
 </div>
@@ -920,7 +918,7 @@ critical in understanding whether significant cell-cell interactions
 detected are an artifact of technical measurement errors driven by spill
 over or are real biological changes that represent a shift in a cell’s
 state.</p>
-<p><img src="images/Contamination.png" alt="Contamination" style="border: 0px"></p>
+<p><img src="images/Contamination.png" alt="Contamination" style="width: 4in; border: 0px"></p>
 <p>To circumvent this problem, Statial provides a function that predicts
 the probability that a cell is any particular cell type -
 <code>calcContamination</code>. <code>calcContamination</code> returns a
@@ -941,10 +939,9 @@ between B cell density and CD20 expression in CD4+ T cells remains one
 of the most significant interactions in our model.</p>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">kerenSPE</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/calcContamination.html" class="external-link">calcContamination</a></span><span class="op">(</span><span class="va">kerenSPE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Growing trees.. Progress: 25%. Estimated remaining time: 1 minute, 36 seconds.</span></span>
-<span><span class="co">#&gt; Growing trees.. Progress: 50%. Estimated remaining time: 1 minute, 4 seconds.</span></span>
-<span><span class="co">#&gt; Growing trees.. Progress: 75%. Estimated remaining time: 31 seconds.</span></span>
-<span><span class="co">#&gt; Growing trees.. Progress: 100%. Estimated remaining time: 0 seconds.</span></span>
+<span><span class="co">#&gt; Growing trees.. Progress: 28%. Estimated remaining time: 1 minute, 19 seconds.</span></span>
+<span><span class="co">#&gt; Growing trees.. Progress: 55%. Estimated remaining time: 50 seconds.</span></span>
+<span><span class="co">#&gt; Growing trees.. Progress: 84%. Estimated remaining time: 17 seconds.</span></span>
 <span></span>
 <span><span class="va">stateChangesCorrected</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/calcStateChanges.html" class="external-link">calcStateChanges</a></span><span class="op">(</span></span>
 <span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
@@ -956,45 +953,45 @@ of the most significant interactions in our model.</p>
 <span><span class="co">#&gt;        imageID primaryCellType otherCellType      marker         coef</span></span>
 <span><span class="co">#&gt; 71820       37     Endothelial        Tumour        Lag3 -0.001621517</span></span>
 <span><span class="co">#&gt; 146511      11     Neutrophils            NK        CD56 -0.059936866</span></span>
-<span><span class="co">#&gt; 19570       35      CD4_T_cell        B_cell        CD20 -0.024985459</span></span>
-<span><span class="co">#&gt; 19666       35      CD4_T_cell    DC_or_Mono        CD20  0.016203298</span></span>
-<span><span class="co">#&gt; 19675       35      CD4_T_cell    DC_or_Mono  phospho.S6  0.003662190</span></span>
-<span><span class="co">#&gt; 19522       35      CD4_T_cell     dn_T_cell        CD20  0.013794744</span></span>
-<span><span class="co">#&gt; 5707        35          B_cell    DC_or_Mono  phospho.S6  0.004307784</span></span>
-<span><span class="co">#&gt; 19525       35      CD4_T_cell     dn_T_cell      HLA.DR  0.010398458</span></span>
-<span><span class="co">#&gt; 5329        28          B_cell            NK          Na -0.004538284</span></span>
-<span><span class="co">#&gt; 74980        3  Keratin_Tumour            DC          Ca -0.013675895</span></span>
-<span><span class="co">#&gt; 86254       20  Keratin_Tumour        Tumour HLA_Class_1  0.002929945</span></span>
-<span><span class="co">#&gt; 5557        35          B_cell     dn_T_cell      HLA.DR  0.008992818</span></span>
-<span><span class="co">#&gt; 87358       23  Keratin_Tumour  Unidentified HLA_Class_1  0.003135671</span></span>
-<span><span class="co">#&gt; 5701        35          B_cell    DC_or_Mono      HLA.DR  0.008898481</span></span>
-<span><span class="co">#&gt; 19659       35      CD4_T_cell    DC_or_Mono      CSF.1R  0.008575300</span></span>
-<span><span class="co">#&gt; 19531       35      CD4_T_cell     dn_T_cell  phospho.S6  0.002974993</span></span>
-<span><span class="co">#&gt; 76945        6  Keratin_Tumour  Unidentified          Na  0.004183129</span></span>
-<span><span class="co">#&gt; 86209       20  Keratin_Tumour        Tumour          Na  0.002531469</span></span>
-<span><span class="co">#&gt; 5899        35          B_cell  Other_Immune  phospho.S6  0.004582704</span></span>
-<span><span class="co">#&gt; 87017       21  Keratin_Tumour            DC Pan.Keratin -0.005726880</span></span>
+<span><span class="co">#&gt; 19570       35      CD4_T_cell        B_cell        CD20 -0.025558083</span></span>
+<span><span class="co">#&gt; 19666       35      CD4_T_cell    DC_or_Mono        CD20  0.016536616</span></span>
+<span><span class="co">#&gt; 19522       35      CD4_T_cell     dn_T_cell        CD20  0.014134810</span></span>
+<span><span class="co">#&gt; 19675       35      CD4_T_cell    DC_or_Mono  phospho.S6  0.003654636</span></span>
+<span><span class="co">#&gt; 74980        3  Keratin_Tumour            DC          Ca -0.014250003</span></span>
+<span><span class="co">#&gt; 19525       35      CD4_T_cell     dn_T_cell      HLA.DR  0.010534338</span></span>
+<span><span class="co">#&gt; 5707        35          B_cell    DC_or_Mono  phospho.S6  0.004239628</span></span>
+<span><span class="co">#&gt; 5329        28          B_cell            NK          Na -0.004526930</span></span>
+<span><span class="co">#&gt; 19659       35      CD4_T_cell    DC_or_Mono      CSF.1R  0.008713613</span></span>
+<span><span class="co">#&gt; 87358       23  Keratin_Tumour  Unidentified HLA_Class_1  0.003095275</span></span>
+<span><span class="co">#&gt; 86254       20  Keratin_Tumour        Tumour HLA_Class_1  0.002856469</span></span>
+<span><span class="co">#&gt; 5557        35          B_cell     dn_T_cell      HLA.DR  0.008754182</span></span>
+<span><span class="co">#&gt; 19531       35      CD4_T_cell     dn_T_cell  phospho.S6  0.002983937</span></span>
+<span><span class="co">#&gt; 87017       21  Keratin_Tumour            DC Pan.Keratin -0.005954777</span></span>
+<span><span class="co">#&gt; 76945        6  Keratin_Tumour  Unidentified          Na  0.004161704</span></span>
+<span><span class="co">#&gt; 5899        35          B_cell  Other_Immune  phospho.S6  0.004516914</span></span>
+<span><span class="co">#&gt; 86209       20  Keratin_Tumour        Tumour          Na  0.002515262</span></span>
+<span><span class="co">#&gt; 5701        35          B_cell    DC_or_Mono      HLA.DR  0.008518149</span></span>
 <span><span class="co">#&gt;                 tval          pval           fdr</span></span>
-<span><span class="co">#&gt; 71820  -4.615423e+14  0.000000e+00  0.000000e+00</span></span>
-<span><span class="co">#&gt; 146511 -6.755974e+16  0.000000e+00  0.000000e+00</span></span>
-<span><span class="co">#&gt; 19570  -3.509413e+01 1.103607e-222 6.453342e-218</span></span>
-<span><span class="co">#&gt; 19666   3.447989e+01 2.880333e-216 1.263206e-211</span></span>
-<span><span class="co">#&gt; 19675   3.026444e+01 1.530239e-173 5.368844e-169</span></span>
-<span><span class="co">#&gt; 19522   3.004154e+01 2.353958e-171 6.882385e-167</span></span>
-<span><span class="co">#&gt; 5707    3.006932e+01 8.908243e-171 2.232469e-166</span></span>
-<span><span class="co">#&gt; 19525   2.923899e+01 1.508803e-163 3.308522e-159</span></span>
-<span><span class="co">#&gt; 5329   -2.947631e+01 1.200136e-161 2.339265e-157</span></span>
-<span><span class="co">#&gt; 74980  -2.890546e+01 2.549538e-156 4.472527e-152</span></span>
-<span><span class="co">#&gt; 86254   2.571220e+01 2.447547e-133 3.903281e-129</span></span>
-<span><span class="co">#&gt; 5557    2.592566e+01 4.951456e-132 7.238410e-128</span></span>
-<span><span class="co">#&gt; 87358   2.544175e+01 4.394562e-131 5.930124e-127</span></span>
-<span><span class="co">#&gt; 5701    2.559957e+01 4.042978e-129 5.065996e-125</span></span>
-<span><span class="co">#&gt; 19659   2.528975e+01 7.587368e-127 8.873426e-123</span></span>
-<span><span class="co">#&gt; 19531   2.508403e+01 5.078605e-125 5.568214e-121</span></span>
-<span><span class="co">#&gt; 76945   2.445395e+01 1.355480e-121 1.398736e-117</span></span>
-<span><span class="co">#&gt; 86209   2.433812e+01 1.026127e-120 1.000047e-116</span></span>
-<span><span class="co">#&gt; 5899    2.462633e+01 1.463732e-120 1.351448e-116</span></span>
-<span><span class="co">#&gt; 87017  -2.384776e+01 9.120019e-119 7.999397e-115</span></span></code></pre></div>
+<span><span class="co">#&gt; 71820  -4.337284e+14  0.000000e+00  0.000000e+00</span></span>
+<span><span class="co">#&gt; 146511 -4.564484e+16  0.000000e+00  0.000000e+00</span></span>
+<span><span class="co">#&gt; 19570  -3.541986e+01 4.196161e-226 2.453705e-221</span></span>
+<span><span class="co">#&gt; 19666   3.480024e+01 1.313070e-219 5.758630e-215</span></span>
+<span><span class="co">#&gt; 19522   3.055608e+01 2.047985e-176 7.185357e-172</span></span>
+<span><span class="co">#&gt; 19675   3.027048e+01 1.334739e-173 3.902442e-169</span></span>
+<span><span class="co">#&gt; 74980  -3.025134e+01 9.432393e-169 2.363825e-164</span></span>
+<span><span class="co">#&gt; 19525   2.971951e+01 3.290629e-168 7.215732e-164</span></span>
+<span><span class="co">#&gt; 5707    2.924152e+01 8.493978e-163 1.655618e-158</span></span>
+<span><span class="co">#&gt; 5329   -2.948702e+01 9.556728e-162 1.676489e-157</span></span>
+<span><span class="co">#&gt; 19659   2.556692e+01 2.546604e-129 4.061255e-125</span></span>
+<span><span class="co">#&gt; 87358   2.507433e+01 1.130403e-127 1.652508e-123</span></span>
+<span><span class="co">#&gt; 86254   2.509565e+01 1.291349e-127 1.742576e-123</span></span>
+<span><span class="co">#&gt; 5557    2.539098e+01 2.870515e-127 3.596857e-123</span></span>
+<span><span class="co">#&gt; 19531   2.531736e+01 4.309031e-127 5.039412e-123</span></span>
+<span><span class="co">#&gt; 87017  -2.463196e+01 4.055653e-126 4.446643e-122</span></span>
+<span><span class="co">#&gt; 76945   2.435145e+01 1.135107e-120 1.171330e-116</span></span>
+<span><span class="co">#&gt; 5899    2.442980e+01 7.396418e-119 7.208425e-115</span></span>
+<span><span class="co">#&gt; 86209   2.403341e+01 5.559917e-118 5.133413e-114</span></span>
+<span><span class="co">#&gt; 5701    2.421115e+01 5.679039e-117 4.981227e-113</span></span></code></pre></div>
 <p>However, this does not mean factoring in contamination into our
 linear model was ineffective. In general, cell type specific markers
 such as CD68, CD45, and CD20 should not change in cells they are not
@@ -1020,8 +1017,8 @@ occur, where we indeed see more true positives than false positives with
 contamination correction.</p>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">TP</span>, y <span class="op">=</span> <span class="va">FP</span>, colour <span class="op">=</span> <span class="va">type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html" class="external-link">xlim</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">100</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html" class="external-link">ylim</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1000</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"Cell state marker"</span>, x <span class="op">=</span> <span class="st">"Cell type marker"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_colour_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">values</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Warning: Removed 348995 rows containing missing values (`geom_line()`).</span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-25-1.png" width="700"></p>
+<span><span class="co">#&gt; Warning: Removed 349004 rows containing missing values (`geom_line()`).</span></span></code></pre></div>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-25-1.png" width="480"></p>
 <div class="question">
 <p><strong>Question</strong></p>
 <ol style="list-style-type: decimal">
@@ -1084,7 +1081,7 @@ outcomes for patients.</p>
 <span>    <span class="fu"><a href="http://www.danieldsjoberg.com/ggsurvfit/reference/ggsurvfit.html" class="external-link">ggsurvfit</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="http://www.danieldsjoberg.com/ggsurvfit/reference/add_pvalue.html" class="external-link">add_pvalue</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">"Keratin_Tumour__Mesenchymal__HLA_Class_1"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-27-1.png" width="700"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-27-1.png" width="480"></p>
 <div class="question">
 <p><strong>Question</strong></p>
 <ol style="list-style-type: decimal">
@@ -1226,7 +1223,7 @@ image or the states estimated by Kontextual could be.</p>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, vjust <span class="op">=</span> <span class="fl">1</span>, hjust<span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning in .local(results, ...): C-index not found in all elements of results.</span></span>
 <span><span class="co">#&gt; Calculating it now.</span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-31-1.png" width="700"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-31-1.png" width="576"></p>
 </div>
 </div>
 <div class="section level2">
