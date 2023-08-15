@@ -97,6 +97,17 @@ The expected timing of the workshop:
 
 # Workshop
 
+## Installation 
+```{r, warning = FALSE, message=FALSE, eval = FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+    install.packages("BiocManager")
+}
+
+BiocManager::install("Statial")
+```
+
+
+
 ## Load packages
 
 ```{r, warning=FALSE, message=FALSE}
