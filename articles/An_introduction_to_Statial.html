@@ -233,14 +233,24 @@ cell state features.</li>
 <h2 id="workshop">Workshop<a class="anchor" aria-label="anchor" href="#workshop"></a>
 </h2>
 <div class="section level3">
-<h3 id="load-packages">Load packages<a class="anchor" aria-label="anchor" href="#load-packages"></a>
+<h3 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">"BiocManager"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"BiocManager"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://bioconductor.github.io/BiocManager/reference/install.html" class="external-link">install</a></span><span class="op">(</span><span class="st">"Statial"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="load-packages">Load packages<a class="anchor" aria-label="anchor" href="#load-packages"></a>
+</h3>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://SydneyBioX.github.io/StatialBioc2023/">StatialBioc2023</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">Statial</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">spicyR</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">lisaClust</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://sydneybiox.github.io/Statial" class="external-link">Statial</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ellispatrick.github.io/spicyR/" class="external-link">spicyR</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ellispatrick.github.io/lisaClust/" class="external-link">lisaClust</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://sydneybiox.github.io/ClassifyR/" class="external-link">ClassifyR</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/drighelli/SpatialExperiment" class="external-link">SpatialExperiment</a></span><span class="op">)</span></span>
@@ -281,7 +291,7 @@ and the original cohort included 41 patients.</p>
 <p>The data is stored in a <code>SpatialExperiment</code> object called
 <code>kerenSPE</code>. We can load the data and view some basic
 characteristics.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"kerenSPE"</span>, package <span class="op">=</span> <span class="st">"StatialBioc2023"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Filter out samples with few immune cells and those without survival information.</span></span>
@@ -305,7 +315,7 @@ characteristics.</p>
 <code>spatialCoords</code> also stored as a <code>reducedDim</code>, we
 can use <code>scater</code> to visualise our data in a lower dimensional
 embedding and look for image or cluster differences.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># Perform dimension reduction using UMAP.</span></span>
 <span><span class="co"># I have already run this and saved it in kerenSPE so that you can save time.</span></span>
@@ -315,7 +325,7 @@ embedding and look for image or cluster differences.</p>
 <span></span>
 <span><span class="co"># UMAP by imageID.</span></span>
 <span><span class="fu">scater</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/scater/man/plotReducedDim.html" class="external-link">plotReducedDim</a></span><span class="op">(</span><span class="va">kerenSPE</span>, dimred <span class="op">=</span> <span class="st">"UMAP"</span>, colour_by <span class="op">=</span> <span class="st">"cellType"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-4-1.png" width="480"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-5-1.png" width="480"></p>
 <div class="question">
 <p><strong>Question</strong></p>
 <ol style="list-style-type: decimal">
@@ -362,7 +372,7 @@ a vector called bcells.</p>
 <p>To make our lives easier, we will start by defining these here. I’m
 happy to talk about how we use our bioconductor package <a href="http://www.bioconductor.org/packages/release/bioc/html/treekoR.html" class="external-link">treekoR</a>
 to define these hierarchies in a data driven way.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Set up cell populations</span></span>
 <span></span>
 <span><span class="va">tumour</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Keratin_Tumour"</span>, <span class="st">"Tumour"</span><span class="op">)</span></span>
@@ -390,7 +400,7 @@ dispersed. However when the behaviour of <em>p53+ tumour cells</em> are
 placed in the context of the spatial behaviour of its broader parent
 population <em>tumour cells</em>, <em>p53+ tumour cells</em> and
 <em>immune</em> would appear localised.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span></span>
 <span><span class="co"># Lets define a new cell type vector</span></span>
@@ -419,7 +429,7 @@ population <em>tumour cells</em>, <em>p53+ tumour cells</em> and
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>, y <span class="op">=</span> <span class="va">y</span>, color <span class="op">=</span> <span class="va">cellTypeNew</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_colour_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#505050"</span>, <span class="st">"#64BC46"</span>,<span class="st">"#D6D6D6"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html" class="external-link">guides</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guide_legend.html" class="external-link">guide_legend</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Cell types"</span>, override.aes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>size<span class="op">=</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-6-1.png" width="528"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-7-1.png" width="528"></p>
 <p>The <code>Kontextual</code> function accepts a
 <code>SingleCellExperiment</code> object, or a single image, or list of
 images from a <code>SingleCellExperiment</code> object, this gets passed
@@ -435,8 +445,8 @@ cores can be specified using the <code>cores</code> argument.
 each argument and will test all combinations of the arguments
 specified.</p>
 <p>We can calculate these relationships for a single radius.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">p53_Kontextual</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/Kontextual.html" class="external-link">Kontextual</a></span><span class="op">(</span></span>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">p53_Kontextual</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sydneybiox.github.io/Statial/reference/Kontextual.html" class="external-link">Kontextual</a></span><span class="op">(</span></span>
 <span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
 <span>  image <span class="op">=</span> <span class="fl">6</span>,</span>
 <span>  r <span class="op">=</span> <span class="fl">50</span>,</span>
@@ -460,9 +470,9 @@ following plot Kontextual is able to correctly identify localisation
 between p53+ tumour cells and immune cells in the example image for a
 certain range of radii. The original L-function is not able to identify
 localisation at any value of radii.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="va">curves</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/kontextCurve.html" class="external-link">kontextCurve</a></span><span class="op">(</span></span>
+<span><span class="va">curves</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sydneybiox.github.io/Statial/reference/kontextCurve.html" class="external-link">kontextCurve</a></span><span class="op">(</span></span>
 <span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
 <span>  image <span class="op">=</span> <span class="st">"6"</span>,</span>
 <span>  from <span class="op">=</span> <span class="st">"p53_Tumour"</span>,</span>
@@ -473,8 +483,8 @@ localisation at any value of radii.</p>
 <span>  cores <span class="op">=</span> <span class="va">nCores</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/Statial/man/kontextPlot.html" class="external-link">kontextPlot</a></span><span class="op">(</span><span class="va">curves</span><span class="op">)</span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-8-1.png" width="576"></p>
+<span><span class="fu"><a href="https://sydneybiox.github.io/Statial/reference/kontextPlot.html" class="external-link">kontextPlot</a></span><span class="op">(</span><span class="va">curves</span><span class="op">)</span></span></code></pre></div>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-9-1.png" width="576"></p>
 <p>Alternatively all pairwise cell relationships and their corresponding
 parents in the dataset can be tested. A data frame with all pairwise
 combinations can be creating using the <code>parentCombinations</code>
@@ -482,9 +492,9 @@ function. This function takes in a vector of all the cells, as well as
 all the parent vectors set up earlier. As shown below the output is a
 data frame specifying the <code>to</code>, <code>from</code>, and
 <code>parent</code> arguments for <code>Kontextual</code>.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Get all relationships between cell types and their parents</span></span>
-<span><span class="va">parentDf</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/parentCombinations.html" class="external-link">parentCombinations</a></span><span class="op">(</span></span>
+<span><span class="va">parentDf</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sydneybiox.github.io/Statial/reference/parentCombinations.html" class="external-link">parentCombinations</a></span><span class="op">(</span></span>
 <span>  all <span class="op">=</span> <span class="va">all</span>,</span>
 <span>  <span class="va">tumour</span>,</span>
 <span>  <span class="va">bcells</span>,</span>
@@ -506,15 +516,15 @@ data frame specifying the <code>to</code>, <code>from</code>, and
 examine all pairwise relationships in the dataset. This chunk will take
 a signficant amount of time to run (~20 minutes), for demonstration the
 results have been saved and are loaded in.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Running Kontextual on all relationships across all images.</span></span>
-<span><span class="va">kerenKontextual</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/Kontextual.html" class="external-link">Kontextual</a></span><span class="op">(</span></span>
+<span><span class="va">kerenKontextual</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sydneybiox.github.io/Statial/reference/Kontextual.html" class="external-link">Kontextual</a></span><span class="op">(</span></span>
 <span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
 <span>  parentDf <span class="op">=</span> <span class="va">parentDf</span>,</span>
 <span>  r <span class="op">=</span> <span class="fl">50</span>,</span>
 <span>  cores <span class="op">=</span> <span class="va">nCores</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"kerenKontextual"</span>, package <span class="op">=</span> <span class="st">"StatialBioc2023"</span><span class="op">)</span></span>
 <span><span class="va">bigDiff</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">kerenKontextual</span><span class="op">$</span><span class="va">original</span> <span class="op">-</span> <span class="va">kerenKontextual</span><span class="op">$</span><span class="va">kontextual</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">kerenKontextual</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html" class="external-link">order</a></span><span class="op">(</span><span class="va">bigDiff</span><span class="op">)</span>,<span class="op">]</span>, <span class="fl">10</span><span class="op">)</span></span>
@@ -553,7 +563,7 @@ which features are most associated with patient survival using the
 Kontextual values as an example. To do so, survival data is extracted
 from <code>kerenSPE</code> and converted into the survival object
 <code>kerenSurv</code>.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># Extracting survival data</span></span>
 <span><span class="va">survData</span> <span class="op">=</span> <span class="va">kerenSPE</span> <span class="op">|&gt;</span></span>
@@ -570,9 +580,9 @@ from <code>kerenSPE</code> and converted into the survival object
 using <code>prepMatrix</code>. Note, to extract the original L-function
 values, specify <code>column = "original"</code> in
 <code>prepMatrix</code>.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Converting Kontextual result into data matrix</span></span>
-<span><span class="va">kontextMat</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/prepMatrix.html" class="external-link">prepMatrix</a></span><span class="op">(</span><span class="va">kerenKontextual</span><span class="op">)</span></span>
+<span><span class="va">kontextMat</span> <span class="op">=</span> <span class="fu"><a href="https://sydneybiox.github.io/Statial/reference/prepMatrix.html" class="external-link">prepMatrix</a></span><span class="op">(</span><span class="va">kerenKontextual</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Ensuring rownames of kontextMat match up with rownames of the survival vector </span></span>
 <span><span class="va">kontextMat</span> <span class="op">=</span> <span class="va">kontextMat</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">kerenSurv</span><span class="op">)</span>, <span class="op">]</span></span>
@@ -582,9 +592,9 @@ values, specify <code>column = "original"</code> in
 <p>Finally, both the Kontextual matrix and survival object are passed
 into <code>colTest</code>, with <code>type = "survival"</code> to obtain
 the survival results.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Running survival analysis</span></span>
-<span><span class="va">survivalResults</span> <span class="op">=</span> <span class="fu">spicyR</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/spicyR/man/colTest.html" class="external-link">colTest</a></span><span class="op">(</span><span class="va">kontextMat</span>, <span class="va">kerenSurv</span>, type <span class="op">=</span> <span class="st">"survival"</span><span class="op">)</span></span>
+<span><span class="va">survivalResults</span> <span class="op">=</span> <span class="fu">spicyR</span><span class="fu">::</span><span class="fu"><a href="https://ellispatrick.github.io/spicyR/reference/colTest.html" class="external-link">colTest</a></span><span class="op">(</span><span class="va">kontextMat</span>, <span class="va">kerenSurv</span>, type <span class="op">=</span> <span class="st">"survival"</span><span class="op">)</span></span>
 <span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">survivalResults</span><span class="op">)</span></span>
@@ -620,7 +630,7 @@ Kaplan-Meier curve using the <code>ggsurvfit</code> package.</p>
 <p>As shown below, when Mesenchymal and Macrophages are relatively more
 dispersed to one another, patients tend to have worse survival
 outcomes.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Selecting most significant relationship</span></span>
 <span><span class="va">survRelationship</span> <span class="op">=</span> <span class="va">kontextMat</span><span class="op">[[</span><span class="st">"Mesenchymal__Macrophages__tissue"</span><span class="op">]</span><span class="op">]</span></span>
 <span><span class="va">survRelationship</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">survRelationship</span> <span class="op">&gt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html" class="external-link">median</a></span><span class="op">(</span><span class="va">survRelationship</span><span class="op">)</span>, <span class="st">"Localised"</span>, <span class="st">"Dispersed"</span><span class="op">)</span></span>
@@ -630,7 +640,7 @@ outcomes.</p>
 <span>    <span class="fu"><a href="http://www.danieldsjoberg.com/ggsurvfit/reference/ggsurvfit.html" class="external-link">ggsurvfit</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="http://www.danieldsjoberg.com/ggsurvfit/reference/add_pvalue.html" class="external-link">add_pvalue</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">"Mesenchymal__Macrophages__tissue"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-15-1.png" width="480"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-16-1.png" width="480"></p>
 </div>
 </div>
 <div class="section level3">
@@ -656,12 +666,12 @@ proximity (<code>getDistances</code>) and abundance
 values will then be stored in the <code>reducedDims</code> slot of the
 <code>SpatialExperiment</code> object under the names
 <code>distances</code> and <code>abundances</code> respectively.</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="va">kerenSPE</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/getDistances.html" class="external-link">getDistances</a></span><span class="op">(</span><span class="va">kerenSPE</span>,</span>
+<span><span class="va">kerenSPE</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sydneybiox.github.io/Statial/reference/getDistances.html" class="external-link">getDistances</a></span><span class="op">(</span><span class="va">kerenSPE</span>,</span>
 <span>                    maxDist <span class="op">=</span> <span class="fl">200</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">kerenSPE</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/getAbundances.html" class="external-link">getAbundances</a></span><span class="op">(</span><span class="va">kerenSPE</span>,</span>
+<span><span class="va">kerenSPE</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sydneybiox.github.io/Statial/reference/getAbundances.html" class="external-link">getAbundances</a></span><span class="op">(</span><span class="va">kerenSPE</span>,</span>
 <span>                     r <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span></code></pre></div>
 <p>First, let’s examine the same effect observed earlier with
 Kontextual. To avoid redefining cell types we’ll examine the distance
@@ -678,9 +688,9 @@ the <code>fdr</code> statistic for this relationship is significant, and
 with a negative <code>coef</code>, or coefficient value, indicating that
 the expression of p53 in keratin/tumour cells decreases as distance from
 macrophages increases.</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="va">stateChanges</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/calcStateChanges.html" class="external-link">calcStateChanges</a></span><span class="op">(</span></span>
+<span><span class="va">stateChanges</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sydneybiox.github.io/Statial/reference/calcStateChanges.html" class="external-link">calcStateChanges</a></span><span class="op">(</span></span>
 <span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
 <span>  type <span class="op">=</span> <span class="st">"distances"</span>,</span>
 <span>  image <span class="op">=</span> <span class="st">"6"</span>,</span>
@@ -707,8 +717,8 @@ keratin/tumour cells as distance to macrophages increase.</p>
 <p>These results allow us to essentially arrive at the same result as
 Kontextual, which calculated a localisation between p53+ keratin/tumour
 cells and macrophages in the wider context of keratin/tumour cells.</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/plotStateChanges.html" class="external-link">plotStateChanges</a></span><span class="op">(</span></span>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sydneybiox.github.io/Statial/reference/plotStateChanges.html" class="external-link">plotStateChanges</a></span><span class="op">(</span></span>
 <span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
 <span>  type <span class="op">=</span> <span class="st">"distances"</span>,</span>
 <span>  image <span class="op">=</span> <span class="st">"6"</span>,</span>
@@ -722,12 +732,19 @@ cells and macrophages in the wider context of keratin/tumour cells.</p>
 <span>  method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">p</span></span>
-<span><span class="co">#&gt; $image</span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-18-1.png" width="576"></p>
+<span><span class="co">#&gt; $image</span></span>
+<span><span class="co">#&gt; Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Please use `after_stat(density)` instead.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> The deprecated feature was likely used in the <span style="color: #0000BB;">Statial</span> package.</span></span>
+<span><span class="co">#&gt;   Please report the issue at <span style="color: #0000BB; font-style: italic;">&lt;https://github.com/SydneyBioX/Statial/issues&gt;</span>.</span></span>
+<span><span class="co">#&gt; <span style="color: #555555;">This warning is displayed once every 8 hours.</span></span></span>
+<span><span class="co">#&gt; <span style="color: #555555;">Call `lifecycle::last_lifecycle_warnings()` to see where this warning was</span></span></span>
+<span><span class="co">#&gt; <span style="color: #555555;">generated.</span></span></span></code></pre></div>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-19-1.png" width="576"></p>
 <pre><code><span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $scatter</span></span>
 <span><span class="co">#&gt; `geom_smooth()` using formula = 'y ~ x'</span></span></code></pre>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-18-2.png" width="576"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-19-2.png" width="576"></p>
 <div class="question">
 <p><strong>Question</strong></p>
 <ol style="list-style-type: decimal">
@@ -753,8 +770,8 @@ the entire dataset. Here, we’ve calculated all state changes across all
 images in case you would like to have a play, but first we’ll be taking
 a closer examination at the most significant interactions found within
 image 6 of the Keren et al. dataset.</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">stateChanges</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/calcStateChanges.html" class="external-link">calcStateChanges</a></span><span class="op">(</span></span>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">stateChanges</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sydneybiox.github.io/Statial/reference/calcStateChanges.html" class="external-link">calcStateChanges</a></span><span class="op">(</span></span>
 <span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
 <span>  type <span class="op">=</span> <span class="st">"distances"</span>,</span>
 <span>  minCells <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
@@ -797,9 +814,9 @@ expression HLA class I.</p>
 cells, tasked with presenting internal cell antigens for recognition by
 the immune system, marking aberrant cells for destruction by either CD8+
 T cells or NK cells.</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/plotStateChanges.html" class="external-link">plotStateChanges</a></span><span class="op">(</span></span>
+<span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sydneybiox.github.io/Statial/reference/plotStateChanges.html" class="external-link">plotStateChanges</a></span><span class="op">(</span></span>
 <span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
 <span>  type <span class="op">=</span> <span class="st">"distances"</span>,</span>
 <span>  image <span class="op">=</span> <span class="st">"6"</span>,</span>
@@ -814,17 +831,17 @@ T cells or NK cells.</p>
 <span></span>
 <span><span class="va">p</span></span>
 <span><span class="co">#&gt; $image</span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-20-1.png" width="576"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-21-1.png" width="576"></p>
 <pre><code><span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $scatter</span></span>
 <span><span class="co">#&gt; `geom_smooth()` using formula = 'y ~ x'</span></span>
 <span><span class="co">#&gt; Warning: Removed 1359 rows containing non-finite values</span></span>
 <span><span class="co">#&gt; (`stat_smooth()`).</span></span>
 <span><span class="co">#&gt; Warning: Removed 1359 rows containing missing values (`geom_point()`).</span></span></code></pre>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-20-2.png" width="576"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-21-2.png" width="576"></p>
 <p>Now, we can take a look at the top 10 most significant results across
 all images.</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">stateChanges</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt;        imageID primaryCellType otherCellType     marker         coef</span></span>
@@ -875,9 +892,9 @@ artefacts?</p>
 </li>
 </ol>
 </div>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/plotStateChanges.html" class="external-link">plotStateChanges</a></span><span class="op">(</span></span>
+<span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sydneybiox.github.io/Statial/reference/plotStateChanges.html" class="external-link">plotStateChanges</a></span><span class="op">(</span></span>
 <span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
 <span>  type <span class="op">=</span> <span class="st">"distances"</span>,</span>
 <span>  image <span class="op">=</span> <span class="st">"35"</span>,</span>
@@ -892,12 +909,12 @@ artefacts?</p>
 <span></span>
 <span><span class="va">p</span></span>
 <span><span class="co">#&gt; $image</span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-22-1.png" width="576"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-23-1.png" width="576"></p>
 <pre><code><span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $scatter</span></span>
 <span><span class="co">#&gt; `geom_smooth()` using formula = 'y ~ x'</span></span>
 <span><span class="co">#&gt; Warning: Removed 26 rows containing missing values (`geom_smooth()`).</span></span></code></pre>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-22-2.png" width="576"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-23-2.png" width="576"></p>
 <p>So why are T cells expressing CD20? This brings us to a key
 limitation of cell segmentation.</p>
 </div>
@@ -937,13 +954,12 @@ perfect solution for the issue of contamination. As we can see, despite
 factoring in contamination into our linear model, the correlation
 between B cell density and CD20 expression in CD4+ T cells remains one
 of the most significant interactions in our model.</p>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">kerenSPE</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/calcContamination.html" class="external-link">calcContamination</a></span><span class="op">(</span><span class="va">kerenSPE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Growing trees.. Progress: 28%. Estimated remaining time: 1 minute, 19 seconds.</span></span>
-<span><span class="co">#&gt; Growing trees.. Progress: 55%. Estimated remaining time: 50 seconds.</span></span>
-<span><span class="co">#&gt; Growing trees.. Progress: 84%. Estimated remaining time: 17 seconds.</span></span>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">kerenSPE</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sydneybiox.github.io/Statial/reference/calcContamination.html" class="external-link">calcContamination</a></span><span class="op">(</span><span class="va">kerenSPE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Growing trees.. Progress: 35%. Estimated remaining time: 57 seconds.</span></span>
+<span><span class="co">#&gt; Growing trees.. Progress: 71%. Estimated remaining time: 25 seconds.</span></span>
 <span></span>
-<span><span class="va">stateChangesCorrected</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/calcStateChanges.html" class="external-link">calcStateChanges</a></span><span class="op">(</span></span>
+<span><span class="va">stateChangesCorrected</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sydneybiox.github.io/Statial/reference/calcStateChanges.html" class="external-link">calcStateChanges</a></span><span class="op">(</span></span>
 <span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
 <span>  type <span class="op">=</span> <span class="st">"distances"</span>,</span>
 <span>  minCells <span class="op">=</span> <span class="fl">100</span>,</span>
@@ -953,45 +969,45 @@ of the most significant interactions in our model.</p>
 <span><span class="co">#&gt;        imageID primaryCellType otherCellType      marker         coef</span></span>
 <span><span class="co">#&gt; 71820       37     Endothelial        Tumour        Lag3 -0.001621517</span></span>
 <span><span class="co">#&gt; 146511      11     Neutrophils            NK        CD56 -0.059936866</span></span>
-<span><span class="co">#&gt; 19570       35      CD4_T_cell        B_cell        CD20 -0.025558083</span></span>
-<span><span class="co">#&gt; 19666       35      CD4_T_cell    DC_or_Mono        CD20  0.016536616</span></span>
-<span><span class="co">#&gt; 19522       35      CD4_T_cell     dn_T_cell        CD20  0.014134810</span></span>
-<span><span class="co">#&gt; 19675       35      CD4_T_cell    DC_or_Mono  phospho.S6  0.003654636</span></span>
-<span><span class="co">#&gt; 74980        3  Keratin_Tumour            DC          Ca -0.014250003</span></span>
-<span><span class="co">#&gt; 19525       35      CD4_T_cell     dn_T_cell      HLA.DR  0.010534338</span></span>
-<span><span class="co">#&gt; 5707        35          B_cell    DC_or_Mono  phospho.S6  0.004239628</span></span>
-<span><span class="co">#&gt; 5329        28          B_cell            NK          Na -0.004526930</span></span>
-<span><span class="co">#&gt; 19659       35      CD4_T_cell    DC_or_Mono      CSF.1R  0.008713613</span></span>
-<span><span class="co">#&gt; 87358       23  Keratin_Tumour  Unidentified HLA_Class_1  0.003095275</span></span>
-<span><span class="co">#&gt; 86254       20  Keratin_Tumour        Tumour HLA_Class_1  0.002856469</span></span>
-<span><span class="co">#&gt; 5557        35          B_cell     dn_T_cell      HLA.DR  0.008754182</span></span>
-<span><span class="co">#&gt; 19531       35      CD4_T_cell     dn_T_cell  phospho.S6  0.002983937</span></span>
-<span><span class="co">#&gt; 87017       21  Keratin_Tumour            DC Pan.Keratin -0.005954777</span></span>
-<span><span class="co">#&gt; 76945        6  Keratin_Tumour  Unidentified          Na  0.004161704</span></span>
-<span><span class="co">#&gt; 5899        35          B_cell  Other_Immune  phospho.S6  0.004516914</span></span>
-<span><span class="co">#&gt; 86209       20  Keratin_Tumour        Tumour          Na  0.002515262</span></span>
-<span><span class="co">#&gt; 5701        35          B_cell    DC_or_Mono      HLA.DR  0.008518149</span></span>
+<span><span class="co">#&gt; 19570       35      CD4_T_cell        B_cell        CD20 -0.025268025</span></span>
+<span><span class="co">#&gt; 19666       35      CD4_T_cell    DC_or_Mono        CD20  0.016244223</span></span>
+<span><span class="co">#&gt; 19522       35      CD4_T_cell     dn_T_cell        CD20  0.013872793</span></span>
+<span><span class="co">#&gt; 19675       35      CD4_T_cell    DC_or_Mono  phospho.S6  0.003636195</span></span>
+<span><span class="co">#&gt; 5707        35          B_cell    DC_or_Mono  phospho.S6  0.004338963</span></span>
+<span><span class="co">#&gt; 19525       35      CD4_T_cell     dn_T_cell      HLA.DR  0.010355646</span></span>
+<span><span class="co">#&gt; 74980        3  Keratin_Tumour            DC          Ca -0.013803196</span></span>
+<span><span class="co">#&gt; 5329        28          B_cell            NK          Na -0.004487824</span></span>
+<span><span class="co">#&gt; 5557        35          B_cell     dn_T_cell      HLA.DR  0.009051512</span></span>
+<span><span class="co">#&gt; 86254       20  Keratin_Tumour        Tumour HLA_Class_1  0.002924472</span></span>
+<span><span class="co">#&gt; 87358       23  Keratin_Tumour  Unidentified HLA_Class_1  0.003096683</span></span>
+<span><span class="co">#&gt; 5701        35          B_cell    DC_or_Mono      HLA.DR  0.008898074</span></span>
+<span><span class="co">#&gt; 19531       35      CD4_T_cell     dn_T_cell  phospho.S6  0.002976044</span></span>
+<span><span class="co">#&gt; 87017       21  Keratin_Tumour            DC Pan.Keratin -0.005950219</span></span>
+<span><span class="co">#&gt; 19659       35      CD4_T_cell    DC_or_Mono      CSF.1R  0.008578187</span></span>
+<span><span class="co">#&gt; 5899        35          B_cell  Other_Immune  phospho.S6  0.004665403</span></span>
+<span><span class="co">#&gt; 76945        6  Keratin_Tumour  Unidentified          Na  0.004204458</span></span>
+<span><span class="co">#&gt; 5563        35          B_cell     dn_T_cell  phospho.S6  0.003681954</span></span>
 <span><span class="co">#&gt;                 tval          pval           fdr</span></span>
-<span><span class="co">#&gt; 71820  -4.337284e+14  0.000000e+00  0.000000e+00</span></span>
-<span><span class="co">#&gt; 146511 -4.564484e+16  0.000000e+00  0.000000e+00</span></span>
-<span><span class="co">#&gt; 19570  -3.541986e+01 4.196161e-226 2.453705e-221</span></span>
-<span><span class="co">#&gt; 19666   3.480024e+01 1.313070e-219 5.758630e-215</span></span>
-<span><span class="co">#&gt; 19522   3.055608e+01 2.047985e-176 7.185357e-172</span></span>
-<span><span class="co">#&gt; 19675   3.027048e+01 1.334739e-173 3.902442e-169</span></span>
-<span><span class="co">#&gt; 74980  -3.025134e+01 9.432393e-169 2.363825e-164</span></span>
-<span><span class="co">#&gt; 19525   2.971951e+01 3.290629e-168 7.215732e-164</span></span>
-<span><span class="co">#&gt; 5707    2.924152e+01 8.493978e-163 1.655618e-158</span></span>
-<span><span class="co">#&gt; 5329   -2.948702e+01 9.556728e-162 1.676489e-157</span></span>
-<span><span class="co">#&gt; 19659   2.556692e+01 2.546604e-129 4.061255e-125</span></span>
-<span><span class="co">#&gt; 87358   2.507433e+01 1.130403e-127 1.652508e-123</span></span>
-<span><span class="co">#&gt; 86254   2.509565e+01 1.291349e-127 1.742576e-123</span></span>
-<span><span class="co">#&gt; 5557    2.539098e+01 2.870515e-127 3.596857e-123</span></span>
-<span><span class="co">#&gt; 19531   2.531736e+01 4.309031e-127 5.039412e-123</span></span>
-<span><span class="co">#&gt; 87017  -2.463196e+01 4.055653e-126 4.446643e-122</span></span>
-<span><span class="co">#&gt; 76945   2.435145e+01 1.135107e-120 1.171330e-116</span></span>
-<span><span class="co">#&gt; 5899    2.442980e+01 7.396418e-119 7.208425e-115</span></span>
-<span><span class="co">#&gt; 86209   2.403341e+01 5.559917e-118 5.133413e-114</span></span>
-<span><span class="co">#&gt; 5701    2.421115e+01 5.679039e-117 4.981227e-113</span></span></code></pre></div>
+<span><span class="co">#&gt; 71820  -3.078405e+14  0.000000e+00  0.000000e+00</span></span>
+<span><span class="co">#&gt; 146511 -3.556001e+16  0.000000e+00  0.000000e+00</span></span>
+<span><span class="co">#&gt; 19570  -3.543433e+01 2.955432e-226 1.728189e-221</span></span>
+<span><span class="co">#&gt; 19666   3.437287e+01 3.741258e-215 1.640775e-210</span></span>
+<span><span class="co">#&gt; 19522   3.021555e+01 4.625900e-173 1.622997e-168</span></span>
+<span><span class="co">#&gt; 19675   2.998734e+01 7.987393e-171 2.335314e-166</span></span>
+<span><span class="co">#&gt; 5707    3.006698e+01 9.386194e-171 2.352247e-166</span></span>
+<span><span class="co">#&gt; 19525   2.930066e+01 3.824484e-164 8.386376e-160</span></span>
+<span><span class="co">#&gt; 74980  -2.964441e+01 4.084525e-163 7.961420e-159</span></span>
+<span><span class="co">#&gt; 5329   -2.937203e+01 1.099665e-160 1.929087e-156</span></span>
+<span><span class="co">#&gt; 5557    2.610818e+01 1.135973e-133 1.811619e-129</span></span>
+<span><span class="co">#&gt; 86254   2.556735e+01 5.515975e-132 8.063666e-128</span></span>
+<span><span class="co">#&gt; 87358   2.532727e+01 5.118335e-130 6.906799e-126</span></span>
+<span><span class="co">#&gt; 5701    2.533453e+01 9.064929e-127 1.135868e-122</span></span>
+<span><span class="co">#&gt; 19531   2.520675e+01 4.147434e-126 4.850424e-122</span></span>
+<span><span class="co">#&gt; 87017  -2.458275e+01 1.188009e-125 1.251464e-121</span></span>
+<span><span class="co">#&gt; 19659   2.515423e+01 1.212762e-125 1.251464e-121</span></span>
+<span><span class="co">#&gt; 5899    2.514280e+01 4.452689e-125 4.339517e-121</span></span>
+<span><span class="co">#&gt; 76945   2.453996e+01 2.267878e-122 2.093908e-118</span></span>
+<span><span class="co">#&gt; 5563    2.456586e+01 4.903743e-120 4.301195e-116</span></span></code></pre></div>
 <p>However, this does not mean factoring in contamination into our
 linear model was ineffective. In general, cell type specific markers
 such as CD68, CD45, and CD20 should not change in cells they are not
@@ -1001,7 +1017,7 @@ treated as such for the purposes of evaluation.</p>
 <p>Plotting the relationship between false positives and true positives,
 we’d expect the contamination correction to be greatest in relationships
 which are detected to be more significant.</p>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cellTypeMarkers</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"CD3"</span>, <span class="st">"CD4"</span>, <span class="st">"CD8"</span>, <span class="st">"CD56"</span>, <span class="st">"CD11c"</span>, <span class="st">"CD68"</span>, <span class="st">"CD45"</span>, <span class="st">"CD20"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">values</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"blue"</span>, <span class="st">"red"</span><span class="op">)</span></span>
@@ -1011,14 +1027,14 @@ which are detected to be more significant.</p>
 <span>            <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>TP <span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/cumsum.html" class="external-link">cumsum</a></span><span class="op">(</span><span class="va">stateChangesCorrected</span><span class="op">$</span><span class="va">marker</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">cellTypeMarkers</span><span class="op">)</span>, FP <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cumsum.html" class="external-link">cumsum</a></span><span class="op">(</span><span class="op">!</span><span class="va">stateChangesCorrected</span><span class="op">$</span><span class="va">marker</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">cellTypeMarkers</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"Corrected"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">TP</span>, y <span class="op">=</span> <span class="va">FP</span>, colour <span class="op">=</span> <span class="va">type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"Cell state marker"</span>, x <span class="op">=</span> <span class="st">"Cell type marker"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_colour_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">values</span><span class="op">)</span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-24-1.png" width="480"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-25-1.png" width="480"></p>
 <p>Here, we zoom in on the ROC curve where the top 100 lowest p values
 occur, where we indeed see more true positives than false positives with
 contamination correction.</p>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">TP</span>, y <span class="op">=</span> <span class="va">FP</span>, colour <span class="op">=</span> <span class="va">type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html" class="external-link">xlim</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">100</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html" class="external-link">ylim</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1000</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"Cell state marker"</span>, x <span class="op">=</span> <span class="st">"Cell type marker"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_colour_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">values</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Warning: Removed 349004 rows containing missing values (`geom_line()`).</span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-25-1.png" width="480"></p>
+<span><span class="co">#&gt; Warning: Removed 349003 rows containing missing values (`geom_line()`).</span></span></code></pre></div>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-26-1.png" width="480"></p>
 <div class="question">
 <p><strong>Question</strong></p>
 <ol style="list-style-type: decimal">
@@ -1035,9 +1051,9 @@ extracts the coefficients, or the <code>coef</code> column of
 <code>stateChanges</code> by default. To use the t values instead,
 specify <code>column = "tval"</code> in the <code>prepMatrix</code>
 function.</p>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Preparing features for Statial</span></span>
-<span><span class="va">stateMat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/prepMatrix.html" class="external-link">prepMatrix</a></span><span class="op">(</span><span class="va">stateChanges</span><span class="op">)</span></span>
+<span><span class="va">stateMat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sydneybiox.github.io/Statial/reference/prepMatrix.html" class="external-link">prepMatrix</a></span><span class="op">(</span><span class="va">stateChanges</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Ensuring rownames of stateMat match up with rownames of the survival vector</span></span>
 <span><span class="va">stateMat</span> <span class="op">&lt;-</span> <span class="va">stateMat</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">kerenSurv</span><span class="op">)</span>, <span class="op">]</span></span>
@@ -1045,7 +1061,7 @@ function.</p>
 <span><span class="co"># Remove some very small values</span></span>
 <span><span class="va">stateMat</span> <span class="op">&lt;-</span> <span class="va">stateMat</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colMeans</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">stateMat</span><span class="op">)</span><span class="op">&gt;</span><span class="fl">0.0001</span><span class="op">)</span><span class="op">&gt;</span><span class="fl">.8</span><span class="op">]</span></span>
 <span></span>
-<span><span class="va">survivalResults</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/spicyR/man/colTest.html" class="external-link">colTest</a></span><span class="op">(</span><span class="va">stateMat</span>, <span class="va">kerenSurv</span>, type <span class="op">=</span> <span class="st">"survival"</span><span class="op">)</span></span>
+<span><span class="va">survivalResults</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ellispatrick.github.io/spicyR/reference/colTest.html" class="external-link">colTest</a></span><span class="op">(</span><span class="va">stateMat</span>, <span class="va">kerenSurv</span>, type <span class="op">=</span> <span class="st">"survival"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">survivalResults</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                                            coef se.coef   pval adjPval</span></span>
@@ -1071,7 +1087,7 @@ As there is a negative coeffcient associated with this relationship,
 which tells us that higher HLA class I expression in keratin/tumour
 cells nearby mesenchymal cell populations lead to poorer survival
 outcomes for patients.</p>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Selecting the most significant relationship</span></span>
 <span><span class="va">survRelationship</span> <span class="op">=</span> <span class="va">stateMat</span><span class="op">[[</span><span class="st">"Keratin_Tumour__Mesenchymal__HLA_Class_1"</span><span class="op">]</span><span class="op">]</span></span>
 <span><span class="va">survRelationship</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">survRelationship</span> <span class="op">&gt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html" class="external-link">median</a></span><span class="op">(</span><span class="va">survRelationship</span><span class="op">)</span>, <span class="st">"Higher expressed in close cells"</span>, <span class="st">"Lower expressed in close cells"</span><span class="op">)</span></span>
@@ -1081,7 +1097,7 @@ outcomes for patients.</p>
 <span>    <span class="fu"><a href="http://www.danieldsjoberg.com/ggsurvfit/reference/ggsurvfit.html" class="external-link">ggsurvfit</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="http://www.danieldsjoberg.com/ggsurvfit/reference/add_pvalue.html" class="external-link">add_pvalue</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">"Keratin_Tumour__Mesenchymal__HLA_Class_1"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-27-1.png" width="480"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-28-1.png" width="480"></p>
 <div class="question">
 <p><strong>Question</strong></p>
 <ol style="list-style-type: decimal">
@@ -1108,17 +1124,17 @@ within spatial region 1 than spatial region 2.</p>
 <p>We can cluster areas with similar spatial interactions to identify
 regions using the <code>lisaClust</code> package on Bioconductor. Here
 we set <code>k = 5</code> to identify 5 regions.</p>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">51773</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Preparing features for lisaClust</span></span>
-<span><span class="va">kerenSPE</span> <span class="op">&lt;-</span> <span class="fu">lisaClust</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/lisaClust/man/lisaClust.html" class="external-link">lisaClust</a></span><span class="op">(</span><span class="va">kerenSPE</span>, k <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
+<span><span class="va">kerenSPE</span> <span class="op">&lt;-</span> <span class="fu">lisaClust</span><span class="fu">::</span><span class="fu"><a href="https://github.com/ellispatrick/lisaClust/reference/lisaClust.html" class="external-link">lisaClust</a></span><span class="op">(</span><span class="va">kerenSPE</span>, k <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Generating local L-curves. If you run out of memory, try 'fast = FALSE'.</span></span></code></pre></div>
 <p>The regions identified by lisaClust can be visualised using the
 <code>hatchingPlot</code> function.</p>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Use hatching to visualise regions and cell types.</span></span>
-<span><span class="fu">lisaClust</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/lisaClust/man/hatchingPlot.html" class="external-link">hatchingPlot</a></span><span class="op">(</span><span class="va">kerenSPE</span>,</span>
+<span><span class="fu">lisaClust</span><span class="fu">::</span><span class="fu"><a href="https://github.com/ellispatrick/lisaClust/reference/hatchingPlot.html" class="external-link">hatchingPlot</a></span><span class="op">(</span><span class="va">kerenSPE</span>,</span>
 <span>  useImages <span class="op">=</span> <span class="st">"5"</span>,</span>
 <span>  line.spacing <span class="op">=</span> <span class="fl">41</span>, <span class="co"># spacing of lines</span></span>
 <span>  nbp <span class="op">=</span> <span class="fl">100</span> <span class="co"># smoothness of lines</span></span>
@@ -1132,7 +1148,7 @@ we set <code>k = 5</code> to identify 5 regions.</p>
 <span></span>
 <span><span class="co">#&gt; Warning in split.default(x = seq_len(nrow(x)), f = f, drop = drop, ...): data</span></span>
 <span><span class="co">#&gt; length is not a multiple of split variable</span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-29-1.png" width="624"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-30-1.png" width="624"></p>
 </div>
 <div class="section level4">
 <h4 id="changes-in-marker-means">Changes in marker means<a class="anchor" aria-label="anchor" href="#changes-in-marker-means"></a>
@@ -1141,14 +1157,14 @@ we set <code>k = 5</code> to identify 5 regions.</p>
 marker expression of a given cell type in a given region, using the
 <code>getMarkerMeans</code> function. Similar to the analysis above,
 these features can also be used for survival analysis.</p>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="va">cellTypeRegionMeans</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Statial/man/getMarkerMeans.html" class="external-link">getMarkerMeans</a></span><span class="op">(</span><span class="va">kerenSPE</span>,</span>
+<span><span class="va">cellTypeRegionMeans</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sydneybiox.github.io/Statial/reference/getMarkerMeans.html" class="external-link">getMarkerMeans</a></span><span class="op">(</span><span class="va">kerenSPE</span>,</span>
 <span>                              imageID <span class="op">=</span> <span class="st">"imageID"</span>,</span>
 <span>                              cellType <span class="op">=</span> <span class="st">"cellType"</span>,</span>
 <span>                              region <span class="op">=</span> <span class="st">"region"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">survivalResults</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/spicyR/man/colTest.html" class="external-link">colTest</a></span><span class="op">(</span><span class="va">cellTypeRegionMeans</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">kerenSurv</span><span class="op">)</span>,<span class="op">]</span>, <span class="va">kerenSurv</span>, type <span class="op">=</span> <span class="st">"survival"</span><span class="op">)</span></span>
+<span><span class="va">survivalResults</span> <span class="op">=</span> <span class="fu"><a href="https://ellispatrick.github.io/spicyR/reference/colTest.html" class="external-link">colTest</a></span><span class="op">(</span><span class="va">cellTypeRegionMeans</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">kerenSurv</span><span class="op">)</span>,<span class="op">]</span>, <span class="va">kerenSurv</span>, type <span class="op">=</span> <span class="st">"survival"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">survivalResults</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                                     coef se.coef    pval adjPval</span></span>
@@ -1178,13 +1194,13 @@ cell type proportions and region proportions using the
 <code>getProp</code> function in <code>spicyR</code>. Here we perform 5
 fold cross validation with 20 repeats, using a CoxPH model for survival
 classification.</p>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># Calculate cell type and region proportions</span></span>
-<span><span class="va">cellTypeProp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/spicyR/man/getProp.html" class="external-link">getProp</a></span><span class="op">(</span><span class="va">kerenSPE</span>, </span>
+<span><span class="va">cellTypeProp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ellispatrick.github.io/spicyR/reference/getProp.html" class="external-link">getProp</a></span><span class="op">(</span><span class="va">kerenSPE</span>, </span>
 <span>                       feature <span class="op">=</span> <span class="st">"cellType"</span>,</span>
 <span>                       imageID <span class="op">=</span> <span class="st">"imageID"</span><span class="op">)</span></span>
-<span><span class="va">regionProp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/spicyR/man/getProp.html" class="external-link">getProp</a></span><span class="op">(</span><span class="va">kerenSPE</span>, </span>
+<span><span class="va">regionProp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ellispatrick.github.io/spicyR/reference/getProp.html" class="external-link">getProp</a></span><span class="op">(</span><span class="va">kerenSPE</span>, </span>
 <span>                       feature <span class="op">=</span> <span class="st">"region"</span>,</span>
 <span>                       imageID <span class="op">=</span> <span class="st">"imageID"</span><span class="op">)</span></span>
 <span></span>
@@ -1215,7 +1231,7 @@ C-index from each repeat of the 5-fold cross-validation. We can see that
 in this case cell type proportions are not a reliable predictor of
 survival. However the proportion of each spatial domain region in an
 image or the states estimated by Kontextual could be.</p>
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Calculate AUC for each cross-validation repeat and plot.</span></span>
 <span><span class="fu"><a href="https://sydneybiox.github.io/ClassifyR/reference/performancePlot.html" class="external-link">performancePlot</a></span><span class="op">(</span><span class="va">kerenCV</span>,</span>
 <span>  characteristicsList <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Assay Name"</span><span class="op">)</span></span>
@@ -1223,7 +1239,7 @@ image or the states estimated by Kontextual could be.</p>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, vjust <span class="op">=</span> <span class="fl">1</span>, hjust<span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning in .local(results, ...): C-index not found in all elements of results.</span></span>
 <span><span class="co">#&gt; Calculating it now.</span></span></code></pre></div>
-<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-31-1.png" width="576"></p>
+<p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-32-1.png" width="576"></p>
 </div>
 </div>
 <div class="section level2">
@@ -1240,7 +1256,7 @@ Imaging. Cell, 174(6), 1373-1387.e1319. (<a href="https://doi.org/10.1016/j.cell
 <div class="section level2">
 <h2 id="session-info">Session info<a class="anchor" aria-label="anchor" href="#session-info"></a>
 </h2>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; R version 4.3.1 (2023-06-16)</span></span>
 <span><span class="co">#&gt; Platform: x86_64-pc-linux-gnu (64-bit)</span></span>
@@ -1266,51 +1282,51 @@ Imaging. Cell, 174(6), 1373-1387.e1319. (<a href="https://doi.org/10.1016/j.cell
 <span><span class="co">#&gt; [8] base     </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; other attached packages:</span></span>
-<span><span class="co">#&gt;  [1] StatialBioc2023_1.0.1       scater_1.29.0              </span></span>
-<span><span class="co">#&gt;  [3] scuttle_1.11.0              ggsurvfit_0.3.0            </span></span>
+<span><span class="co">#&gt;  [1] StatialBioc2023_1.0.1       scater_1.29.3              </span></span>
+<span><span class="co">#&gt;  [3] scuttle_1.11.2              ggsurvfit_0.3.0            </span></span>
 <span><span class="co">#&gt;  [5] tidyr_1.3.0                 dplyr_1.1.2                </span></span>
 <span><span class="co">#&gt;  [7] SpatialExperiment_1.11.0    SingleCellExperiment_1.23.0</span></span>
-<span><span class="co">#&gt;  [9] ggplot2_3.4.2               ClassifyR_3.5.8            </span></span>
-<span><span class="co">#&gt; [11] survival_3.5-5              BiocParallel_1.35.3        </span></span>
+<span><span class="co">#&gt;  [9] ggplot2_3.4.3               ClassifyR_3.5.8            </span></span>
+<span><span class="co">#&gt; [11] survival_3.5-7              BiocParallel_1.35.3        </span></span>
 <span><span class="co">#&gt; [13] MultiAssayExperiment_1.27.0 SummarizedExperiment_1.31.1</span></span>
 <span><span class="co">#&gt; [15] GenomicRanges_1.53.1        GenomeInfoDb_1.37.2        </span></span>
 <span><span class="co">#&gt; [17] IRanges_2.35.2              MatrixGenerics_1.13.1      </span></span>
 <span><span class="co">#&gt; [19] matrixStats_1.0.0           S4Vectors_0.39.1           </span></span>
-<span><span class="co">#&gt; [21] generics_0.1.3              lisaClust_1.9.0            </span></span>
-<span><span class="co">#&gt; [23] spicyR_1.12.1               Statial_1.2.1              </span></span>
+<span><span class="co">#&gt; [21] generics_0.1.3              lisaClust_1.9.1            </span></span>
+<span><span class="co">#&gt; [23] spicyR_1.12.1               Statial_1.2.2              </span></span>
 <span><span class="co">#&gt; [25] Biobase_2.61.0              BiocGenerics_0.47.0        </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; loaded via a namespace (and not attached):</span></span>
 <span><span class="co">#&gt;   [1] splines_4.3.1             bitops_1.0-7             </span></span>
 <span><span class="co">#&gt;   [3] tibble_3.2.1              R.oo_1.25.0              </span></span>
 <span><span class="co">#&gt;   [5] polyclip_1.10-4           lifecycle_1.0.3          </span></span>
-<span><span class="co">#&gt;   [7] rstatix_0.7.2             edgeR_3.43.7             </span></span>
+<span><span class="co">#&gt;   [7] rstatix_0.7.2             edgeR_3.43.8             </span></span>
 <span><span class="co">#&gt;   [9] rprojroot_2.0.3           lattice_0.21-8           </span></span>
 <span><span class="co">#&gt;  [11] MASS_7.3-60               backports_1.4.1          </span></span>
-<span><span class="co">#&gt;  [13] magrittr_2.0.3            limma_3.57.6             </span></span>
+<span><span class="co">#&gt;  [13] magrittr_2.0.3            limma_3.57.7             </span></span>
 <span><span class="co">#&gt;  [15] plotly_4.10.2             sass_0.4.7               </span></span>
-<span><span class="co">#&gt;  [17] rmarkdown_2.23            jquerylib_0.1.4          </span></span>
+<span><span class="co">#&gt;  [17] rmarkdown_2.24            jquerylib_0.1.4          </span></span>
 <span><span class="co">#&gt;  [19] yaml_2.3.7                spatstat.sparse_3.0-2    </span></span>
 <span><span class="co">#&gt;  [21] cowplot_1.1.1             minqa_1.2.5              </span></span>
 <span><span class="co">#&gt;  [23] RColorBrewer_1.1-3        abind_1.4-5              </span></span>
-<span><span class="co">#&gt;  [25] zlibbioc_1.47.0           purrr_1.0.1              </span></span>
+<span><span class="co">#&gt;  [25] zlibbioc_1.47.0           purrr_1.0.2              </span></span>
 <span><span class="co">#&gt;  [27] R.utils_2.12.2            RCurl_1.98-1.12          </span></span>
 <span><span class="co">#&gt;  [29] tweenr_2.0.2              GenomeInfoDbData_1.2.10  </span></span>
 <span><span class="co">#&gt;  [31] ggrepel_0.9.3             irlba_2.3.5.1            </span></span>
 <span><span class="co">#&gt;  [33] spatstat.utils_3.0-3      pheatmap_1.0.12          </span></span>
 <span><span class="co">#&gt;  [35] goftest_1.2-3             spatstat.random_3.1-5    </span></span>
 <span><span class="co">#&gt;  [37] dqrng_0.3.0               pkgdown_2.0.7            </span></span>
-<span><span class="co">#&gt;  [39] DelayedMatrixStats_1.23.0 codetools_0.2-19         </span></span>
+<span><span class="co">#&gt;  [39] DelayedMatrixStats_1.23.4 codetools_0.2-19         </span></span>
 <span><span class="co">#&gt;  [41] DropletUtils_1.21.0       DelayedArray_0.27.10     </span></span>
 <span><span class="co">#&gt;  [43] ggforce_0.4.1             tidyselect_1.2.0         </span></span>
-<span><span class="co">#&gt;  [45] farver_2.1.1              lme4_1.1-34              </span></span>
-<span><span class="co">#&gt;  [47] ScaledMatrix_1.9.1        viridis_0.6.4            </span></span>
+<span><span class="co">#&gt;  [45] farver_2.1.1              viridis_0.6.4            </span></span>
+<span><span class="co">#&gt;  [47] lme4_1.1-34               ScaledMatrix_1.9.1       </span></span>
 <span><span class="co">#&gt;  [49] spatstat.explore_3.2-1    jsonlite_1.8.7           </span></span>
 <span><span class="co">#&gt;  [51] BiocNeighbors_1.19.0      systemfonts_1.0.4        </span></span>
 <span><span class="co">#&gt;  [53] tools_4.3.1               ragg_1.2.5               </span></span>
 <span><span class="co">#&gt;  [55] Rcpp_1.0.11               glue_1.6.2               </span></span>
 <span><span class="co">#&gt;  [57] gridExtra_2.3             SparseArray_1.1.11       </span></span>
-<span><span class="co">#&gt;  [59] xfun_0.39                 ranger_0.15.1            </span></span>
+<span><span class="co">#&gt;  [59] xfun_0.40                 ranger_0.15.1            </span></span>
 <span><span class="co">#&gt;  [61] mgcv_1.9-0                HDF5Array_1.29.3         </span></span>
 <span><span class="co">#&gt;  [63] scam_1.2-14               withr_2.5.0              </span></span>
 <span><span class="co">#&gt;  [65] numDeriv_2016.8-1.1       fastmap_1.1.1            </span></span>
@@ -1324,19 +1340,19 @@ Imaging. Cell, 174(6), 1373-1387.e1319. (<a href="https://doi.org/10.1016/j.cell
 <span><span class="co">#&gt;  [81] httr_1.4.6                htmlwidgets_1.6.2        </span></span>
 <span><span class="co">#&gt;  [83] S4Arrays_1.1.5            pkgconfig_2.0.3          </span></span>
 <span><span class="co">#&gt;  [85] gtable_0.3.3              XVector_0.41.1           </span></span>
-<span><span class="co">#&gt;  [87] htmltools_0.5.5           carData_3.0-5            </span></span>
+<span><span class="co">#&gt;  [87] htmltools_0.5.6           carData_3.0-5            </span></span>
 <span><span class="co">#&gt;  [89] scales_1.2.1              knitr_1.43               </span></span>
 <span><span class="co">#&gt;  [91] reshape2_1.4.4            rjson_0.2.21             </span></span>
-<span><span class="co">#&gt;  [93] curl_5.0.1                nlme_3.1-162             </span></span>
+<span><span class="co">#&gt;  [93] curl_5.0.2                nlme_3.1-163             </span></span>
 <span><span class="co">#&gt;  [95] nloptr_2.0.3              cachem_1.0.8             </span></span>
 <span><span class="co">#&gt;  [97] rhdf5_2.45.1              stringr_1.5.0            </span></span>
-<span><span class="co">#&gt;  [99] parallel_4.3.1            vipor_0.4.5              </span></span>
+<span><span class="co">#&gt;  [99] vipor_0.4.5               parallel_4.3.1           </span></span>
 <span><span class="co">#&gt; [101] concaveman_1.1.0          desc_1.4.2               </span></span>
 <span><span class="co">#&gt; [103] pillar_1.9.0              grid_4.3.1               </span></span>
 <span><span class="co">#&gt; [105] vctrs_0.6.3               ggpubr_0.6.0             </span></span>
 <span><span class="co">#&gt; [107] car_3.1-2                 BiocSingular_1.17.1      </span></span>
-<span><span class="co">#&gt; [109] beachmat_2.17.14          beeswarm_0.4.0           </span></span>
-<span><span class="co">#&gt; [111] evaluate_0.21             magick_2.7.4             </span></span>
+<span><span class="co">#&gt; [109] beachmat_2.17.15          beeswarm_0.4.0           </span></span>
+<span><span class="co">#&gt; [111] evaluate_0.21             magick_2.7.5             </span></span>
 <span><span class="co">#&gt; [113] cli_3.6.1                 locfit_1.5-9.8           </span></span>
 <span><span class="co">#&gt; [115] compiler_4.3.1            rlang_1.1.1              </span></span>
 <span><span class="co">#&gt; [117] crayon_1.5.2              ggsignif_0.6.4           </span></span>
@@ -1346,10 +1362,10 @@ Imaging. Cell, 174(6), 1373-1387.e1319. (<a href="https://doi.org/10.1016/j.cell
 <span><span class="co">#&gt; [125] deldir_1.0-9              lmerTest_3.1-3           </span></span>
 <span><span class="co">#&gt; [127] munsell_0.5.0             lazyeval_0.2.2           </span></span>
 <span><span class="co">#&gt; [129] spatstat.geom_3.2-4       V8_4.3.3                 </span></span>
-<span><span class="co">#&gt; [131] Matrix_1.6-0              sparseMatrixStats_1.13.0 </span></span>
-<span><span class="co">#&gt; [133] Rhdf5lib_1.23.0           highr_0.10               </span></span>
-<span><span class="co">#&gt; [135] broom_1.0.5               memoise_2.0.1            </span></span>
-<span><span class="co">#&gt; [137] bslib_0.5.0</span></span></code></pre></div>
+<span><span class="co">#&gt; [131] Matrix_1.6-1              sparseMatrixStats_1.13.4 </span></span>
+<span><span class="co">#&gt; [133] Rhdf5lib_1.23.0           statmod_1.5.0            </span></span>
+<span><span class="co">#&gt; [135] highr_0.10                broom_1.0.5              </span></span>
+<span><span class="co">#&gt; [137] memoise_2.0.1             bslib_0.5.1</span></span></code></pre></div>
 </div>
   </div>
 
