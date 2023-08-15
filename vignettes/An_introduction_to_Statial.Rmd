@@ -441,7 +441,9 @@ p <- plotStateChanges(
   plotModelFit = FALSE,
   method = "lm")
 
-p
+p + 
+  labs(y = "p53 expression in Keratin_Tumour",
+       x = "Distance of Keratin_Tumour to Macrophages")
 
 ```
 
@@ -489,7 +491,9 @@ p <- plotStateChanges(
   plotModelFit = FALSE,
   method = "lm")
 
-p
+p + 
+  labs(y = "HLA_Class_1 expression in Keratin_Tumour",
+       x = "Distance of Keratin_Tumour to Macrophages")
 
 ```
 
@@ -532,7 +536,9 @@ p <- plotStateChanges(
   plotModelFit = FALSE,
   method = "lm")
 
-p
+p + 
+  labs(y = "CD20 expression in CD4_T_cell",
+       x = "Distance of B_cell to CD4_T_cell")
 
 ```
 
