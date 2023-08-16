@@ -441,9 +441,11 @@ p <- plotStateChanges(
   plotModelFit = FALSE,
   method = "lm")
 
-p + 
+p$image + 
   labs(y = "p53 expression in Keratin_Tumour",
        x = "Distance of Keratin_Tumour to Macrophages")
+
+p$scatter
 
 ```
 
@@ -491,10 +493,12 @@ p <- plotStateChanges(
   plotModelFit = FALSE,
   method = "lm")
 
-p + 
+p$image + 
   labs(y = "HLA_Class_1 expression in Keratin_Tumour",
        x = "Distance of Keratin_Tumour to Macrophages")
 
+
+p$scatter
 ```
 
 Now, we can take a look at the top 10 most significant results across all images.
@@ -536,10 +540,11 @@ p <- plotStateChanges(
   plotModelFit = FALSE,
   method = "lm")
 
-p + 
+p$image + 
   labs(y = "CD20 expression in CD4_T_cell",
        x = "Distance of B_cell to CD4_T_cell")
 
+p$scatter
 ```
 
 So why are T cells expressing CD20? This brings us to a key limitation of cell segmentation.
