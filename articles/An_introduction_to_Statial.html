@@ -731,8 +731,9 @@ cells and macrophages in the wider context of keratin/tumour cells.</p>
 <span>  plotModelFit <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">p</span></span>
-<span><span class="co">#&gt; $image</span></span>
+<span><span class="va">p</span><span class="op">$</span><span class="va">image</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"p53 expression in Keratin_Tumour"</span>,</span>
+<span>       x <span class="op">=</span> <span class="st">"Distance of Keratin_Tumour to Macrophages"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.</span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Please use `after_stat(density)` instead.</span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> The deprecated feature was likely used in the <span style="color: #0000BB;">Statial</span> package.</span></span>
@@ -741,9 +742,10 @@ cells and macrophages in the wider context of keratin/tumour cells.</p>
 <span><span class="co">#&gt; <span style="color: #555555;">Call `lifecycle::last_lifecycle_warnings()` to see where this warning was</span></span></span>
 <span><span class="co">#&gt; <span style="color: #555555;">generated.</span></span></span></code></pre></div>
 <p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-19-1.png" width="576"></p>
-<pre><code><span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; $scatter</span></span>
-<span><span class="co">#&gt; `geom_smooth()` using formula = 'y ~ x'</span></span></code></pre>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">p</span><span class="op">$</span><span class="va">scatter</span></span>
+<span><span class="co">#&gt; `geom_smooth()` using formula = 'y ~ x'</span></span></code></pre></div>
 <p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-19-2.png" width="576"></p>
 <div class="question">
 <p><strong>Question</strong></p>
@@ -791,16 +793,16 @@ image 6 of the Keren et al. dataset.</p>
 <span><span class="co">#&gt; 9        6  Keratin_Tumour    CD4_T_cell           Fe -0.003457338 -21.43550</span></span>
 <span><span class="co">#&gt; 10       6  Keratin_Tumour    CD4_T_cell   phospho.S6 -0.002892457 -20.50767</span></span>
 <span><span class="co">#&gt;             pval           fdr</span></span>
-<span><span class="co">#&gt; 1  6.971648e-127 3.397226e-123</span></span>
-<span><span class="co">#&gt; 2  7.814253e-124 3.427038e-120</span></span>
-<span><span class="co">#&gt; 3  1.745242e-116 5.669614e-113</span></span>
-<span><span class="co">#&gt; 4  1.917245e-112 5.798841e-109</span></span>
-<span><span class="co">#&gt; 5  5.444541e-110 1.516046e-106</span></span>
-<span><span class="co">#&gt; 6  1.053130e-108 2.842235e-105</span></span>
-<span><span class="co">#&gt; 7  1.237988e-105 3.016305e-102</span></span>
-<span><span class="co">#&gt; 8  8.188258e-100  1.710030e-96</span></span>
-<span><span class="co">#&gt; 9   1.287478e-95  2.352664e-92</span></span>
-<span><span class="co">#&gt; 10  3.928912e-88  5.890849e-85</span></span></code></pre></div>
+<span><span class="co">#&gt; 1  6.971648e-127 3.397517e-123</span></span>
+<span><span class="co">#&gt; 2  7.814253e-124 3.427331e-120</span></span>
+<span><span class="co">#&gt; 3  1.745242e-116 5.670098e-113</span></span>
+<span><span class="co">#&gt; 4  1.917245e-112 5.799337e-109</span></span>
+<span><span class="co">#&gt; 5  5.444541e-110 1.516175e-106</span></span>
+<span><span class="co">#&gt; 6  1.053130e-108 2.842478e-105</span></span>
+<span><span class="co">#&gt; 7  1.237988e-105 3.016563e-102</span></span>
+<span><span class="co">#&gt; 8  8.188258e-100  1.710176e-96</span></span>
+<span><span class="co">#&gt; 9   1.287478e-95  2.352866e-92</span></span>
+<span><span class="co">#&gt; 10  3.928912e-88  5.891353e-85</span></span></code></pre></div>
 <p>In image 6, the majority of the top 10 most significant interactions
 occur between keratin/tumour cells and an immune population, and many of
 these interactions appear to involve the HLA class I ligand.</p>
@@ -829,15 +831,18 @@ T cells or NK cells.</p>
 <span>  plotModelFit <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">p</span></span>
-<span><span class="co">#&gt; $image</span></span></code></pre></div>
+<span><span class="va">p</span><span class="op">$</span><span class="va">image</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"HLA_Class_1 expression in Keratin_Tumour"</span>,</span>
+<span>       x <span class="op">=</span> <span class="st">"Distance of Keratin_Tumour to Macrophages"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-21-1.png" width="576"></p>
-<pre><code><span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; $scatter</span></span>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span></span>
+<span><span class="va">p</span><span class="op">$</span><span class="va">scatter</span></span>
 <span><span class="co">#&gt; `geom_smooth()` using formula = 'y ~ x'</span></span>
 <span><span class="co">#&gt; Warning: Removed 1359 rows containing non-finite values</span></span>
 <span><span class="co">#&gt; (`stat_smooth()`).</span></span>
-<span><span class="co">#&gt; Warning: Removed 1359 rows containing missing values (`geom_point()`).</span></span></code></pre>
+<span><span class="co">#&gt; Warning: Removed 1359 rows containing missing values (`geom_point()`).</span></span></code></pre></div>
 <p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-21-2.png" width="576"></p>
 <p>Now, we can take a look at the top 10 most significant results across
 all images.</p>
@@ -856,16 +861,16 @@ all images.</p>
 <span><span class="co">#&gt; 19522       35      CD4_T_cell     dn_T_cell       CD20  0.016349492</span></span>
 <span><span class="co">#&gt; 5704        35          B_cell    DC_or_Mono     H3K9ac  0.005096632</span></span>
 <span><span class="co">#&gt;                 tval          pval           fdr</span></span>
-<span><span class="co">#&gt; 71820  -5.639068e+14  0.000000e+00  0.000000e+00</span></span>
-<span><span class="co">#&gt; 146511 -4.011535e+16  0.000000e+00  0.000000e+00</span></span>
-<span><span class="co">#&gt; 19570  -4.057355e+01 7.019343e-282 4.104561e-277</span></span>
-<span><span class="co">#&gt; 19666   4.053436e+01 1.891267e-281 8.294389e-277</span></span>
-<span><span class="co">#&gt; 5707    4.041385e+01 5.306590e-278 1.861817e-273</span></span>
-<span><span class="co">#&gt; 19675   3.472882e+01 4.519947e-219 1.321520e-214</span></span>
-<span><span class="co">#&gt; 5701    3.415344e+01 8.401034e-212 2.105359e-207</span></span>
-<span><span class="co">#&gt; 5859    3.414375e+01 1.056403e-211 2.316494e-207</span></span>
-<span><span class="co">#&gt; 19522   3.391901e+01 1.219488e-210 2.376985e-206</span></span>
-<span><span class="co">#&gt; 5704    3.399856e+01 3.266533e-210 5.730315e-206</span></span></code></pre></div>
+<span><span class="co">#&gt; 71820  -1.601116e+15  0.000000e+00  0.000000e+00</span></span>
+<span><span class="co">#&gt; 146511 -2.435997e+15  0.000000e+00  0.000000e+00</span></span>
+<span><span class="co">#&gt; 19570  -4.057355e+01 7.019343e-282 4.104912e-277</span></span>
+<span><span class="co">#&gt; 19666   4.053436e+01 1.891267e-281 8.295098e-277</span></span>
+<span><span class="co">#&gt; 5707    4.041385e+01 5.306590e-278 1.861976e-273</span></span>
+<span><span class="co">#&gt; 19675   3.472882e+01 4.519947e-219 1.321633e-214</span></span>
+<span><span class="co">#&gt; 5701    3.415344e+01 8.401034e-212 2.105539e-207</span></span>
+<span><span class="co">#&gt; 5859    3.414375e+01 1.056403e-211 2.316692e-207</span></span>
+<span><span class="co">#&gt; 19522   3.391901e+01 1.219488e-210 2.377188e-206</span></span>
+<span><span class="co">#&gt; 5704    3.399856e+01 3.266533e-210 5.730805e-206</span></span></code></pre></div>
 <p>Immediately, we can appreciate that a couple of interactions appear a
 bit strange. One of the most significant interactions occurs between B
 cells and CD4 T cells, where CD4 T cells are found to increase in CD20
@@ -907,13 +912,15 @@ artefacts?</p>
 <span>  plotModelFit <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">p</span></span>
-<span><span class="co">#&gt; $image</span></span></code></pre></div>
+<span><span class="va">p</span><span class="op">$</span><span class="va">image</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"CD20 expression in CD4_T_cell"</span>,</span>
+<span>       x <span class="op">=</span> <span class="st">"Distance of B_cell to CD4_T_cell"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-23-1.png" width="576"></p>
-<pre><code><span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; $scatter</span></span>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">p</span><span class="op">$</span><span class="va">scatter</span></span>
 <span><span class="co">#&gt; `geom_smooth()` using formula = 'y ~ x'</span></span>
-<span><span class="co">#&gt; Warning: Removed 26 rows containing missing values (`geom_smooth()`).</span></span></code></pre>
+<span><span class="co">#&gt; Warning: Removed 26 rows containing missing values (`geom_smooth()`).</span></span></code></pre></div>
 <p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-23-2.png" width="576"></p>
 <p>So why are T cells expressing CD20? This brings us to a key
 limitation of cell segmentation.</p>
@@ -956,8 +963,9 @@ between B cell density and CD20 expression in CD4+ T cells remains one
 of the most significant interactions in our model.</p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">kerenSPE</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sydneybiox.github.io/Statial/reference/calcContamination.html" class="external-link">calcContamination</a></span><span class="op">(</span><span class="va">kerenSPE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Growing trees.. Progress: 35%. Estimated remaining time: 57 seconds.</span></span>
-<span><span class="co">#&gt; Growing trees.. Progress: 71%. Estimated remaining time: 25 seconds.</span></span>
+<span><span class="co">#&gt; Growing trees.. Progress: 27%. Estimated remaining time: 1 minute, 23 seconds.</span></span>
+<span><span class="co">#&gt; Growing trees.. Progress: 56%. Estimated remaining time: 49 seconds.</span></span>
+<span><span class="co">#&gt; Growing trees.. Progress: 83%. Estimated remaining time: 19 seconds.</span></span>
 <span></span>
 <span><span class="va">stateChangesCorrected</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sydneybiox.github.io/Statial/reference/calcStateChanges.html" class="external-link">calcStateChanges</a></span><span class="op">(</span></span>
 <span>  cells <span class="op">=</span> <span class="va">kerenSPE</span>,</span>
@@ -969,45 +977,45 @@ of the most significant interactions in our model.</p>
 <span><span class="co">#&gt;        imageID primaryCellType otherCellType      marker         coef</span></span>
 <span><span class="co">#&gt; 71820       37     Endothelial        Tumour        Lag3 -0.001621517</span></span>
 <span><span class="co">#&gt; 146511      11     Neutrophils            NK        CD56 -0.059936866</span></span>
-<span><span class="co">#&gt; 19570       35      CD4_T_cell        B_cell        CD20 -0.025268025</span></span>
-<span><span class="co">#&gt; 19666       35      CD4_T_cell    DC_or_Mono        CD20  0.016244223</span></span>
-<span><span class="co">#&gt; 19522       35      CD4_T_cell     dn_T_cell        CD20  0.013872793</span></span>
-<span><span class="co">#&gt; 19675       35      CD4_T_cell    DC_or_Mono  phospho.S6  0.003636195</span></span>
-<span><span class="co">#&gt; 5707        35          B_cell    DC_or_Mono  phospho.S6  0.004338963</span></span>
-<span><span class="co">#&gt; 19525       35      CD4_T_cell     dn_T_cell      HLA.DR  0.010355646</span></span>
-<span><span class="co">#&gt; 74980        3  Keratin_Tumour            DC          Ca -0.013803196</span></span>
-<span><span class="co">#&gt; 5329        28          B_cell            NK          Na -0.004487824</span></span>
-<span><span class="co">#&gt; 5557        35          B_cell     dn_T_cell      HLA.DR  0.009051512</span></span>
-<span><span class="co">#&gt; 86254       20  Keratin_Tumour        Tumour HLA_Class_1  0.002924472</span></span>
-<span><span class="co">#&gt; 87358       23  Keratin_Tumour  Unidentified HLA_Class_1  0.003096683</span></span>
-<span><span class="co">#&gt; 5701        35          B_cell    DC_or_Mono      HLA.DR  0.008898074</span></span>
-<span><span class="co">#&gt; 19531       35      CD4_T_cell     dn_T_cell  phospho.S6  0.002976044</span></span>
-<span><span class="co">#&gt; 87017       21  Keratin_Tumour            DC Pan.Keratin -0.005950219</span></span>
-<span><span class="co">#&gt; 19659       35      CD4_T_cell    DC_or_Mono      CSF.1R  0.008578187</span></span>
-<span><span class="co">#&gt; 5899        35          B_cell  Other_Immune  phospho.S6  0.004665403</span></span>
-<span><span class="co">#&gt; 76945        6  Keratin_Tumour  Unidentified          Na  0.004204458</span></span>
-<span><span class="co">#&gt; 5563        35          B_cell     dn_T_cell  phospho.S6  0.003681954</span></span>
+<span><span class="co">#&gt; 19570       35      CD4_T_cell        B_cell        CD20 -0.024648975</span></span>
+<span><span class="co">#&gt; 19666       35      CD4_T_cell    DC_or_Mono        CD20  0.015935977</span></span>
+<span><span class="co">#&gt; 74980        3  Keratin_Tumour            DC          Ca -0.014204438</span></span>
+<span><span class="co">#&gt; 19675       35      CD4_T_cell    DC_or_Mono  phospho.S6  0.003588488</span></span>
+<span><span class="co">#&gt; 5707        35          B_cell    DC_or_Mono  phospho.S6  0.004317143</span></span>
+<span><span class="co">#&gt; 5329        28          B_cell            NK          Na -0.004556843</span></span>
+<span><span class="co">#&gt; 19522       35      CD4_T_cell     dn_T_cell        CD20  0.013573724</span></span>
+<span><span class="co">#&gt; 19525       35      CD4_T_cell     dn_T_cell      HLA.DR  0.010172620</span></span>
+<span><span class="co">#&gt; 5557        35          B_cell     dn_T_cell      HLA.DR  0.009060908</span></span>
+<span><span class="co">#&gt; 86254       20  Keratin_Tumour        Tumour HLA_Class_1  0.002889672</span></span>
+<span><span class="co">#&gt; 87358       23  Keratin_Tumour  Unidentified HLA_Class_1  0.003097774</span></span>
+<span><span class="co">#&gt; 19659       35      CD4_T_cell    DC_or_Mono      CSF.1R  0.008642380</span></span>
+<span><span class="co">#&gt; 5701        35          B_cell    DC_or_Mono      HLA.DR  0.008918375</span></span>
+<span><span class="co">#&gt; 87017       21  Keratin_Tumour            DC Pan.Keratin -0.005964576</span></span>
+<span><span class="co">#&gt; 5899        35          B_cell  Other_Immune  phospho.S6  0.004630462</span></span>
+<span><span class="co">#&gt; 76945        6  Keratin_Tumour  Unidentified          Na  0.004189721</span></span>
+<span><span class="co">#&gt; 19531       35      CD4_T_cell     dn_T_cell  phospho.S6  0.002913286</span></span>
+<span><span class="co">#&gt; 5563        35          B_cell     dn_T_cell  phospho.S6  0.003671970</span></span>
 <span><span class="co">#&gt;                 tval          pval           fdr</span></span>
-<span><span class="co">#&gt; 71820  -3.078405e+14  0.000000e+00  0.000000e+00</span></span>
-<span><span class="co">#&gt; 146511 -3.556001e+16  0.000000e+00  0.000000e+00</span></span>
-<span><span class="co">#&gt; 19570  -3.543433e+01 2.955432e-226 1.728189e-221</span></span>
-<span><span class="co">#&gt; 19666   3.437287e+01 3.741258e-215 1.640775e-210</span></span>
-<span><span class="co">#&gt; 19522   3.021555e+01 4.625900e-173 1.622997e-168</span></span>
-<span><span class="co">#&gt; 19675   2.998734e+01 7.987393e-171 2.335314e-166</span></span>
-<span><span class="co">#&gt; 5707    3.006698e+01 9.386194e-171 2.352247e-166</span></span>
-<span><span class="co">#&gt; 19525   2.930066e+01 3.824484e-164 8.386376e-160</span></span>
-<span><span class="co">#&gt; 74980  -2.964441e+01 4.084525e-163 7.961420e-159</span></span>
-<span><span class="co">#&gt; 5329   -2.937203e+01 1.099665e-160 1.929087e-156</span></span>
-<span><span class="co">#&gt; 5557    2.610818e+01 1.135973e-133 1.811619e-129</span></span>
-<span><span class="co">#&gt; 86254   2.556735e+01 5.515975e-132 8.063666e-128</span></span>
-<span><span class="co">#&gt; 87358   2.532727e+01 5.118335e-130 6.906799e-126</span></span>
-<span><span class="co">#&gt; 5701    2.533453e+01 9.064929e-127 1.135868e-122</span></span>
-<span><span class="co">#&gt; 19531   2.520675e+01 4.147434e-126 4.850424e-122</span></span>
-<span><span class="co">#&gt; 87017  -2.458275e+01 1.188009e-125 1.251464e-121</span></span>
-<span><span class="co">#&gt; 19659   2.515423e+01 1.212762e-125 1.251464e-121</span></span>
-<span><span class="co">#&gt; 5899    2.514280e+01 4.452689e-125 4.339517e-121</span></span>
-<span><span class="co">#&gt; 76945   2.453996e+01 2.267878e-122 2.093908e-118</span></span>
-<span><span class="co">#&gt; 5563    2.456586e+01 4.903743e-120 4.301195e-116</span></span></code></pre></div>
+<span><span class="co">#&gt; 71820  -1.411655e+15  0.000000e+00  0.000000e+00</span></span>
+<span><span class="co">#&gt; 146511 -1.871213e+15  0.000000e+00  0.000000e+00</span></span>
+<span><span class="co">#&gt; 19570  -3.463000e+01 7.858483e-218 4.595641e-213</span></span>
+<span><span class="co">#&gt; 19666   3.387228e+01 5.800202e-210 2.543969e-205</span></span>
+<span><span class="co">#&gt; 74980  -3.025607e+01 8.522063e-169 2.990221e-164</span></span>
+<span><span class="co">#&gt; 19675   2.974764e+01 1.750289e-168 5.117844e-164</span></span>
+<span><span class="co">#&gt; 5707    2.974131e+01 1.332460e-167 3.339526e-163</span></span>
+<span><span class="co">#&gt; 5329   -3.001792e+01 1.144548e-166 2.509994e-162</span></span>
+<span><span class="co">#&gt; 19522   2.952919e+01 2.333820e-166 4.549394e-162</span></span>
+<span><span class="co">#&gt; 19525   2.864905e+01 7.036367e-158 1.234460e-153</span></span>
+<span><span class="co">#&gt; 5557    2.616690e+01 3.361397e-134 5.361123e-130</span></span>
+<span><span class="co">#&gt; 86254   2.528906e+01 2.119230e-129 3.098314e-125</span></span>
+<span><span class="co">#&gt; 87358   2.503285e+01 2.729646e-127 3.683762e-123</span></span>
+<span><span class="co">#&gt; 19659   2.522910e+01 2.625736e-126 3.290422e-122</span></span>
+<span><span class="co">#&gt; 5701    2.527417e+01 3.094655e-126 3.619509e-122</span></span>
+<span><span class="co">#&gt; 87017  -2.459026e+01 1.008506e-125 1.105827e-121</span></span>
+<span><span class="co">#&gt; 5899    2.495310e+01 2.062423e-123 2.128421e-119</span></span>
+<span><span class="co">#&gt; 76945   2.447704e+01 8.390477e-122 8.177918e-118</span></span>
+<span><span class="co">#&gt; 19531   2.463899e+01 4.201894e-121 3.879896e-117</span></span>
+<span><span class="co">#&gt; 5563    2.454030e+01 8.169615e-120 7.166386e-116</span></span></code></pre></div>
 <p>However, this does not mean factoring in contamination into our
 linear model was ineffective. In general, cell type specific markers
 such as CD68, CD45, and CD20 should not change in cells they are not
@@ -1033,7 +1041,7 @@ occur, where we indeed see more true positives than false positives with
 contamination correction.</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">TP</span>, y <span class="op">=</span> <span class="va">FP</span>, colour <span class="op">=</span> <span class="va">type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html" class="external-link">xlim</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">100</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html" class="external-link">ylim</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1000</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"Cell state marker"</span>, x <span class="op">=</span> <span class="st">"Cell type marker"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_colour_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">values</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Warning: Removed 349003 rows containing missing values (`geom_line()`).</span></span></code></pre></div>
+<span><span class="co">#&gt; Warning: Removed 348997 rows containing missing values (`geom_line()`).</span></span></code></pre></div>
 <p><img src="An_introduction_to_Statial_files/figure-html/unnamed-chunk-26-1.png" width="480"></p>
 <div class="question">
 <p><strong>Question</strong></p>
@@ -1337,7 +1345,7 @@ Imaging. Cell, 174(6), 1373-1387.e1319. (<a href="https://doi.org/10.1016/j.cell
 <span><span class="co">#&gt;  [75] tensor_1.5                spatstat.data_3.0-1      </span></span>
 <span><span class="co">#&gt;  [77] R.methodsS3_1.8.2         utf8_1.2.3               </span></span>
 <span><span class="co">#&gt;  [79] data.table_1.14.8         class_7.3-22             </span></span>
-<span><span class="co">#&gt;  [81] httr_1.4.6                htmlwidgets_1.6.2        </span></span>
+<span><span class="co">#&gt;  [81] httr_1.4.7                htmlwidgets_1.6.2        </span></span>
 <span><span class="co">#&gt;  [83] S4Arrays_1.1.5            pkgconfig_2.0.3          </span></span>
 <span><span class="co">#&gt;  [85] gtable_0.3.3              XVector_0.41.1           </span></span>
 <span><span class="co">#&gt;  [87] htmltools_0.5.6           carData_3.0-5            </span></span>
