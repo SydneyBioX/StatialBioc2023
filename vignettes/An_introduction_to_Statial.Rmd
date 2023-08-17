@@ -103,7 +103,8 @@ if (!requireNamespace("BiocManager", quietly = TRUE)) {
     install.packages("BiocManager")
 }
 
-BiocManager::install("Statial")
+BiocManager::install(c("Statial", "spicyR", "lisaClust", "ClassifyR", "ggplot2", "SpatialExperiment", "dplyr",
+                    "tidyr", "ggsurvfit", "scater"))
 ```
 
 
